@@ -149,7 +149,7 @@
             this.Controls.Add(this.IDTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioPrincipal";
-            this.Text = "Pendiente a Editar.";
+            this.Text = "Registro de Clasificaciones";
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
