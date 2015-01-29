@@ -139,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(319, 151);
+            this.ClientSize = new System.Drawing.Size(319, 155);
             this.Controls.Add(this.LimpiarButtom);
             this.Controls.Add(this.BottarButtom);
             this.Controls.Add(this.AceptarButtom);
