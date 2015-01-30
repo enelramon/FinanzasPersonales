@@ -76,10 +76,10 @@
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(34, 190);
+            this.button1.Location = new System.Drawing.Point(34, 191);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(112, 42);
+            this.button1.Size = new System.Drawing.Size(112, 43);
             this.button1.TabIndex = 3;
             this.button1.Text = "Aceptar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,9 +95,9 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(168, 189);
+            this.button2.Location = new System.Drawing.Point(168, 191);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 43);
+            this.button2.Size = new System.Drawing.Size(115, 43);
             this.button2.TabIndex = 4;
             this.button2.Text = "Limpiar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,9 +112,9 @@
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(310, 189);
+            this.button3.Location = new System.Drawing.Point(305, 190);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 43);
+            this.button3.Size = new System.Drawing.Size(115, 44);
             this.button3.TabIndex = 5;
             this.button3.Text = "Borrar";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
