@@ -44,7 +44,7 @@
             // 
             this.IDTextBox.Location = new System.Drawing.Point(134, 12);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.IDTextBox.Size = new System.Drawing.Size(70, 20);
             this.IDTextBox.TabIndex = 0;
             this.IDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -58,6 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(46, 15);
             this.label1.Name = "label1";
@@ -68,6 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 41);
             this.label2.Name = "label2";
@@ -127,6 +129,7 @@
             // Active
             // 
             this.Active.AutoSize = true;
+            this.Active.BackColor = System.Drawing.Color.Transparent;
             this.Active.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Active.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Active.Location = new System.Drawing.Point(12, 97);
@@ -134,7 +137,7 @@
             this.Active.Size = new System.Drawing.Size(68, 20);
             this.Active.TabIndex = 9;
             this.Active.Text = "Active";
-            this.Active.UseVisualStyleBackColor = true;
+            this.Active.UseVisualStyleBackColor = false;
             // 
             // FormularioPrincipal
             // 
@@ -142,6 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(319, 155);
             this.Controls.Add(this.Active);
