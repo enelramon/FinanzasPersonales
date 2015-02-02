@@ -44,7 +44,7 @@
             // 
             this.IDTextBox.Location = new System.Drawing.Point(134, 12);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(70, 20);
+            this.IDTextBox.Size = new System.Drawing.Size(98, 20);
             this.IDTextBox.TabIndex = 0;
             this.IDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
