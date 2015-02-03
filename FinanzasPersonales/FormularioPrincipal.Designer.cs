@@ -29,147 +29,188 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
-            this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.NombreTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.BuscarButtom = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.AceptarButtom = new System.Windows.Forms.Button();
-            this.BottarButtom = new System.Windows.Forms.Button();
-            this.LimpiarButtom = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // IDTextBox
+            // textBox1
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(134, 12);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.IDTextBox.TabIndex = 0;
-            this.IDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Location = new System.Drawing.Point(86, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(126, 20);
+            this.textBox1.TabIndex = 0;
             // 
-            // NombreTextBox
+            // textBox2
             // 
-            this.NombreTextBox.Location = new System.Drawing.Point(134, 38);
-            this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.Size = new System.Drawing.Size(173, 20);
-            this.NombreTextBox.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(86, 81);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(232, 20);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(40, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(21, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ID:";
+            this.label1.Text = "Id";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(34, 191);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(112, 43);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Aceptar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(168, 191);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 43);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Limpiar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(305, 190);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 44);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Borrar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(228, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 30);
+            this.button4.TabIndex = 6;
+            this.button4.UseCompatibleTextRendering = true;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 41);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(17, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre:";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nombre";
             // 
-            // BuscarButtom
+            // groupBox1
             // 
-            this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(263, 8);
-            this.BuscarButtom.Name = "BuscarButtom";
-            this.BuscarButtom.Size = new System.Drawing.Size(27, 26);
-            this.BuscarButtom.TabIndex = 4;
-            this.BuscarButtom.UseVisualStyleBackColor = true;
+            this.groupBox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Location = new System.Drawing.Point(34, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(386, 162);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registro";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // radioButton1
+            // checkBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 93);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Activa";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // AceptarButtom
-            // 
-            this.AceptarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.AceptarButtom.Image = ((System.Drawing.Image)(resources.GetObject("AceptarButtom.Image")));
-            this.AceptarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AceptarButtom.Location = new System.Drawing.Point(232, 64);
-            this.AceptarButtom.Name = "AceptarButtom";
-            this.AceptarButtom.Size = new System.Drawing.Size(75, 23);
-            this.AceptarButtom.TabIndex = 6;
-            this.AceptarButtom.Text = "Aceptar";
-            this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AceptarButtom.UseVisualStyleBackColor = true;
-            this.AceptarButtom.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // BottarButtom
-            // 
-            this.BottarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BottarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BottarButtom.Image")));
-            this.BottarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BottarButtom.Location = new System.Drawing.Point(232, 122);
-            this.BottarButtom.Name = "BottarButtom";
-            this.BottarButtom.Size = new System.Drawing.Size(75, 23);
-            this.BottarButtom.TabIndex = 7;
-            this.BottarButtom.Text = "Borrar";
-            this.BottarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BottarButtom.UseVisualStyleBackColor = true;
-            // 
-            // LimpiarButtom
-            // 
-            this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
-            this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButtom.Location = new System.Drawing.Point(232, 93);
-            this.LimpiarButtom.Name = "LimpiarButtom";
-            this.LimpiarButtom.Size = new System.Drawing.Size(75, 23);
-            this.LimpiarButtom.TabIndex = 8;
-            this.LimpiarButtom.Text = "Limpiar";
-            this.LimpiarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LimpiarButtom.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Maroon;
+            this.checkBox1.Location = new System.Drawing.Point(20, 119);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 21);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Activo";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FormularioPrincipal
             // 
-            this.AcceptButton = this.AceptarButtom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.Cyan;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(319, 151);
-            this.Controls.Add(this.LimpiarButtom);
-            this.Controls.Add(this.BottarButtom);
-            this.Controls.Add(this.AceptarButtom);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.BuscarButtom);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.NombreTextBox);
-            this.Controls.Add(this.IDTextBox);
+            this.ClientSize = new System.Drawing.Size(473, 289);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormularioPrincipal";
             this.Text = "Registro de Clasificaciones";
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.TextBox NombreTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BuscarButtom;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button AceptarButtom;
-        private System.Windows.Forms.Button BottarButtom;
-        private System.Windows.Forms.Button LimpiarButtom;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+
     }
 }
 
