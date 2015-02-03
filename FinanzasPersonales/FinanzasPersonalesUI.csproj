@@ -94,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
@@ -129,6 +130,8 @@
   <ItemGroup>
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
+    <None Include="Resources\1.bmp" />
+    <None Include="Resources\lupe2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
