@@ -151,6 +151,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(this.IDTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rClasificaciones";
             this.Text = "Registro de Clasificaciones";
             this.ResumeLayout(false);
