@@ -130,6 +130,8 @@
   <ItemGroup>
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
+    <None Include="Resources\erase.bmp" />
+    <None Include="Resources\t.bmp" />
     <None Include="Resources\1.bmp" />
     <None Include="Resources\lupe2.png" />
   </ItemGroup>
