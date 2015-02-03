@@ -16,5 +16,10 @@ namespace FinanzasPersonales.Registros
         {
             InitializeComponent();
         }
+
+        private void BottarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

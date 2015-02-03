@@ -139,6 +139,12 @@
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{6c82934c-e0d0-432b-9d9d-c68af0352786}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

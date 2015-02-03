@@ -46,7 +46,7 @@
             this.Active.BackColor = System.Drawing.Color.Transparent;
             this.Active.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Active.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Active.Location = new System.Drawing.Point(4, 129);
+            this.Active.Location = new System.Drawing.Point(126, 96);
             this.Active.Name = "Active";
             this.Active.Size = new System.Drawing.Size(68, 20);
             this.Active.TabIndex = 18;
@@ -57,9 +57,9 @@
             // 
             this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButtom.Location = new System.Drawing.Point(224, 125);
+            this.LimpiarButtom.Location = new System.Drawing.Point(36, 136);
             this.LimpiarButtom.Name = "LimpiarButtom";
-            this.LimpiarButtom.Size = new System.Drawing.Size(75, 23);
+            this.LimpiarButtom.Size = new System.Drawing.Size(75, 33);
             this.LimpiarButtom.TabIndex = 17;
             this.LimpiarButtom.Text = "Limpiar";
             this.LimpiarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -70,33 +70,34 @@
             this.BottarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BottarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BottarButtom.Image")));
             this.BottarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BottarButtom.Location = new System.Drawing.Point(224, 154);
+            this.BottarButtom.Location = new System.Drawing.Point(198, 136);
             this.BottarButtom.Name = "BottarButtom";
-            this.BottarButtom.Size = new System.Drawing.Size(75, 23);
+            this.BottarButtom.Size = new System.Drawing.Size(75, 33);
             this.BottarButtom.TabIndex = 16;
             this.BottarButtom.Text = "Borrar";
             this.BottarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BottarButtom.UseVisualStyleBackColor = true;
+            this.BottarButtom.Click += new System.EventHandler(this.BottarButtom_Click);
             // 
             // AceptarButtom
             // 
             this.AceptarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.AceptarButtom.Image = ((System.Drawing.Image)(resources.GetObject("AceptarButtom.Image")));
             this.AceptarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AceptarButtom.Location = new System.Drawing.Point(224, 96);
+            this.AceptarButtom.Location = new System.Drawing.Point(117, 136);
             this.AceptarButtom.Name = "AceptarButtom";
-            this.AceptarButtom.Size = new System.Drawing.Size(75, 23);
+            this.AceptarButtom.Size = new System.Drawing.Size(75, 33);
             this.AceptarButtom.TabIndex = 15;
-            this.AceptarButtom.Text = "Aceptar";
+            this.AceptarButtom.Text = "Guardar";
             this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AceptarButtom.UseVisualStyleBackColor = true;
             // 
             // BuscarButtom
             // 
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(255, 40);
+            this.BuscarButtom.Location = new System.Drawing.Point(230, 38);
             this.BuscarButtom.Name = "BuscarButtom";
-            this.BuscarButtom.Size = new System.Drawing.Size(28, 26);
+            this.BuscarButtom.Size = new System.Drawing.Size(32, 30);
             this.BuscarButtom.TabIndex = 14;
             this.BuscarButtom.UseVisualStyleBackColor = true;
             // 
