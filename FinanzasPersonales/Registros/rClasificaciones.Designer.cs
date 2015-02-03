@@ -95,9 +95,9 @@
             // BuscarButtom
             // 
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(230, 38);
+            this.BuscarButtom.Location = new System.Drawing.Point(239, 41);
             this.BuscarButtom.Name = "BuscarButtom";
-            this.BuscarButtom.Size = new System.Drawing.Size(32, 30);
+            this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
             this.BuscarButtom.TabIndex = 14;
             this.BuscarButtom.UseVisualStyleBackColor = true;
             // 
@@ -117,7 +117,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 47);
+            this.label1.Location = new System.Drawing.Point(12, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 16);
             this.label1.TabIndex = 12;
@@ -152,7 +152,7 @@
             this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(this.IDTextBox);
             this.Name = "rClasificaciones";
-            this.Text = "rClasificaciones";
+            this.Text = "Registro de Clasificaciones";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,12 @@ namespace FinanzasPersonales
             InitializeComponent();
         }
 
+        private void clasificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rClasificaciones clasi = new Registros.rClasificaciones();
+            clasi.Show();
+        }
+
        
     }
 }
