@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FinanzasPersonales
+namespace FinanzasPersonales.Registros
 {
-    public partial class FormularioPrincipal : Form
+    public partial class rClasificaciones : Form
     {
-        public FormularioPrincipal()
+        public rClasificaciones()
         {
             InitializeComponent();
         }
-
-       
     }
 }

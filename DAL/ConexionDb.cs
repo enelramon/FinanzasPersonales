@@ -11,5 +11,6 @@ namespace DAL
     /// </summary>
     class ConexionDb
     {
+
     }
 }
