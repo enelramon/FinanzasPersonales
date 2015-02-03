@@ -36,6 +36,7 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,9 +91,18 @@
             // 
             // ayudaToolStripMenuItem
             // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acercaDeToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // FormularioPrincipal
             // 
@@ -127,6 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clasificacionesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
 
     }
 }

@@ -23,6 +23,11 @@ namespace FinanzasPersonales
             clasi.Show();
         }
 
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\tFinanzas Personales\n\tProgramacion Aplicada I inc.\n\tIntegrantes:\n\n\tEnel Almonte\n\tChristopher Genao\n\tJoel Olvares\n\tNewlin Duarte\n\tYahaida Vargas\n\tAngel Rodriguez\n\tFeliz Radel\n\tKlainer Morales");
+        }
+
        
     }
 }
