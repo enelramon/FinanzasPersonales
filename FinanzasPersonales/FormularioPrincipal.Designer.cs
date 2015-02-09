@@ -90,7 +90,6 @@
             // AceptarButtom
             // 
             this.AceptarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.AceptarButtom.Image = ((System.Drawing.Image)(resources.GetObject("AceptarButtom.Image")));
             this.AceptarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AceptarButtom.Location = new System.Drawing.Point(232, 64);
             this.AceptarButtom.Name = "AceptarButtom";
@@ -104,7 +103,6 @@
             // BottarButtom
             // 
             this.BottarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BottarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BottarButtom.Image")));
             this.BottarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BottarButtom.Location = new System.Drawing.Point(232, 122);
             this.BottarButtom.Name = "BottarButtom";
@@ -116,7 +114,6 @@
             // 
             // LimpiarButtom
             // 
-            this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButtom.Location = new System.Drawing.Point(232, 93);
             this.LimpiarButtom.Name = "LimpiarButtom";
@@ -144,7 +141,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(319, 155);
             this.Controls.Add(this.Active);
@@ -161,9 +157,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioPrincipal";
-            this.Text = "Untitled Program";
+            this.Text = "Registro de Clasificaciones";
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
