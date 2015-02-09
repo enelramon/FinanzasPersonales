@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\rClasificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rClasificaciones.Designer.cs">
+      <DependentUpon>rClasificaciones.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registros\rClasificaciones.resx">
+      <DependentUpon>rClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -129,6 +138,15 @@
   <ItemGroup>
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{6c82934c-e0d0-432b-9d9d-c68af0352786}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Consultas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

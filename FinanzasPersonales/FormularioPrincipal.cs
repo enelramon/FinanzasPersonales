@@ -17,24 +17,17 @@ namespace FinanzasPersonales
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void clasificacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Registros.rClasificaciones clasi = new Registros.rClasificaciones();
+            clasi.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("\tFinanzas Personales\n\tProgramacion Aplicada I inc.\n\tIntegrantes:\n\n\tEnel Almonte\n\tChristopher Genao\n\tJoel Olvares\n\tNewlin Duarte\n\tYahaida Vargas\n\tAngel Rodriguez\n\tFeliz Radel\n\tKlainer Morales");
         }
 
-        private void FormularioPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
