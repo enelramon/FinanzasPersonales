@@ -8,9 +8,6 @@ namespace BLL
 {
     class Clasificaciones
     {
-        public string IdClasificacion { get; set; }
-
-
-        
+        public string IdClasificacion { get; set; }        
     }
 }
