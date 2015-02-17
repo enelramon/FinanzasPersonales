@@ -144,7 +144,7 @@
         3hUHP0m85vJzQvQvsi/nfoBo4KUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BottarButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BorrarButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAvVJREFUSEuV
         lTtz2kAUhe3CRcrMxLaEASMECAwGjB/EGPMQbwR2oSJFipQuXaZMl9JFivyEFGryK1KkTOGdSZF0/gFu
@@ -162,7 +162,7 @@
         L1Xa2Yzvbrdguo5L2y+EvFYhF0HuLa5pIaE2Nv4BccExdMscF9gAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="AceptarButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="GuardarButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAdZJREFUSEvF
         ls1OwkAUhYGAQYMxxgUtFUqMCZ0WlMS4N4aY+AQ+iEZjXLnwCXwFFiYuNJSg/Bbj3qVLfAld13vLTJlp

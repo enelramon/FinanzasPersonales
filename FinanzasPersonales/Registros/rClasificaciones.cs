@@ -17,7 +17,17 @@ namespace FinanzasPersonales.Registros
             InitializeComponent();
         }
 
-        private void BottarButtom_Click(object sender, EventArgs e)
+        private void LimpiarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuardarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BorrarButtom_Click(object sender, EventArgs e)
         {
 
         }
