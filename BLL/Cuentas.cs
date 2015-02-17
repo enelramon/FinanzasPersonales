@@ -24,37 +24,53 @@ namespace BLL
             this.IdCuenta = 0;
             this.Descripcion = string.Empty;
         }
+
         /// <summary>
-        /// Permite insertar una cuenta en la base de datos
+        /// Permite insertar una Cuenta en la base de datos
         /// </summary>
-        /// <returns>Verdadero o Falso, Segun sea, insertado o no</returns>
+        /// <returns>Verdadero o Falso segun sea, insertado o no</returns>
         public Boolean Insertar()
         {
             this.IdCuenta = 0;
-            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion)  Values ('" + this.Descripcion + "') Select @@Identity");
+
+            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion)  Values('" + this.Descripcion + "') Select @@Identity");
+
             return this.IdCuenta > 0;
-                
+
         }
 
 
         public Boolean Modificar()
         {
-            return Conexion.EjecutarDB("Update Cuentas set Descripcion='" + this.Descripcion + "' where Descripcion='" + this.Descripcion + "'");
+            return Conexion.EjecutarDB("Update Cuentas set Descripcion= '" + this.Descripcion + "' Where IdCuenta = " + this.IdCuenta);
+
         }
 
-        public Boolean Borrar()
+
+        public Boolean Eliminar(Int32 IdBuscado)
         {
-            return Conexion.EjecutarDB("Delete from Cuentas where Descripcion='"+this.Descripcion+"'");
+            return Conexion.EjecutarDB("Delete from Cuentas where IdCuenta=" + IdBuscado);
         }
 
-        public Boolean Buscar()
+        public Boolean Buscar(Int32 IdBuscado)
         {
-            //if dt.rows.count > 0 
-            //this.Descripcion =dt.rows[0]["Descripcion"];
-            return false;
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = Conexion.BuscarDb("Select  Descripcion From Cuentas Where IdCuenta=" + IdBuscado );
+
+            if (dt.Rows.Count > 0)
+        {
+                Encontro = true;
+
+                this.IdCuenta = IdBuscado;
+                this.Descripcion = (string)dt.Rows[0]["Descripcion"];
+            }
+
+            return Encontro;
         }
-        
-        public DataTable Listar(string campos ="*", string Filtro="1=1")
+
+        public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
             return Conexion.BuscarDb("Select " + campos + " from Cuentas where " + Filtro);
         }
