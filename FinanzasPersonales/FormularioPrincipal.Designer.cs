@@ -85,6 +85,7 @@
             // 
             // clasificacionesToolStripMenuItem1
             // 
+            this.clasificacionesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("clasificacionesToolStripMenuItem1.Image")));
             this.clasificacionesToolStripMenuItem1.Name = "clasificacionesToolStripMenuItem1";
             this.clasificacionesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.clasificacionesToolStripMenuItem1.Text = "Clasificaciones";
