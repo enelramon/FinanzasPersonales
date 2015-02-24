@@ -95,6 +95,7 @@
             this.LimpiarButtom.Text = "Limpiar";
             this.LimpiarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LimpiarButtom.UseVisualStyleBackColor = true;
+            this.LimpiarButtom.Click += new System.EventHandler(this.LimpiarButtom_Click);
             // 
             // BorrarButtom
             // 

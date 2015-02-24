@@ -17,8 +17,6 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
-
-
         public Cuentas()
         {
             this.IdCuenta = 0;
@@ -57,10 +55,10 @@ namespace BLL
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = Conexion.BuscarDb("Select  Descripcion From Cuentas Where IdCuenta=" + IdBuscado );
+            dt = this.Listar("Descripcion", "IdCuenta=" + IdBuscado);
 
             if (dt.Rows.Count > 0)
-        {
+            {
                 Encontro = true;
 
                 this.IdCuenta = IdBuscado;
