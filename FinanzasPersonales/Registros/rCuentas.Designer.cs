@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCuentas));
             this.IdCuentatextBox = new System.Windows.Forms.TextBox();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
@@ -37,6 +38,8 @@
             this.LimpiarButtom = new System.Windows.Forms.Button();
             this.BorrarButtom = new System.Windows.Forms.Button();
             this.GuardarButtom = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // IdCuentatextBox
@@ -127,6 +130,10 @@
             this.GuardarButtom.UseVisualStyleBackColor = true;
             this.GuardarButtom.Click += new System.EventHandler(this.GuardarButtom_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // rCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +149,7 @@
             this.Controls.Add(this.IdCuentatextBox);
             this.Name = "rCuentas";
             this.Text = "Registro de Cuentas";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +165,6 @@
         private System.Windows.Forms.Button LimpiarButtom;
         private System.Windows.Forms.Button BorrarButtom;
         private System.Windows.Forms.Button GuardarButtom;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

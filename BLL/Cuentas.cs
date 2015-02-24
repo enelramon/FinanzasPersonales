@@ -17,10 +17,18 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
+       private  float balance;
+       public readonly float Balance 
+       {
+           get { return balance; } 
+       }
+      
+        
         public Cuentas()
         {
             this.IdCuenta = 0;
             this.Descripcion = string.Empty;
+            this.balance = 0;
         }
 
         /// <summary>
@@ -31,7 +39,7 @@ namespace BLL
         {
             this.IdCuenta = 0;
 
-            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion)  Values('" + this.Descripcion + "') Select @@Identity");
+            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion,Balance)  Values('" + this.Descripcion + "',0) Select @@Identity");
 
             return this.IdCuenta > 0;
 
@@ -50,19 +58,28 @@ namespace BLL
             return Conexion.EjecutarDB("Delete from Cuentas where IdCuenta=" + IdBuscado);
         }
 
+        public static Boolean AfectarBalance(int IdCuenta,float ValorAumentar)
+        {
+            ConexionDb Conexion = new ConexionDb();
+
+            return Conexion.EjecutarDB("Update Cuentas Set Balance=Balance+" + ValorAumentar.ToString() + "Where IdCuenta=" + IdCuenta.ToString() );
+       
+        }
+
         public Boolean Buscar(Int32 IdBuscado)
         {
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listar("Descripcion", "IdCuenta=" + IdBuscado);
+            dt = this.Listar("Descripcion,Balance", "IdCuenta=" + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
                 Encontro = true;
-
+               
                 this.IdCuenta = IdBuscado;
                 this.Descripcion = (string)dt.Rows[0]["Descripcion"];
+                this.balance = (float )dt.Rows[0]["Balance"];
             }
 
             return Encontro;

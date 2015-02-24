@@ -39,3 +39,28 @@ IdPresupuesto int IDENTITY(1,1) Primary Key,
 IdClasificacion int references Clasificaciones(IdClasificacion),
 Valor float);
  
+
+-- select * from SubClasificaciones
+
+--select * from Ingresos
+
+--select IdIngreso,Valor , SubClasificaciones.Descripcion 
+--from Ingresos  inner join SubClasificaciones  
+--	on Ingresos.IdSubClas = SubClasificaciones.IdSubClas 
+
+
+--insert into Clasificaciones(Descripcion) values ('sueldos')
+
+--insert into SubClasificaciones(IdClasificacion,Descripcion) values (1,'sueldos extra')
+
+--Insert into Cuentas (Descripcion,Balance ) values('Efectivo',0)
+
+--balance = balance + (inicial-final)
+
+--select Ingresos.* , SubClasificaciones.*
+
+
+
+--insert Into Ingresos(Fecha,IdCuenta,IdSubClas,Concepto ,Valor) values (getdate(),1,2,'sueldo',100)
+
+--Update Cuentas set Balance = Balance + Valor +50 where IdCuenta =1

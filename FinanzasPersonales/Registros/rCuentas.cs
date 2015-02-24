@@ -37,6 +37,18 @@ namespace FinanzasPersonales.Registros
         {
             Boolean paso = false;
 
+            if (!Utilitarios.ValidarTextBoxVacio(DescripciontextBox, errorProvider1, "Debe introducir alguna descripción"))
+                return;
+
+            //if (DescripciontextBox.Text.Trim().Length ==0)
+            //{
+            //    errorProvider1.SetError(DescripciontextBox, "Debe introducir alguna descripción");
+            //    MessageBox.Show("Debe introducir alguna descripción");
+            //    DescripciontextBox.Focus();
+            //    return;
+            //}
+                
+
             Cuenta.IdCuenta = Utilitarios.ToInt(IdCuentatextBox.Text);
             Cuenta.Descripcion = DescripciontextBox.Text;
 
