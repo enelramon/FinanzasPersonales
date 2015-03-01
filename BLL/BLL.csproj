@@ -51,6 +51,7 @@
     <Compile Include="Cuentas.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Gastos.cs" />
     <Compile Include="Ingresos.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
