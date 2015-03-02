@@ -17,7 +17,7 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
-        public DateTime Fecha { get; }
+        public DateTime Fecha { get; set; }
 
        
 
