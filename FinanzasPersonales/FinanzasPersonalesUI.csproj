@@ -95,6 +95,13 @@
     <Compile Include="Registros\rCuentas.Designer.cs">
       <DependentUpon>rCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rGastos.Designer.cs">
+      <DependentUpon>rGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios.cs" />
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +120,9 @@
     <EmbeddedResource Include="Registros\rCuentas.resx">
       <DependentUpon>rCuentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rGastos.resx">
+      <DependentUpon>rGastos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,7 +140,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -145,6 +155,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\FinanzasPersonalesDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\FinanzasPersonalesDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>FinanzasPersonalesDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Database\Script Db.sql" />
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
   </ItemGroup>

@@ -28,6 +28,18 @@ namespace FinanzasPersonales
             MessageBox.Show("\tFinanzas Personales\n\tProgramacion Aplicada I inc.\n\tIntegrantes:\n\n\tEnel Almonte\n\tChristopher Genao\n\tJoel Olvares\n\tNewlin Duarte\n\tYahaida Vargas\n\tAngel Rodriguez\n\tFeliz Radel\n\tKlainer Morales");
         }
 
+        private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rCuentas rCuenta = new Registros.rCuentas();
+            rCuenta.Show();
+        }
+
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rGastos gastos = new Registros.rGastos();
+            gastos.Show();
+        }
+
        
     }
 }
