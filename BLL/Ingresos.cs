@@ -17,7 +17,7 @@ namespace BLL
 
         public int IdIngreso { get; set; }
 
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
 
         public int IdCuenta { get; set; }
 
@@ -32,7 +32,7 @@ namespace BLL
         public Ingresos()
         {
             this.IdIngreso = 0;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now;
             this.IdCuenta = 0;
             this.IdSubClas = 0;
             this.Concepto = string.Empty;
@@ -83,7 +83,7 @@ namespace BLL
                 Encontro = true;
 
                 this.IdIngreso = (int)dt.Rows[0]["IdIngreso"];
-                this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                this.Fecha =(DateTime) dt.Rows[0]["Fecha"];
                 this.IdCuenta = (int)dt.Rows[0]["IdCuenta"];
                 this.IdSubClas = (int)dt.Rows[0]["IdSubClas"];
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();
