@@ -34,6 +34,12 @@ namespace FinanzasPersonales
             rCuenta.Show();
         }
 
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rGastos gastos = new Registros.rGastos();
+            gastos.Show();
+        }
+
        
     }
 }

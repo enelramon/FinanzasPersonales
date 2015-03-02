@@ -18,7 +18,7 @@ namespace BLL
         public string Descripcion { get; set; }
 
        private  float balance;
-       public readonly float Balance 
+       public float Balance 
        {
            get { return balance; } 
        }
@@ -64,6 +64,13 @@ namespace BLL
 
             return Conexion.EjecutarDB("Update Cuentas Set Balance=Balance+" + ValorAumentar.ToString() + "Where IdCuenta=" + IdCuenta.ToString() );
        
+        }
+
+        public static Boolean DecrementarBalance(int IdCuenta, float ValorDecrementar)
+        {
+            ConexionDb Conexion = new ConexionDb();
+
+            return Conexion.EjecutarDB("Update Cuentas set Balance= Balance-" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdCuenta.ToString());
         }
 
         public Boolean Buscar(Int32 IdBuscado)
