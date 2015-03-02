@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    class Gastos
+    public class Gastos
     {
         private ConexionDb Conexion = new ConexionDb(); //instanciamos la ConexionDb
 
@@ -17,7 +17,7 @@ namespace BLL
         public string Concepto { get; set; }
         public int IdCuenta { get; set; }
         public int IdSubClas { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public float Monto { get; set; }
 
 
@@ -28,7 +28,7 @@ namespace BLL
             this.Concepto = string.Empty;
             this.IdCuenta = 0;
             this.IdSubClas = 0;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now;
             this.Monto = 0;
         }
 
@@ -42,12 +42,20 @@ namespace BLL
         /// <returns>Retorna si se ingreso o no.</returns>
         public Boolean Insertar()
         {
-            this.IdGasto = 0;
+            bool paso = false;
+            string va;
+            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Monto);
 
-            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gasto (Concepto, IdCuenta, IdSubClas, Fecha, Monto)  Values('" + this.Concepto + this.IdCuenta + this.IdSubClas + this.Fecha + this.Monto + "') Select @@Identity");
+            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gastos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + va + "') Select @@Identity");
 
-            return this.IdGasto > 0;
+            paso = this.IdGasto > 0;
 
+            if (paso)
+            {
+                Cuentas.AfectarBalance(this.IdCuenta, this.Monto);
+            }
+
+            return paso;
         }
 
         public Boolean Modificar()
@@ -88,7 +96,7 @@ namespace BLL
             {
                 Encontro = true;
 
-                this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                // this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.IdCuenta = (int)dt.Rows[0]["IdCuenta"];
                 this.IdSubClas = (int)dt.Rows[0]["IdSubClas"];
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();

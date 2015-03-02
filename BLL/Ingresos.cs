@@ -83,7 +83,7 @@ namespace BLL
 
         public Boolean Buscar()
         {
-            DataTable dt = Conexion.BuscarDb("select * from Cuentas where Descripcion='"+ this.Descripcion+"'");
+            DataTable dt = Conexion.BuscarDb("select * from Cuentas where Descripcion='"+ this.Concepto+"'");
            // dt = Listar("*", "Descripcion='" + this.Descripcion + "'");
 
             //if dt.rows.count > 0 
