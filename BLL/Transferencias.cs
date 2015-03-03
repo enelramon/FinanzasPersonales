@@ -30,15 +30,17 @@ namespace BLL
             this.IdCuentaDestino = 0;
             this.Concepto = string.Empty;
             this.Valor = 0;
-
+            this.Fecha = DateTime.Now;
         }
 
         public Boolean Insertar()
         {
             this.IdTransferencia = 0;
 
-            this.IdTransferencia = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Transferencias (Concepto, IdCuentaOrigen, IdCuentaDestino, Valor)  Values('" + this.Concepto + "', '" + this.IdCuentaOrigen + "', '" + this.IdCuentaDestino + "', '" + this.Valor + "') Select @@Identity"));
-
+            this.IdTransferencia = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Transferencias (Concepto, IdCuentaOrigen, IdCuentaDestino, Valor, Fecha)  Values('" + this.Concepto + "','" + this.IdCuentaOrigen + "','" + this.IdCuentaDestino + "'," + this.Valor + ", GETDATE() ) Select @@Identity"));
+            
+            Cuentas.AfectarBalance(this.IdCuentaDestino, this.Valor);
+            
             return this.IdTransferencia > 0;
         }
 
