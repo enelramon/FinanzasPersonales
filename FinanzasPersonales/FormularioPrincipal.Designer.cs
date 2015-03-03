@@ -35,11 +35,12 @@
             this.clasificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.cuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,10 +94,18 @@
             this.cuentasToolStripMenuItem.Text = "Cuentas";
             this.cuentasToolStripMenuItem.Click += new System.EventHandler(this.cuentasToolStripMenuItem_Click);
             // 
+            // gastosToolStripMenuItem
+            // 
+            this.gastosToolStripMenuItem.Name = "gastosToolStripMenuItem";
+            this.gastosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gastosToolStripMenuItem.Text = "Gastos";
+            this.gastosToolStripMenuItem.Click += new System.EventHandler(this.gastosToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clasificacionesToolStripMenuItem1});
+            this.clasificacionesToolStripMenuItem1,
+            this.cuentasToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -124,12 +133,12 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // gastosToolStripMenuItem
+            // cuentasToolStripMenuItem1
             // 
-            this.gastosToolStripMenuItem.Name = "gastosToolStripMenuItem";
-            this.gastosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gastosToolStripMenuItem.Text = "Gastos";
-            this.gastosToolStripMenuItem.Click += new System.EventHandler(this.gastosToolStripMenuItem_Click);
+            this.cuentasToolStripMenuItem1.Name = "cuentasToolStripMenuItem1";
+            this.cuentasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cuentasToolStripMenuItem1.Text = "Cuentas";
+            this.cuentasToolStripMenuItem1.Click += new System.EventHandler(this.cuentasToolStripMenuItem1_Click);
             // 
             // FormularioPrincipal
             // 
@@ -168,6 +177,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem1;
 
     }
 }

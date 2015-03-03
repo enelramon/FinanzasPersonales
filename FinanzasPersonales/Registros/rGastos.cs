@@ -102,5 +102,21 @@ namespace FinanzasPersonales.Registros
 
             }
         }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rGastos_Load(object sender, EventArgs e)
+        {
+            Cuentas cuenta = new Cuentas();
+
+            BuscarPorcomboBox.DataSource = cuenta.Listar("IdCuenta,Descripcion", "1=1");
+
+            BuscarPorcomboBox.ValueMember = "IdCuenta";
+            BuscarPorcomboBox.DisplayMember = "Descripcion";
+            
+        }
     }
 }

@@ -40,6 +40,12 @@ namespace FinanzasPersonales
             gastos.Show();
         }
 
+        private void cuentasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cCuentas cCuenta = new Consultas.cCuentas();
+            cCuenta.Show();
+        }
+
        
     }
 }

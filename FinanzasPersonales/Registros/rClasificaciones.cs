@@ -33,5 +33,10 @@ namespace FinanzasPersonales.Registros
         {
 
         }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCuentas.Designer.cs">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
       <DependentUpon>rGastos.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="Consultas\cCuentas.resx">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,9 +181,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Consultas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

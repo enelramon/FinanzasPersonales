@@ -45,6 +45,8 @@
             this.GuardarButtom = new System.Windows.Forms.Button();
             this.BuscarButtom = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BuscarPorcomboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,16 +197,40 @@
             this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
             this.BuscarButtom.TabIndex = 31;
             this.BuscarButtom.UseVisualStyleBackColor = true;
+            this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // BuscarPorcomboBox
+            // 
+            this.BuscarPorcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BuscarPorcomboBox.FormattingEnabled = true;
+            this.BuscarPorcomboBox.Items.AddRange(new object[] {
+            "IdCuenta",
+            "Descripcion"});
+            this.BuscarPorcomboBox.Location = new System.Drawing.Point(122, 159);
+            this.BuscarPorcomboBox.Name = "BuscarPorcomboBox";
+            this.BuscarPorcomboBox.Size = new System.Drawing.Size(101, 21);
+            this.BuscarPorcomboBox.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Buscar Por:";
             // 
             // rGastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 261);
+            this.Controls.Add(this.BuscarPorcomboBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BuscarButtom);
             this.Controls.Add(this.LimpiarButtom);
             this.Controls.Add(this.BorrarButtom);
@@ -221,6 +247,7 @@
             this.Controls.Add(this.IDTextBox);
             this.Name = "rGastos";
             this.Text = "rGastos";
+            this.Load += new System.EventHandler(this.rGastos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,5 +271,7 @@
         private System.Windows.Forms.Button GuardarButtom;
         private System.Windows.Forms.Button BuscarButtom;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox BuscarPorcomboBox;
+        private System.Windows.Forms.Label label2;
     }
 }

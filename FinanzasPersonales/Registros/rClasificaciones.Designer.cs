@@ -102,6 +102,7 @@
             this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
             this.BuscarButtom.TabIndex = 14;
             this.BuscarButtom.UseVisualStyleBackColor = true;
+            this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
             // 
             // label2
             // 
