@@ -40,6 +40,12 @@ namespace FinanzasPersonales
             gastos.Show();
         }
 
+        private void transferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rTransferencias trans = new Registros.rTransferencias();
+            trans.Show();
+        }
+
        
     }
 }
