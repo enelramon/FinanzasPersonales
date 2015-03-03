@@ -43,10 +43,9 @@ namespace BLL
         public Boolean Insertar()
         {
             bool paso = false;
-            string va;
-            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Monto);
-
-            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gastos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + va + "') Select @@Identity");
+            
+            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gastos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + this.Fecha + this.IdCuenta + IdSubClas +
+                this.Concepto + this.Monto +"') Select @@Identity");
 
             paso = this.IdGasto > 0;
 
@@ -63,7 +62,7 @@ namespace BLL
             Boolean paso = false;
             float Inicial = 0;
 
-            Inicial = (float)Conexion.ObtenerValorDb("Select Monto from Gastos Where idGasto=" + this.IdGasto.ToString());
+            Inicial = Convert.ToSingle(Conexion.ObtenerValorDb("Select Monto from Gastos Where IdGasto=" + this.IdGasto.ToString()));
 
             paso = Conexion.EjecutarDB("Update Gastos set Fecha = '" + this.Fecha + "', Concepto ='" + this.Concepto +
                 "',Monto=" + this.Monto + " where IdGasto=" + this.IdGasto);
@@ -96,7 +95,7 @@ namespace BLL
             {
                 Encontro = true;
 
-                // this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                //this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.IdCuenta = (int)dt.Rows[0]["IdCuenta"];
                 this.IdSubClas = (int)dt.Rows[0]["IdSubClas"];
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();

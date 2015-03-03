@@ -41,6 +41,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.transferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.clasificacionesToolStripMenuItem,
             this.toolStripMenuItem1,
             this.cuentasToolStripMenuItem,
-            this.gastosToolStripMenuItem});
+            this.gastosToolStripMenuItem,
+            this.transferenciasToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -139,6 +141,15 @@
             this.cuentasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.cuentasToolStripMenuItem1.Text = "Cuentas";
             this.cuentasToolStripMenuItem1.Click += new System.EventHandler(this.cuentasToolStripMenuItem1_Click);
+
+            // 
+            // transferenciasToolStripMenuItem
+            // 
+            this.transferenciasToolStripMenuItem.Name = "transferenciasToolStripMenuItem";
+            this.transferenciasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.transferenciasToolStripMenuItem.Text = "Transferencias";
+            this.transferenciasToolStripMenuItem.Click += new System.EventHandler(this.transferenciasToolStripMenuItem_Click);
+           
             // 
             // FormularioPrincipal
             // 
@@ -178,6 +189,7 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem transferenciasToolStripMenuItem;
 
     }
 }
