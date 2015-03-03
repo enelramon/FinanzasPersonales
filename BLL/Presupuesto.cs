@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -15,9 +15,14 @@ namespace BLL
      
         public int IdPresupuesto { get; set;}
 
+        public DateTime Fecha { get; set; }
+
         public string Descripcion { get; set; }
 
-        public DateTime Fecha { get; set; }
+        List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
+        
+
+        
 
        
 

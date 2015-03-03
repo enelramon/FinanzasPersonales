@@ -69,24 +69,20 @@ namespace FinanzasPersonales.Registros
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
 
-            if (Gastos.IdGasto > 0)
-            {
-                //editando
+            if (Gastos.IdGasto > 0) {
+                //Editando
                 paso = Gastos.Modificar();
             }
-            else
-            {
+            else {
                 //Insertando
                 paso = Gastos.Insertar();
-
             }
 
             if (paso)
                 MessageBox.Show("Registro Guardado");
         }
 
-        private void LimpiarButtom_Click(object sender, EventArgs e)
-        {
+        private void LimpiarButtom_Click(object sender, EventArgs e) {
             IDTextBox.Clear();
             CuentaTextBox.Clear();
             SubClasTextBox.Clear();
