@@ -20,11 +20,6 @@ namespace FinanzasPersonales.Registros
             InitializeComponent();
         }
 
-        private void rTransferencias_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LimpiarButtom_Click(object sender, EventArgs e)
         {
             IdTransferenciaTextBox.Clear();
@@ -58,6 +53,13 @@ namespace FinanzasPersonales.Registros
 
             if (paso)
                 MessageBox.Show("Transferencia Guardada");
+        }
+
+        private void BorrarButtom_Click(object sender, EventArgs e)
+        {
+            // Utilitarios.ValidarTextBoxVacio(IdTransferenciaTextBox, ErrorProvider, "Por favor asigne un ID a eliminar.");
+            if (Transferencia.Eliminar(Utilitarios.ToInt(IdTransferenciaTextBox.Text)))
+                MessageBox.Show("Registro Eliminado Con Exito");
         }
     }
 }
