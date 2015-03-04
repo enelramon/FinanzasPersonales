@@ -60,8 +60,8 @@ namespace BLL
 
         public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
-            return Conexion.BuscarDb("Select " + campos + " from clasificaciones where " + Filtro);
-
+            return Conexion.BuscarDb("Select " + campos + " from Clasificaciones where " + Filtro);
+           
         }
 
     }
