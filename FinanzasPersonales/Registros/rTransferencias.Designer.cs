@@ -42,6 +42,7 @@
             this.LimpiarButtom = new System.Windows.Forms.Button();
             this.BorrarButtom = new System.Windows.Forms.Button();
             this.GuardarButtom = new System.Windows.Forms.Button();
+            this.BuscarButtom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ValorTextBox
@@ -177,11 +178,22 @@
             this.GuardarButtom.UseVisualStyleBackColor = true;
             this.GuardarButtom.Click += new System.EventHandler(this.GuardarButtom_Click);
             // 
+            // BuscarButtom
+            // 
+            this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
+            this.BuscarButtom.Location = new System.Drawing.Point(255, 10);
+            this.BuscarButtom.Name = "BuscarButtom";
+            this.BuscarButtom.Size = new System.Drawing.Size(45, 24);
+            this.BuscarButtom.TabIndex = 69;
+            this.BuscarButtom.UseVisualStyleBackColor = true;
+            this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
+            // 
             // rTransferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 261);
+            this.Controls.Add(this.BuscarButtom);
             this.Controls.Add(this.ValorTextBox);
             this.Controls.Add(this.ConceptoTextBox);
             this.Controls.Add(this.IdCuentaDestinoTextBox);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Button LimpiarButtom;
         private System.Windows.Forms.Button BorrarButtom;
         private System.Windows.Forms.Button GuardarButtom;
+        private System.Windows.Forms.Button BuscarButtom;
     }
 }

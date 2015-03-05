@@ -176,4 +176,15 @@
         QmCC
 </value>
   </data>
+  <data name="BuscarButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAUFJREFUOE/t
+        kr1KA0EUhVdsRFRECyFdSn2AhDxBHiCkyCNtsewvga22SrNtGhubVKmSB7BJL6SUFML6HbkRdXfzp1jl
+        g2Fmz5175s7dcY58I0mSC9/323Ecd5ivTd6fMAyvoigaMlaMQiMIgjf0EfOdbdsNM5szP1NZz3XdyzRN
+        z1l30WcYLlg3bPt2SBqa2a1Jn8iY+JT42KTNqGckrFSZSSWItxhqQ9OkevQDtFnXNKlEURQnXHvJoX2T
+        6mFTR4a6mkmVsOeFMbDPevQ09Dcx7ppUgv496FD23pu0GRJGJMyqqszz/JT4I4dOTNqO3pmeBqZTRks9
+        k67KZKbqiD9lWXb2kbALXLlB8tiSl8zqmdYTmWkt871MBYlN/U3mwbpnMllXepBpFT9N1VsLHc4X01fP
+        825M/h2q7M/M/gnHeQdI4tozpPVZaAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

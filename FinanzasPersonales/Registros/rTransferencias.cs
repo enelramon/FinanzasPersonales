@@ -61,5 +61,10 @@ namespace FinanzasPersonales.Registros
             if (Transferencia.Eliminar(Utilitarios.ToInt(IdTransferenciaTextBox.Text)))
                 MessageBox.Show("Registro Eliminado Con Exito");
         }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
