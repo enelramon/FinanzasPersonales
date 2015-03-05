@@ -57,9 +57,13 @@ namespace FinanzasPersonales.Registros
 
         private void BorrarButtom_Click(object sender, EventArgs e)
         {
-            // Utilitarios.ValidarTextBoxVacio(IdTransferenciaTextBox, ErrorProvider, "Por favor asigne un ID a eliminar.");
-            if (Transferencia.Eliminar(Utilitarios.ToInt(IdTransferenciaTextBox.Text)))
+            ErrorProvider EP = new ErrorProvider();
+            Utilitarios.ValidarTextBoxVacio(IdTransferenciaTextBox, EP, "Por favor asigne un ID a eliminar.");
+            if (Utilitarios.ValidarTextBoxVacio(IdTransferenciaTextBox, EP, "Por favor asigne un ID a eliminar.") == true)
+            {
+                Transferencia.Eliminar(Utilitarios.ToInt(IdTransferenciaTextBox.Text));
                 MessageBox.Show("Registro Eliminado Con Exito");
+            }
         }
 
         private void BuscarButtom_Click(object sender, EventArgs e)

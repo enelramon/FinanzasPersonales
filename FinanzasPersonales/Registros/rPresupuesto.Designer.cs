@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPresupuesto));
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.Secuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClasificacioncomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,9 +46,6 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.LimpiarButtom = new System.Windows.Forms.Button();
             this.BorrarButtom = new System.Windows.Forms.Button();
-            this.Secuencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +64,25 @@
             this.DetalledataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalledataGridView.Size = new System.Drawing.Size(366, 150);
             this.DetalledataGridView.TabIndex = 0;
+            // 
+            // Secuencia
+            // 
+            this.Secuencia.HeaderText = "Column1";
+            this.Secuencia.Name = "Secuencia";
+            this.Secuencia.ReadOnly = true;
+            this.Secuencia.Visible = false;
+            // 
+            // Clasificacion
+            // 
+            this.Clasificacion.HeaderText = "Clasificacion";
+            this.Clasificacion.Name = "Clasificacion";
+            this.Clasificacion.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             // 
             // ClasificacioncomboBox
             // 
@@ -196,25 +215,6 @@
             this.BorrarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BorrarButtom.UseVisualStyleBackColor = true;
             this.BorrarButtom.Click += new System.EventHandler(this.BorrarButtom_Click);
-            // 
-            // Secuencia
-            // 
-            this.Secuencia.HeaderText = "Column1";
-            this.Secuencia.Name = "Secuencia";
-            this.Secuencia.ReadOnly = true;
-            this.Secuencia.Visible = false;
-            // 
-            // Clasificacion
-            // 
-            this.Clasificacion.HeaderText = "Clasificacion";
-            this.Clasificacion.Name = "Clasificacion";
-            this.Clasificacion.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
             // 
             // rPresupuesto
             // 

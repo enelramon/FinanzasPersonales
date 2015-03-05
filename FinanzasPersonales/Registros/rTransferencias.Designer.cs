@@ -49,7 +49,7 @@
             // 
             this.ValorTextBox.Location = new System.Drawing.Point(149, 188);
             this.ValorTextBox.Name = "ValorTextBox";
-            this.ValorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ValorTextBox.Size = new System.Drawing.Size(52, 20);
             this.ValorTextBox.TabIndex = 68;
             // 
             // ConceptoTextBox
@@ -57,7 +57,7 @@
             this.ConceptoTextBox.Location = new System.Drawing.Point(149, 143);
             this.ConceptoTextBox.MaxLength = 99;
             this.ConceptoTextBox.Name = "ConceptoTextBox";
-            this.ConceptoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ConceptoTextBox.Size = new System.Drawing.Size(143, 20);
             this.ConceptoTextBox.TabIndex = 67;
             // 
             // IdCuentaDestinoTextBox
@@ -65,7 +65,7 @@
             this.IdCuentaDestinoTextBox.Location = new System.Drawing.Point(149, 100);
             this.IdCuentaDestinoTextBox.MaxLength = 6;
             this.IdCuentaDestinoTextBox.Name = "IdCuentaDestinoTextBox";
-            this.IdCuentaDestinoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.IdCuentaDestinoTextBox.Size = new System.Drawing.Size(44, 20);
             this.IdCuentaDestinoTextBox.TabIndex = 66;
             // 
             // IdCuentaOrigenTextBox
@@ -73,7 +73,7 @@
             this.IdCuentaOrigenTextBox.Location = new System.Drawing.Point(149, 53);
             this.IdCuentaOrigenTextBox.MaxLength = 6;
             this.IdCuentaOrigenTextBox.Name = "IdCuentaOrigenTextBox";
-            this.IdCuentaOrigenTextBox.Size = new System.Drawing.Size(100, 20);
+            this.IdCuentaOrigenTextBox.Size = new System.Drawing.Size(44, 20);
             this.IdCuentaOrigenTextBox.TabIndex = 65;
             // 
             // IdTransferenciaTextBox
@@ -81,7 +81,7 @@
             this.IdTransferenciaTextBox.Location = new System.Drawing.Point(149, 13);
             this.IdTransferenciaTextBox.MaxLength = 6;
             this.IdTransferenciaTextBox.Name = "IdTransferenciaTextBox";
-            this.IdTransferenciaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.IdTransferenciaTextBox.Size = new System.Drawing.Size(44, 20);
             this.IdTransferenciaTextBox.TabIndex = 64;
             // 
             // label6
@@ -139,7 +139,7 @@
             this.LimpiarButtom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButtom.Location = new System.Drawing.Point(38, 214);
+            this.LimpiarButtom.Location = new System.Drawing.Point(45, 214);
             this.LimpiarButtom.Name = "LimpiarButtom";
             this.LimpiarButtom.Size = new System.Drawing.Size(75, 33);
             this.LimpiarButtom.TabIndex = 58;
@@ -154,7 +154,7 @@
             this.BorrarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BorrarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BorrarButtom.Image")));
             this.BorrarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BorrarButtom.Location = new System.Drawing.Point(200, 214);
+            this.BorrarButtom.Location = new System.Drawing.Point(207, 214);
             this.BorrarButtom.Name = "BorrarButtom";
             this.BorrarButtom.Size = new System.Drawing.Size(75, 33);
             this.BorrarButtom.TabIndex = 57;
@@ -169,7 +169,7 @@
             this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButtom.Image")));
             this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButtom.Location = new System.Drawing.Point(119, 214);
+            this.GuardarButtom.Location = new System.Drawing.Point(126, 214);
             this.GuardarButtom.Name = "GuardarButtom";
             this.GuardarButtom.Size = new System.Drawing.Size(75, 33);
             this.GuardarButtom.TabIndex = 56;
@@ -181,10 +181,13 @@
             // BuscarButtom
             // 
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(255, 10);
+            this.BuscarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButtom.Location = new System.Drawing.Point(242, 5);
             this.BuscarButtom.Name = "BuscarButtom";
-            this.BuscarButtom.Size = new System.Drawing.Size(45, 24);
+            this.BuscarButtom.Size = new System.Drawing.Size(82, 34);
             this.BuscarButtom.TabIndex = 69;
+            this.BuscarButtom.Text = "Buscar";
+            this.BuscarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButtom.UseVisualStyleBackColor = true;
             this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
             // 
@@ -192,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 261);
+            this.ClientSize = new System.Drawing.Size(327, 261);
             this.Controls.Add(this.BuscarButtom);
             this.Controls.Add(this.ValorTextBox);
             this.Controls.Add(this.ConceptoTextBox);
