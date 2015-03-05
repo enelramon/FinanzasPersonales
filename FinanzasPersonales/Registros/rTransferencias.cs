@@ -39,20 +39,35 @@ namespace FinanzasPersonales.Registros
             Transferencia.IdCuentaDestino = Utilitarios.ToInt(IdCuentaDestinoTextBox.Text);
             Transferencia.Valor = Utilitarios.ToInt(IdTransferenciaTextBox.Text);
 
-            if (Transferencia.IdTransferencia > 0)
+            ErrorProvider EP = new ErrorProvider();
+           bool ValidConcept = Utilitarios.ValidarTextBoxVacio(ConceptoTextBox, EP, "Por favor asigne un Concepto.");
+
+            ErrorProvider EP2 = new ErrorProvider();
+           bool ValidCuentaOrigen = Utilitarios.ValidarTextBoxVacio(IdCuentaOrigenTextBox, EP2, "Por favor asigne una Cuenta de Origen.");
+
+            ErrorProvider EP3 = new ErrorProvider();
+           bool ValidCuentaDestino = Utilitarios.ValidarTextBoxVacio(IdCuentaDestinoTextBox, EP3, "Por favor asigne una Cuenta de Destino.");
+
+            ErrorProvider EP4 = new ErrorProvider();
+           bool ValidValor = Utilitarios.ValidarTextBoxVacio(ValorTextBox, EP4, "Por favor asigne un .");
+
+            if (Transferencia.IdTransferencia > 0 && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
             {
                 //editando
                 paso = Transferencia.Modificar();
             }
-            else
+            if (Transferencia.IdTransferencia == 0 && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
             {
                 //Insertando
                 paso = Transferencia.Insertar();
 
             }
 
-            if (paso)
+            //Revisar esta validacion
+            if (paso && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
                 MessageBox.Show("Transferencia Guardada");
+            else
+                MessageBox.Show("Error en la transferencia.");
         }
 
         private void BorrarButtom_Click(object sender, EventArgs e)
