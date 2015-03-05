@@ -112,6 +112,8 @@ namespace FinanzasPersonales.Registros
 
             BuscarPorcomboBox.ValueMember = "IdCuenta";
             BuscarPorcomboBox.DisplayMember = "Descripcion";
+
+           
             
         }
     }

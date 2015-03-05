@@ -52,6 +52,12 @@ namespace FinanzasPersonales
             trans.Show();
         }
 
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rPresupuesto pres = new Registros.rPresupuesto();
+            pres.Show();
+        }
+
        
     }
 }
