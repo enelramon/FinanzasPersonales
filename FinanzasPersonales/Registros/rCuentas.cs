@@ -22,6 +22,25 @@ namespace FinanzasPersonales.Registros
 
         private void BuscarButtom_Click(object sender, EventArgs e)
         {
+            DialogResult result;
+
+            result = DialogResult.Ignore;
+
+            if (Utilitarios.ToInt(IdCuentatextBox.Text) == 0)
+            {
+                Consultas.cCuentas cCuenta = new Consultas.cCuentas();
+
+                result = cCuenta.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    IdCuentatextBox.Text = cCuenta.DatoEncontrado.ToString();
+                }
+                else
+                {
+                    IdCuentatextBox.Clear();
+                }
+            }
 
 
             if (Cuenta.Buscar(Utilitarios.ToInt(IdCuentatextBox.Text)))
@@ -47,7 +66,7 @@ namespace FinanzasPersonales.Registros
             //    DescripciontextBox.Focus();
             //    return;
             //}
-                
+
 
             Cuenta.IdCuenta = Utilitarios.ToInt(IdCuentatextBox.Text);
             Cuenta.Descripcion = DescripciontextBox.Text;
@@ -72,8 +91,8 @@ namespace FinanzasPersonales.Registros
 
         private void BorrarButtom_Click(object sender, EventArgs e)
         {
-          if  (Cuenta.Eliminar(Utilitarios.ToInt(IdCuentatextBox.Text )))
-              MessageBox.Show("Registro Guardado");
+            if (Cuenta.Eliminar(Utilitarios.ToInt(IdCuentatextBox.Text)))
+                MessageBox.Show("Registro Guardado");
 
         }
 

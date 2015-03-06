@@ -40,6 +40,30 @@ namespace FinanzasPersonales
             gastos.Show();
         }
 
+        private void cuentasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cCuentas cCuenta = new Consultas.cCuentas();
+            cCuenta.Show();
+        }
+
+        private void transferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rTransferencias trans = new Registros.rTransferencias();
+            trans.Show();
+        }
+
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rPresupuesto pres = new Registros.rPresupuesto();
+            pres.Show();
+        }
+
+        private void transferenciasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cTransferencias ctran = new Consultas.cTransferencias();
+            ctran.Show();
+        }
+
        
     }
 }

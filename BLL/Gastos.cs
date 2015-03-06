@@ -36,26 +36,22 @@ namespace BLL
         //Faltan algunas modificaciones de lugar
         //Para que este adaptado al 100% a Gastos
 
-        /// <summary>
-        /// Inserta un valor a la DB
-        /// </summary>
-        /// <returns>Retorna si se ingreso o no.</returns>
         public Boolean Insertar()
         {
-            bool paso = false;
-            string va;
-            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Monto);
+            bool paso2 = false;
 
-            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gastos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + va + "') Select @@Identity");
+            //todo: Terminar esto.
+            this.IdGasto = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Gastos (Concepto, IdCuenta, IdSubclas, Fecha, Monto)  Values('" + this.Concepto + "'," + this.IdCuenta + "," + this.IdSubClas +", GETDATE()," + this.Monto +") Select @@Identity"));
 
-            paso = this.IdGasto > 0;
-
-            if (paso)
+            paso2 = this.IdGasto > 0;
+            
+            if(paso2)
             {
+
                 Cuentas.AfectarBalance(this.IdCuenta, this.Monto);
             }
 
-            return paso;
+            return paso2;
         }
 
         public Boolean Modificar()
@@ -63,7 +59,7 @@ namespace BLL
             Boolean paso = false;
             float Inicial = 0;
 
-            Inicial = (float)Conexion.ObtenerValorDb("Select Monto from Gastos Where idGasto=" + this.IdGasto.ToString());
+            Inicial = Convert.ToSingle(Conexion.ObtenerValorDb("Select Monto from Gastos Where IdGasto=" + this.IdGasto.ToString()));
 
             paso = Conexion.EjecutarDB("Update Gastos set Fecha = '" + this.Fecha + "', Concepto ='" + this.Concepto +
                 "',Monto=" + this.Monto + " where IdGasto=" + this.IdGasto);
@@ -96,7 +92,7 @@ namespace BLL
             {
                 Encontro = true;
 
-                // this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                //this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.IdCuenta = (int)dt.Rows[0]["IdCuenta"];
                 this.IdSubClas = (int)dt.Rows[0]["IdSubClas"];
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();
@@ -110,6 +106,12 @@ namespace BLL
         public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
             return Conexion.BuscarDb("Select " + campos + " from Gastos where " + Filtro);
+        }
+
+        public static DataTable GetSubClas()
+        {
+            ConexionDb Conexion = new ConexionDb();
+            return Conexion.BuscarDb("Select * from SubClasificaciones");
         }
 
     }

@@ -68,28 +68,25 @@ namespace FinanzasPersonales.Registros
 
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
+            Gastos.Monto = Convert.ToSingle(MontoTextBox.Text);
+            Gastos.IdCuenta = Utilitarios.ToInt(BuscarPorcomboBox.SelectedValue.ToString());
+            Gastos.IdSubClas = Utilitarios.ToInt(BuscarPor2comboBox.SelectedValue.ToString());
 
-            if (Gastos.IdGasto > 0)
-            {
-                //editando
+            if (Gastos.IdGasto > 0) {
+                //Editando
                 paso = Gastos.Modificar();
             }
-            else
-            {
+            else {
                 //Insertando
                 paso = Gastos.Insertar();
-
             }
 
             if (paso)
                 MessageBox.Show("Registro Guardado");
         }
 
-        private void LimpiarButtom_Click(object sender, EventArgs e)
-        {
+        private void LimpiarButtom_Click(object sender, EventArgs e) {
             IDTextBox.Clear();
-            CuentaTextBox.Clear();
-            SubClasTextBox.Clear();
             ConceptoTextBox.Clear();
             MontoTextBox.Clear();
         }
@@ -101,6 +98,60 @@ namespace FinanzasPersonales.Registros
                     MessageBox.Show("Registro Borrado");
 
             }
+        }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+
+            result = DialogResult.Ignore;
+
+            if (Utilitarios.ToInt(IDTextBox.Text) == 0)
+            {
+                Consultas.cGastos cGastos = new Consultas.cGastos();
+
+                result = cGastos.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    IDTextBox.Text = cGastos.DatoEncontrado.ToString();
+                }
+                else
+                {
+                    IDTextBox.Clear();
+                }
+            }
+
+
+            if (Gastos.Buscar(Utilitarios.ToInt(IDTextBox.Text)))
+            {
+                IDTextBox.Text = Gastos.IdGasto.ToString();
+                ConceptoTextBox.Text = Gastos.Concepto;
+            }
+
+        }
+        private void rGastos_Load(object sender, EventArgs e)
+        {
+            Cuentas cuenta = new Cuentas();
+
+            BuscarPorcomboBox.DataSource = cuenta.Listar("IdCuenta,Descripcion", "1=1");
+            BuscarPorcomboBox.ValueMember = "IdCuenta";
+            BuscarPorcomboBox.DisplayMember = "Descripcion";
+            //
+            BuscarPor2comboBox.DataSource = Gastos.GetSubClas();
+            BuscarPor2comboBox.ValueMember = "IdSubClas";
+            BuscarPor2comboBox.DisplayMember = "Descripcion";
+            //*/
+        }
+
+        private void BuscarPorcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarPor2comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -75,6 +75,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCuentas.Designer.cs">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cGastos.Designer.cs">
+      <DependentUpon>cGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.Designer.cs">
+      <DependentUpon>cTransferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,7 +119,28 @@
     <Compile Include="Registros\rGastos.Designer.cs">
       <DependentUpon>rGastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rPresupuesto.Designer.cs">
+      <DependentUpon>rPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rTransferencias.Designer.cs">
+      <DependentUpon>rTransferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="Consultas\cCuentas.resx">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cGastos.resx">
+      <DependentUpon>cGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cTransferencias.resx">
+      <DependentUpon>cTransferencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rGastos.resx">
       <DependentUpon>rGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rPresupuesto.resx">
+      <DependentUpon>rPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rTransferencias.resx">
+      <DependentUpon>rTransferencias.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
@@ -172,9 +217,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Consultas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

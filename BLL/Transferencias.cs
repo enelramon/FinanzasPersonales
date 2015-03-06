@@ -2,85 +2,107 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using DAL;
 using System.Data.SqlClient;
-using System.Data;
+
+//TODO: Arreglar que se inserte el valor en la base de datos. (Sale 0) y Validar Todo!!
 
 namespace BLL
 {
-   public  class Transferencias   // creamos la clase Tranferencias
+    public class Transferencias
     {
-        private ConexionDb Conexion = new ConexionDb();  // instanciamos la Conexion Db
+        private ConexionDb Conexion = new ConexionDb();
 
-        public int IdTransferencias { get; set;}
-
-        public DateTime Fecha { get; set;}
-
-        public string Concepto { get; set; }
-        
+        // Creando setters y getters:
+        public int IdTransferencia { get; set; }
+        public DateTime Fecha { get; set; }
         public int IdCuentaOrigen { get; set; }
+        public int IdCuentaDestino { get; set; }
+        public string Concepto { get; set; }
+        public float Valor { get; set; }
 
-        public int Valor { get; set; }
-
-         public Transferencias()
+        public Transferencias()
         {
-            this.IdTransferencias = 0;
-            this.Fecha = DateTime.Now;
-            this.Concepto = string.Empty;
+            this.IdTransferencia = 0;
             this.IdCuentaOrigen = 0;
+            this.IdCuentaDestino = 0;
+            this.Concepto = string.Empty;
             this.Valor = 0;
+            this.Fecha = DateTime.Now;
         }
 
-       /// <summary>
-       /// permite insertar Transferencias a la Base de Datos
-       /// </summary>
-      /// <returns>Verdadero o Falso segun sea, insertado o no </returns>
 
-       public Boolean Insertar()
-         {
-             this.IdTransferencias = 0;
-           string datos;
+        public Boolean Insertar()
+        {
+            bool paso2 = false;
 
-           datos = String.Format("'{0}',{1},'{2}'",this.Fecha.ToString(),this.Concepto,this.IdCuentaOrigen);
+            this.IdTransferencia = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Transferencias (Concepto, IdCuentaOrigen, IdCuentaDestino, Valor, Fecha)  Values('" + this.Concepto + "'," + this.IdCuentaOrigen + "," + this.IdCuentaDestino +"," + this.Valor +", GETDATE()) Select @@Identity"));
 
-           this.IdTransferencias = (int)Conexion.ObtenerValorDb("Insert Into Transferencias (Fecha,Concepto,IdCuentaOrigen)   Values(" + datos + ") Select @@Identity");
-             return this.IdTransferencias > 0;
-         }
+            paso2 = this.IdTransferencia > 0;
+            
+            if(paso2)
+            {
 
-       public Boolean Modificar()
-       {
-           return Conexion.EjecutarDB("Update Transferencias set Fecha  = '" + this.Fecha + "', Concepto = '" + this.Concepto + "', Valor = "+this.Valor+"  Where IdTransferecia  = " + this.IdTransferencias);
-       }
+                Cuentas.DecrementarBalance(this.IdCuentaOrigen, this.Valor);
+                Cuentas.AfectarBalance(this.IdCuentaDestino, this.Valor);
+            }
 
-       public Boolean Eliminar(Int32 IdBuscando)
-       {
-           return Conexion.EjecutarDB("Delete from Transferencias where IdTransferencias=" + IdBuscando);
-       }
+            return paso2;
+        }
 
-       public Boolean Buscar(Int32 IdBuscando)
-       {
-           bool Encontro = false;
-           DataTable dt = new DataTable();
-           
-           dt = Conexion.BuscarDb("Select * Descripcion From Transferencias Where IdTransferencias=" + IdBuscando);
 
-           if (dt.Rows.Count > 0)
-           {
-               Encontro = true;
+        public Boolean Modificar()
+        {
+            bool paso1 = false;
 
-               this.IdTransferencias = IdBuscando;
-               this.Fecha = (DateTime) dt.Rows[0]["Fecha"];
-               this.Concepto = (string) dt.Rows[0]["Concepto"];
-               this.Valor = (int) dt.Rows[0]["Valor"];
-           }
+            paso1 = Conexion.EjecutarDB("Update Transferencias set Valor = "+ this.Valor +" Where IdTransferencia = "+ this.IdTransferencia);
 
-           return Encontro;
-       }
+            if (paso1)
+            {
+                Cuentas.DecrementarBalance(this.IdTransferencia, this.Valor);
+            }
 
-       public DataTable Listar(string campos = "*", string Filtro = "1=1")
-       {
-           return Conexion.BuscarDb("Select " + campos + " from Transferencias where " + Filtro);
-       }
+            return paso1;
+
+        }
+
+        public Boolean Eliminar(Int32 IdBuscado)
+        {
+            return Conexion.EjecutarDB("Delete from Transferencias where IdTransferencia =" + IdBuscado);
+        }
+
+
+        public Boolean Buscar(Int32 IdBuscado)
+        {
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = this.Listar("Fecha", "IdTransferencia=" + IdBuscado);
+
+            if (dt.Rows.Count > 0)
+            {
+                Encontro = true;
+
+                this.IdTransferencia = (int)dt.Rows[0]["Id Transferencia"];
+                this.Fecha = (DateTime)dt.Rows[0]["Fecha"];
+                this.IdCuentaOrigen = (int)dt.Rows[0]["Id Cuenta Origen"];
+                this.IdCuentaDestino = (int)dt.Rows[0]["Id Cuenta Destino"];
+                this.Concepto = dt.Rows[0]["Concepto"].ToString();
+                this.Valor = (float)dt.Rows[0]["Valor"];
+
+                return true;
+
+            }
+
+            return Encontro;
+        }
+
+        public DataTable Listar(string campos = "*", string Filtro = "1=1")
+        {
+            return Conexion.BuscarDb("Select " + campos + " from Transferencias where " + Filtro);
+        }
+
     }
 }

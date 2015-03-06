@@ -26,7 +26,7 @@ namespace BLL
         }
 
        /// <summary>
-       /// //permite insercar las subclasificaiones a la base de datos.
+       /// //permite insercar las subclasificaiones a la base de datos
        /// </summary>
        /// <returns>// retorna verdadero o falso segun sea insertado</returns>
 
