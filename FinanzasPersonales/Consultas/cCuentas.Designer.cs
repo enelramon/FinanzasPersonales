@@ -59,6 +59,7 @@
             this.DatosdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatosdataGridView.Size = new System.Drawing.Size(546, 315);
             this.DatosdataGridView.TabIndex = 0;
+            this.DatosdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosdataGridView_CellContentClick);
             // 
             // BuscarButtom
             // 

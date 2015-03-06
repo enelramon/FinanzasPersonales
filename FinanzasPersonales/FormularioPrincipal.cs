@@ -58,6 +58,12 @@ namespace FinanzasPersonales
             pres.Show();
         }
 
+        private void transferenciasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cTransferencias ctran = new Consultas.cTransferencias();
+            ctran.Show();
+        }
+
        
     }
 }

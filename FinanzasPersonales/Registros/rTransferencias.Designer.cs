@@ -47,14 +47,14 @@
             // 
             // ValorTextBox
             // 
-            this.ValorTextBox.Location = new System.Drawing.Point(149, 188);
+            this.ValorTextBox.Location = new System.Drawing.Point(149, 176);
             this.ValorTextBox.Name = "ValorTextBox";
             this.ValorTextBox.Size = new System.Drawing.Size(52, 20);
             this.ValorTextBox.TabIndex = 68;
             // 
             // ConceptoTextBox
             // 
-            this.ConceptoTextBox.Location = new System.Drawing.Point(149, 143);
+            this.ConceptoTextBox.Location = new System.Drawing.Point(149, 137);
             this.ConceptoTextBox.MaxLength = 99;
             this.ConceptoTextBox.Name = "ConceptoTextBox";
             this.ConceptoTextBox.Size = new System.Drawing.Size(143, 20);
@@ -75,6 +75,7 @@
             this.IdCuentaOrigenTextBox.Name = "IdCuentaOrigenTextBox";
             this.IdCuentaOrigenTextBox.Size = new System.Drawing.Size(44, 20);
             this.IdCuentaOrigenTextBox.TabIndex = 65;
+            this.IdCuentaOrigenTextBox.TextChanged += new System.EventHandler(this.IdCuentaOrigenTextBox_TextChanged);
             // 
             // IdTransferenciaTextBox
             // 
@@ -88,7 +89,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 191);
+            this.label6.Location = new System.Drawing.Point(38, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 63;
@@ -98,7 +99,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 146);
+            this.label5.Location = new System.Drawing.Point(35, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 62;
@@ -139,7 +140,7 @@
             this.LimpiarButtom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButtom.Location = new System.Drawing.Point(45, 214);
+            this.LimpiarButtom.Location = new System.Drawing.Point(45, 204);
             this.LimpiarButtom.Name = "LimpiarButtom";
             this.LimpiarButtom.Size = new System.Drawing.Size(75, 33);
             this.LimpiarButtom.TabIndex = 58;
@@ -154,7 +155,7 @@
             this.BorrarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BorrarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BorrarButtom.Image")));
             this.BorrarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BorrarButtom.Location = new System.Drawing.Point(207, 214);
+            this.BorrarButtom.Location = new System.Drawing.Point(207, 204);
             this.BorrarButtom.Name = "BorrarButtom";
             this.BorrarButtom.Size = new System.Drawing.Size(75, 33);
             this.BorrarButtom.TabIndex = 57;
@@ -169,7 +170,7 @@
             this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButtom.Image")));
             this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButtom.Location = new System.Drawing.Point(126, 214);
+            this.GuardarButtom.Location = new System.Drawing.Point(126, 204);
             this.GuardarButtom.Name = "GuardarButtom";
             this.GuardarButtom.Size = new System.Drawing.Size(75, 33);
             this.GuardarButtom.TabIndex = 56;
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 261);
+            this.ClientSize = new System.Drawing.Size(327, 251);
             this.Controls.Add(this.BuscarButtom);
             this.Controls.Add(this.ValorTextBox);
             this.Controls.Add(this.ConceptoTextBox);

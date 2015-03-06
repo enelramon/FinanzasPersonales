@@ -36,34 +36,35 @@ namespace BLL
 
         public Boolean Insertar()
         {
-            bool paso = false;
+            bool paso2 = false;
 
             this.IdTransferencia = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Transferencias (Concepto, IdCuentaOrigen, IdCuentaDestino, Valor, Fecha)  Values('" + this.Concepto + "'," + this.IdCuentaOrigen + "," + this.IdCuentaDestino +"," + this.Valor +", GETDATE()) Select @@Identity"));
 
-            paso = this.IdTransferencia > 0; ;
+            paso2 = this.IdTransferencia > 0;
             
-            if(paso)
+            if(paso2)
             {
-                Cuentas.AfectarBalance(this.IdCuentaOrigen, this.Valor);
+
+                Cuentas.DecrementarBalance(this.IdCuentaOrigen, this.Valor);
                 Cuentas.AfectarBalance(this.IdCuentaDestino, this.Valor);
             }
 
-            return paso;
+            return paso2;
         }
 
 
         public Boolean Modificar()
         {
-            bool paso = false;
+            bool paso1 = false;
 
-            paso = Conexion.EjecutarDB("Update Transferencias set Valor = "+ this.Valor +" Where IdTransferencia = "+ this.IdTransferencia);
+            paso1 = Conexion.EjecutarDB("Update Transferencias set Valor = "+ this.Valor +" Where IdTransferencia = "+ this.IdTransferencia);
 
-            if (paso)
+            if (paso1)
             {
                 Cuentas.DecrementarBalance(this.IdTransferencia, this.Valor);
             }
 
-            return paso;
+            return paso1;
 
         }
 
