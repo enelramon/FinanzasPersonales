@@ -36,17 +36,14 @@ namespace BLL
         //Faltan algunas modificaciones de lugar
         //Para que este adaptado al 100% a Gastos
 
-        /// <summary>
-        /// Inserta un valor a la DB
-        /// </summary>
-        /// <returns>Retorna si se ingreso o no.</returns>
         public Boolean Insertar()
         {
             bool paso = false;
             
-            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Gastos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + this.Fecha + this.IdCuenta + IdSubClas +
-                this.Concepto + this.Monto +"') Select @@Identity");
-
+            string va;
+            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Monto);
+            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Ingresos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + va + "')Select @@Identity");
+            
             paso = this.IdGasto > 0;
 
             if (paso)

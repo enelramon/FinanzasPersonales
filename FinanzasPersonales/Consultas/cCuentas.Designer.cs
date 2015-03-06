@@ -104,6 +104,7 @@
             this.FiltrotextBox.Name = "FiltrotextBox";
             this.FiltrotextBox.Size = new System.Drawing.Size(268, 20);
             this.FiltrotextBox.TabIndex = 36;
+            this.FiltrotextBox.TextChanged += new System.EventHandler(this.FiltrotextBox_TextChanged);
             // 
             // label3
             // 

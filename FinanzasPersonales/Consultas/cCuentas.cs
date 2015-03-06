@@ -75,5 +75,10 @@ namespace FinanzasPersonales.Consultas
         {
 
         }
+
+        private void FiltrotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

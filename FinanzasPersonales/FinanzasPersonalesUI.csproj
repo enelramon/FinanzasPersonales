@@ -81,6 +81,12 @@
     <Compile Include="Consultas\cCuentas.Designer.cs">
       <DependentUpon>cCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cGastos.Designer.cs">
+      <DependentUpon>cGastos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cTransferencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <Compile Include="Utilitarios.cs" />
     <EmbeddedResource Include="Consultas\cCuentas.resx">
       <DependentUpon>cCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cGastos.resx">
+      <DependentUpon>cGastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cTransferencias.resx">
       <DependentUpon>cTransferencias.cs</DependentUpon>

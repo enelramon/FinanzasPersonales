@@ -34,9 +34,7 @@
             this.MontoTextBox = new System.Windows.Forms.TextBox();
             this.ConceptoTextBox = new System.Windows.Forms.TextBox();
             this.SubClasTextBox = new System.Windows.Forms.TextBox();
-            this.CuentaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -90,16 +88,6 @@
             this.SubClasTextBox.TabIndex = 5;
             this.SubClasTextBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // CuentaTextBox
-            // 
-            this.CuentaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CuentaTextBox.Location = new System.Drawing.Point(172, 39);
-            this.CuentaTextBox.Name = "CuentaTextBox";
-            this.CuentaTextBox.Size = new System.Drawing.Size(105, 20);
-            this.CuentaTextBox.TabIndex = 6;
-            this.CuentaTextBox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -108,15 +96,6 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "ID del Gasto";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ID de Cuenta";
             // 
             // label4
             // 
@@ -210,19 +189,20 @@
             this.BuscarPorcomboBox.Items.AddRange(new object[] {
             "IdCuenta",
             "Descripcion"});
-            this.BuscarPorcomboBox.Location = new System.Drawing.Point(122, 159);
+            this.BuscarPorcomboBox.Location = new System.Drawing.Point(172, 39);
             this.BuscarPorcomboBox.Name = "BuscarPorcomboBox";
-            this.BuscarPorcomboBox.Size = new System.Drawing.Size(101, 21);
+            this.BuscarPorcomboBox.Size = new System.Drawing.Size(105, 21);
             this.BuscarPorcomboBox.TabIndex = 37;
+            this.BuscarPorcomboBox.SelectedIndexChanged += new System.EventHandler(this.BuscarPorcomboBox_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 163);
+            this.label2.Location = new System.Drawing.Point(12, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 36;
-            this.label2.Text = "Buscar Por:";
+            this.label2.Text = "Cuenta";
             // 
             // rGastos
             // 
@@ -238,9 +218,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CuentaTextBox);
             this.Controls.Add(this.SubClasTextBox);
             this.Controls.Add(this.ConceptoTextBox);
             this.Controls.Add(this.MontoTextBox);
@@ -260,9 +238,7 @@
         private System.Windows.Forms.TextBox MontoTextBox;
         private System.Windows.Forms.TextBox ConceptoTextBox;
         private System.Windows.Forms.TextBox SubClasTextBox;
-        private System.Windows.Forms.TextBox CuentaTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

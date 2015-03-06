@@ -84,7 +84,6 @@ namespace FinanzasPersonales.Registros
 
         private void LimpiarButtom_Click(object sender, EventArgs e) {
             IDTextBox.Clear();
-            CuentaTextBox.Clear();
             SubClasTextBox.Clear();
             ConceptoTextBox.Clear();
             MontoTextBox.Clear();
@@ -101,9 +100,34 @@ namespace FinanzasPersonales.Registros
 
         private void BuscarButtom_Click(object sender, EventArgs e)
         {
+            DialogResult result;
+
+            result = DialogResult.Ignore;
+
+            if (Utilitarios.ToInt(IDTextBox.Text) == 0)
+            {
+                Consultas.cGastos cGastos = new Consultas.cGastos();
+
+                result = cGastos.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    IDTextBox.Text = cGastos.DatoEncontrado.ToString();
+                }
+                else
+                {
+                    IDTextBox.Clear();
+                }
+            }
+
+
+            if (Gastos.Buscar(Utilitarios.ToInt(IDTextBox.Text)))
+            {
+                IDTextBox.Text = Gastos.IdGasto.ToString();
+                ConceptoTextBox.Text = Gastos.Concepto;
+            }
 
         }
-
         private void rGastos_Load(object sender, EventArgs e)
         {
             Cuentas cuenta = new Cuentas();
@@ -112,9 +136,13 @@ namespace FinanzasPersonales.Registros
 
             BuscarPorcomboBox.ValueMember = "IdCuenta";
             BuscarPorcomboBox.DisplayMember = "Descripcion";
-
            
             
+        }
+
+        private void BuscarPorcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
