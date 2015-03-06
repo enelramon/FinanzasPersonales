@@ -33,9 +33,7 @@
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.MontoTextBox = new System.Windows.Forms.TextBox();
             this.ConceptoTextBox = new System.Windows.Forms.TextBox();
-            this.SubClasTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.LimpiarButtom = new System.Windows.Forms.Button();
@@ -45,6 +43,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BuscarPorcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BuscarPor2comboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +62,9 @@
             // 
             this.MontoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MontoTextBox.Location = new System.Drawing.Point(172, 119);
+            this.MontoTextBox.Location = new System.Drawing.Point(225, 119);
             this.MontoTextBox.Name = "MontoTextBox";
-            this.MontoTextBox.Size = new System.Drawing.Size(105, 20);
+            this.MontoTextBox.Size = new System.Drawing.Size(52, 20);
             this.MontoTextBox.TabIndex = 3;
             this.MontoTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -72,21 +72,11 @@
             // 
             this.ConceptoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConceptoTextBox.Location = new System.Drawing.Point(172, 93);
+            this.ConceptoTextBox.Location = new System.Drawing.Point(103, 93);
             this.ConceptoTextBox.Name = "ConceptoTextBox";
-            this.ConceptoTextBox.Size = new System.Drawing.Size(105, 20);
+            this.ConceptoTextBox.Size = new System.Drawing.Size(174, 20);
             this.ConceptoTextBox.TabIndex = 4;
             this.ConceptoTextBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // SubClasTextBox
-            // 
-            this.SubClasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubClasTextBox.Location = new System.Drawing.Point(172, 67);
-            this.SubClasTextBox.Name = "SubClasTextBox";
-            this.SubClasTextBox.Size = new System.Drawing.Size(105, 20);
-            this.SubClasTextBox.TabIndex = 5;
-            this.SubClasTextBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label1
             // 
@@ -96,15 +86,6 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "ID del Gasto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "ID de SubClasificacion";
             // 
             // label5
             // 
@@ -189,7 +170,7 @@
             this.BuscarPorcomboBox.Items.AddRange(new object[] {
             "IdCuenta",
             "Descripcion"});
-            this.BuscarPorcomboBox.Location = new System.Drawing.Point(172, 39);
+            this.BuscarPorcomboBox.Location = new System.Drawing.Point(172, 40);
             this.BuscarPorcomboBox.Name = "BuscarPorcomboBox";
             this.BuscarPorcomboBox.Size = new System.Drawing.Size(105, 21);
             this.BuscarPorcomboBox.TabIndex = 37;
@@ -198,17 +179,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(12, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 36;
-            this.label2.Text = "Cuenta";
+            this.label2.Text = "Buscar Cuenta Por:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "ID de SubClasificacion";
+            // 
+            // BuscarPor2comboBox
+            // 
+            this.BuscarPor2comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BuscarPor2comboBox.FormattingEnabled = true;
+            this.BuscarPor2comboBox.Items.AddRange(new object[] {
+            "IdSubClas",
+            "Descripcion"});
+            this.BuscarPor2comboBox.Location = new System.Drawing.Point(172, 66);
+            this.BuscarPor2comboBox.Name = "BuscarPor2comboBox";
+            this.BuscarPor2comboBox.Size = new System.Drawing.Size(105, 21);
+            this.BuscarPor2comboBox.TabIndex = 38;
+            this.BuscarPor2comboBox.SelectedIndexChanged += new System.EventHandler(this.BuscarPor2comboBox_SelectedIndexChanged);
             // 
             // rGastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 261);
+            this.Controls.Add(this.BuscarPor2comboBox);
             this.Controls.Add(this.BuscarPorcomboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BuscarButtom);
@@ -219,7 +223,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SubClasTextBox);
             this.Controls.Add(this.ConceptoTextBox);
             this.Controls.Add(this.MontoTextBox);
             this.Controls.Add(this.IDTextBox);
@@ -237,9 +240,7 @@
         private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.TextBox MontoTextBox;
         private System.Windows.Forms.TextBox ConceptoTextBox;
-        private System.Windows.Forms.TextBox SubClasTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button LimpiarButtom;
@@ -249,5 +250,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox BuscarPorcomboBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox BuscarPor2comboBox;
+        private System.Windows.Forms.Label label4;
     }
 }

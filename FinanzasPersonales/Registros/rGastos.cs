@@ -68,6 +68,9 @@ namespace FinanzasPersonales.Registros
 
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
+            Gastos.Monto = Convert.ToSingle(MontoTextBox.Text);
+            Gastos.IdCuenta = Utilitarios.ToInt(BuscarPorcomboBox.SelectedValue.ToString());
+            Gastos.IdSubClas = Utilitarios.ToInt(BuscarPor2comboBox.SelectedValue.ToString());
 
             if (Gastos.IdGasto > 0) {
                 //Editando
@@ -84,7 +87,6 @@ namespace FinanzasPersonales.Registros
 
         private void LimpiarButtom_Click(object sender, EventArgs e) {
             IDTextBox.Clear();
-            SubClasTextBox.Clear();
             ConceptoTextBox.Clear();
             MontoTextBox.Clear();
         }
@@ -133,14 +135,21 @@ namespace FinanzasPersonales.Registros
             Cuentas cuenta = new Cuentas();
 
             BuscarPorcomboBox.DataSource = cuenta.Listar("IdCuenta,Descripcion", "1=1");
-
             BuscarPorcomboBox.ValueMember = "IdCuenta";
             BuscarPorcomboBox.DisplayMember = "Descripcion";
-           
-            
+            //
+            BuscarPor2comboBox.DataSource = Gastos.GetSubClas();
+            BuscarPor2comboBox.ValueMember = "IdSubClas";
+            BuscarPor2comboBox.DisplayMember = "Descripcion";
+            //*/
         }
 
         private void BuscarPorcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarPor2comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

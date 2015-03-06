@@ -63,7 +63,7 @@ namespace FinanzasPersonales.Registros
 
             }
 
-            //Revisar esta validacion
+            //todo: Revisar esta validacion
             if (paso && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
                 MessageBox.Show("Transferencia Guardada");
             else

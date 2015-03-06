@@ -38,21 +38,21 @@ namespace BLL
 
         public Boolean Insertar()
         {
-            bool paso = false;
-            
-            string va;
-            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Monto);
-            this.IdGasto = (int)Conexion.ObtenerValorDb("Insert Into Ingresos (Fecha, IdCuenta, IdSubClas, Concepto, Monto)  Values('" + va + "')Select @@Identity");
-            
-            paso = this.IdGasto > 0;
+            bool paso2 = false;
 
-            if (paso)
+            //todo: Terminar esto.
+            this.IdGasto = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Gastos (Concepto, IdCuenta, IdSubclas, Fecha, Monto)  Values('" + this.Concepto + "'," + this.IdCuenta + "," + this.IdSubClas +", GETDATE()," + this.Monto +") Select @@Identity"));
+
+            paso2 = this.IdGasto > 0;
+            
+            if(paso2)
             {
+
                 Cuentas.AfectarBalance(this.IdCuenta, this.Monto);
             }
 
-            return paso;
-        } 
+            return paso2;
+        }
 
         public Boolean Modificar()
         {
@@ -106,6 +106,12 @@ namespace BLL
         public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
             return Conexion.BuscarDb("Select " + campos + " from Gastos where " + Filtro);
+        }
+
+        public static DataTable GetSubClas()
+        {
+            ConexionDb Conexion = new ConexionDb();
+            return Conexion.BuscarDb("Select * from SubClasificaciones");
         }
 
     }
