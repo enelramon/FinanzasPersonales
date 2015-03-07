@@ -20,7 +20,7 @@ namespace BLL
         //que no esta static por eso la instanciacion de Clasificaciones
         Clasificaciones c = new Clasificaciones();
 
-        public PresupuestoDetalle ()
+        public PresupuestoDetalle()
         {
             Valor = 0;
             IdClasificacion = 0;
@@ -28,22 +28,22 @@ namespace BLL
 
 
 
-        public PresupuestoDetalle( int IdClasificacion, int Valor)
+        public PresupuestoDetalle(int IdClasificacion, int Valor)
         {
-            if (Valor > 0 && c.Buscar(IdClasificacion) )
+            if (Valor > 0 && c.Buscar(IdClasificacion))
             {
                 this.Valor = Valor;
                 this.IdClasificacion = IdClasificacion;
-            }                
+            }
         }
 
-        public int Guardar(int IdPresupuesto = 0) 
+        public int Guardar(int IdPresupuesto = 0)
         {
             int paso = 0;
-          
+
             paso = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into PresupuestoDetalle (IdPresupuesto, IdClasificacion, Valor)  Values(" + IdPresupuesto + ", " + IdClasificacion + ", " + Valor + ")Select @@IDENTITY"));
-            
-            return paso ;
+
+            return paso;
         }
 
         public Boolean Eliminar(Int32 IdBuscado)
