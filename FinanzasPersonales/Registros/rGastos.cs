@@ -150,7 +150,10 @@ namespace FinanzasPersonales.Registros
             BuscarPorcomboBox.ValueMember = "IdCuenta";
             BuscarPorcomboBox.DisplayMember = "Descripcion";
             //
-            BuscarPor2comboBox.DataSource = Gastos.GetSubClas();
+
+            SubClasificaciones SubClas = new SubClasificaciones();
+
+            BuscarPor2comboBox.DataSource = SubClas.Listar("IdSubClas,Descripcion", "1=1");
             BuscarPor2comboBox.ValueMember = "IdSubClas";
             BuscarPor2comboBox.DisplayMember = "Descripcion";
             //*/
