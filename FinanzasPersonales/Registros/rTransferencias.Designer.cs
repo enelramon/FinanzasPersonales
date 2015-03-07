@@ -84,6 +84,7 @@
             this.IdTransferenciaTextBox.Name = "IdTransferenciaTextBox";
             this.IdTransferenciaTextBox.Size = new System.Drawing.Size(44, 20);
             this.IdTransferenciaTextBox.TabIndex = 64;
+            this.IdTransferenciaTextBox.TextChanged += new System.EventHandler(this.IdTransferenciaTextBox_TextChanged);
             // 
             // label6
             // 

@@ -9,6 +9,7 @@ namespace FinanzasPersonales
 {
     public static class Utilitarios
     {
+
         public static int ToInt(string texto)
         {
             int valor = 0;
@@ -31,6 +32,7 @@ namespace FinanzasPersonales
 
             return valido;
         }
+       
     }//end clase
 
 

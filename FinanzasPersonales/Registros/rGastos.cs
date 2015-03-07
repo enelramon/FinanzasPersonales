@@ -54,18 +54,22 @@ namespace FinanzasPersonales.Registros
         {
             Boolean paso = false;
 
-            if (!Utilitarios.ValidarTextBoxVacio(ConceptoTextBox, errorProvider1, "Debe introducir alguna descripción"))
+            if (!Utilitarios.ValidarTextBoxVacio(ConceptoTextBox, ErrorProvider1, "Debe introducir alguna descripción"))
                 return;
 
-            //if (DescripciontextBox.Text.Trim().Length ==0)
-            //{
-            //    errorProvider1.SetError(DescripciontextBox, "Debe introducir alguna descripción");
-            //    MessageBox.Show("Debe introducir alguna descripción");
-            //    DescripciontextBox.Focus();
-            //    return;
-            //}
-
-
+            if (MontoTextBox.Text.Trim().Length == 0)
+            {
+               ErrorProvider3.SetError(MontoTextBox, "Debe introducir Algun Concepto.");
+               MontoTextBox.Focus();
+                return;
+           }
+            
+            if (ConceptoTextBox.Text.Trim().Length > 80)
+            {
+                errorProvider4.SetError(ConceptoTextBox, "Los caracteres no pueden exeder a 80");
+                ConceptoTextBox.Focus();
+            return;
+        }
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
             Gastos.Monto = Convert.ToSingle(MontoTextBox.Text);
@@ -83,6 +87,8 @@ namespace FinanzasPersonales.Registros
 
             if (paso)
                 MessageBox.Show("Registro Guardado");
+            else
+                MessageBox.Show("Por Favor Complete los Campo");
         }
 
         private void LimpiarButtom_Click(object sender, EventArgs e) {
@@ -94,6 +100,12 @@ namespace FinanzasPersonales.Registros
         private void BorrarButtom_Click(object sender, EventArgs e)
         {
             {
+                if (IDTextBox.Text.Trim().Length == 0)
+                {
+                    ErrorProvider1.SetError(IDTextBox, "Debe ingresar un ID");
+                    IDTextBox.Focus();
+                    return;
+                }
                 if (Gastos.Eliminar(Utilitarios.ToInt(IDTextBox.Text)))
                     MessageBox.Show("Registro Borrado");
 

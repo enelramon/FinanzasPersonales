@@ -39,7 +39,11 @@ namespace FinanzasPersonales.Consultas
             if (BuscarPorComboBox.SelectedIndex == 0) //IdGasto
             {
                 //todo: validar que sea un numero
-                filtro = "IdCuenta=" + FiltroTextBox.Text;
+                if (FiltroTextBox.Text.Length > 0 && FiltroTextBox.Text.Length < 0)
+                {
+                    filtro = "IdCuenta=" + FiltroTextBox.Text;
+                }
+                
             }
             else if (BuscarPorComboBox.SelectedIndex == 1) //Descripcion
             {
