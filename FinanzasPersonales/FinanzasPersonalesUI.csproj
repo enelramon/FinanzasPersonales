@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="Consultas\cGastos.Designer.cs">
       <DependentUpon>cGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.Designer.cs">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTransferencias.cs">
       <SubType>Form</SubType>
@@ -137,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cGastos.resx">
       <DependentUpon>cGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cPresupuesto.resx">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cTransferencias.resx">
       <DependentUpon>cTransferencias.cs</DependentUpon>

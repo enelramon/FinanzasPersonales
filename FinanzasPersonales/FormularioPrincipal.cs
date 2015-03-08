@@ -64,6 +64,18 @@ namespace FinanzasPersonales
             ctran.Show();
         }
 
+        private void gastosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cGastos cGasto = new Consultas.cGastos();
+            cGasto.Show();
+        }
+
+        private void presupuestoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cPresupuesto cPres = new Consultas.cPresupuesto();
+            cPres.Show();
+        }
+
        
     }
 }

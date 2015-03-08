@@ -40,21 +40,27 @@
             this.BorrarButtom = new System.Windows.Forms.Button();
             this.GuardarButtom = new System.Windows.Forms.Button();
             this.BuscarButtom = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BuscarPorcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BuscarPor2comboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.ErrorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // IDTextBox
             // 
             this.IDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.IDTextBox.Location = new System.Drawing.Point(172, 12);
+            this.IDTextBox.Location = new System.Drawing.Point(154, 12);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(35, 20);
+            this.IDTextBox.Size = new System.Drawing.Size(44, 20);
             this.IDTextBox.TabIndex = 0;
             this.IDTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -62,9 +68,9 @@
             // 
             this.MontoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MontoTextBox.Location = new System.Drawing.Point(225, 119);
+            this.MontoTextBox.Location = new System.Drawing.Point(207, 119);
             this.MontoTextBox.Name = "MontoTextBox";
-            this.MontoTextBox.Size = new System.Drawing.Size(52, 20);
+            this.MontoTextBox.Size = new System.Drawing.Size(43, 20);
             this.MontoTextBox.TabIndex = 3;
             this.MontoTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -72,9 +78,10 @@
             // 
             this.ConceptoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConceptoTextBox.Location = new System.Drawing.Point(103, 93);
+            this.ConceptoTextBox.Location = new System.Drawing.Point(85, 93);
+            this.ConceptoTextBox.MaxLength = 80;
             this.ConceptoTextBox.Name = "ConceptoTextBox";
-            this.ConceptoTextBox.Size = new System.Drawing.Size(174, 20);
+            this.ConceptoTextBox.Size = new System.Drawing.Size(165, 20);
             this.ConceptoTextBox.TabIndex = 4;
             this.ConceptoTextBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -107,7 +114,8 @@
             // 
             // LimpiarButtom
             // 
-            this.LimpiarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LimpiarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButtom.Location = new System.Drawing.Point(22, 216);
@@ -121,7 +129,8 @@
             // 
             // BorrarButtom
             // 
-            this.BorrarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BorrarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BorrarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BorrarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BorrarButtom.Image")));
             this.BorrarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,7 +145,8 @@
             // 
             // GuardarButtom
             // 
-            this.GuardarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GuardarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButtom.Image")));
             this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -151,26 +161,28 @@
             // 
             // BuscarButtom
             // 
+            this.BuscarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(225, 9);
+            this.BuscarButtom.Location = new System.Drawing.Point(234, 9);
             this.BuscarButtom.Name = "BuscarButtom";
             this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
             this.BuscarButtom.TabIndex = 31;
             this.BuscarButtom.UseVisualStyleBackColor = true;
             this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
             // 
-            // errorProvider1
+            // ErrorProvider1
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.ErrorProvider1.ContainerControl = this;
             // 
             // BuscarPorcomboBox
             // 
+            this.BuscarPorcomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarPorcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BuscarPorcomboBox.FormattingEnabled = true;
             this.BuscarPorcomboBox.Items.AddRange(new object[] {
             "IdCuenta",
             "Descripcion"});
-            this.BuscarPorcomboBox.Location = new System.Drawing.Point(172, 40);
+            this.BuscarPorcomboBox.Location = new System.Drawing.Point(150, 40);
             this.BuscarPorcomboBox.Name = "BuscarPorcomboBox";
             this.BuscarPorcomboBox.Size = new System.Drawing.Size(105, 21);
             this.BuscarPorcomboBox.TabIndex = 37;
@@ -196,22 +208,35 @@
             // 
             // BuscarPor2comboBox
             // 
+            this.BuscarPor2comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarPor2comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BuscarPor2comboBox.FormattingEnabled = true;
             this.BuscarPor2comboBox.Items.AddRange(new object[] {
             "IdSubClas",
             "Descripcion"});
-            this.BuscarPor2comboBox.Location = new System.Drawing.Point(172, 66);
+            this.BuscarPor2comboBox.Location = new System.Drawing.Point(150, 67);
             this.BuscarPor2comboBox.Name = "BuscarPor2comboBox";
             this.BuscarPor2comboBox.Size = new System.Drawing.Size(105, 21);
             this.BuscarPor2comboBox.TabIndex = 38;
             this.BuscarPor2comboBox.SelectedIndexChanged += new System.EventHandler(this.BuscarPor2comboBox_SelectedIndexChanged);
             // 
+            // ErrorProvider2
+            // 
+            this.ErrorProvider2.ContainerControl = this;
+            // 
+            // ErrorProvider3
+            // 
+            this.ErrorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // rGastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 261);
+            this.ClientSize = new System.Drawing.Size(280, 261);
             this.Controls.Add(this.BuscarPor2comboBox);
             this.Controls.Add(this.BuscarPorcomboBox);
             this.Controls.Add(this.label2);
@@ -227,9 +252,12 @@
             this.Controls.Add(this.MontoTextBox);
             this.Controls.Add(this.IDTextBox);
             this.Name = "rGastos";
-            this.Text = "rGastos";
+            this.Text = "Registro de Gastos";
             this.Load += new System.EventHandler(this.rGastos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,10 +275,13 @@
         private System.Windows.Forms.Button BorrarButtom;
         private System.Windows.Forms.Button GuardarButtom;
         private System.Windows.Forms.Button BuscarButtom;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider ErrorProvider1;
         private System.Windows.Forms.ComboBox BuscarPorcomboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox BuscarPor2comboBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider ErrorProvider2;
+        private System.Windows.Forms.ErrorProvider ErrorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }

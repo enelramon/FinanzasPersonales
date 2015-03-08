@@ -56,7 +56,7 @@ namespace BLL
            bool Encontro = false;
            DataTable dt = new DataTable();
 
-           dt = this.Listar("Idclasidicaciones", "Descripcion=" + IdBuscado);
+           dt = this.Listar("IdClasificaciones", "Descripcion=" + IdBuscado);
 
            if (dt.Rows.Count > 0)
            {
@@ -72,7 +72,7 @@ namespace BLL
 
        public DataTable Listar(string campos = "*", string Filtro = "1=1")
        {
-           return Conexion.BuscarDb("Select " + campos + " from Cuentas where " + Filtro);
+           return Conexion.BuscarDb("Select " + campos + " from SubClasificaciones where " + Filtro);
        }
 
 

@@ -90,5 +90,10 @@ namespace FinanzasPersonales.Registros
         {
 
         }
+
+        private void IdTransferenciaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
