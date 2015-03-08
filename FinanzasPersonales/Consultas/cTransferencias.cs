@@ -86,5 +86,10 @@ namespace FinanzasPersonales.Consultas
         
         }
 
+        private void AceptarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

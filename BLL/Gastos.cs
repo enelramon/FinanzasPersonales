@@ -86,18 +86,17 @@ namespace BLL
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listar("Concepto", "IdCuenta=" + IdBuscado);
+            dt = this.Listar("Concepto", "IdGasto=" + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
                 Encontro = true;
 
                 //this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.IdCuenta = (int)dt.Rows[0]["IdCuenta"];
-                this.IdSubClas = (int)dt.Rows[0]["IdSubClas"];
+                this.IdGasto = IdBuscado;
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();
-                this.Monto = (float)dt.Rows[0]["Valor"];
-
+                this.Monto = (float)dt.Rows[0]["Monto"];
+                
             }
 
             return Encontro;

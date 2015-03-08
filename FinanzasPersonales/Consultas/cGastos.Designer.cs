@@ -96,7 +96,6 @@
             this.BuscarPorComboBox.FormattingEnabled = true;
             this.BuscarPorComboBox.Items.AddRange(new object[] {
             "IdGasto",
-            "Fecha",
             "IdCuenta",
             "IdSubClas",
             "Concepto",
@@ -128,6 +127,7 @@
             this.CancelarButtom.Text = "Cancelar";
             this.CancelarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelarButtom.UseVisualStyleBackColor = true;
+            this.CancelarButtom.Click += new System.EventHandler(this.CancelarButtom_Click);
             // 
             // AceptarButtom
             // 
@@ -142,6 +142,7 @@
             this.AceptarButtom.Text = "Aceptar";
             this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AceptarButtom.UseVisualStyleBackColor = true;
+            this.AceptarButtom.Click += new System.EventHandler(this.AceptarButtom_Click);
             // 
             // label4
             // 

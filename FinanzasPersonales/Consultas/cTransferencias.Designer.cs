@@ -174,6 +174,7 @@
             this.AceptarButtom.Text = "Aceptar";
             this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AceptarButtom.UseVisualStyleBackColor = true;
+            this.AceptarButtom.Click += new System.EventHandler(this.AceptarButtom_Click);
             // 
             // cTransferencias
             // 
