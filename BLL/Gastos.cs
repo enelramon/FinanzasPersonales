@@ -95,7 +95,7 @@ namespace BLL
                 //this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.IdGasto = IdBuscado;
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();
-                this.Monto = (float)dt.Rows[0]["Monto"];
+                this.Monto = Convert.ToString((float)dt.Rows[0]["Monto"].Value);
                 
             }
 

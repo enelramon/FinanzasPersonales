@@ -110,12 +110,12 @@ namespace FinanzasPersonales.Consultas
 
         private void AceptarButtom_Click(object sender, EventArgs e)
         {
+            Registros.rGastos gastos = new Registros.rGastos();
             int index;
 
             index = DataGridView.CurrentRow.Index;
 
             datoEncontrado = (int)DataGridView.CurrentRow.Cells["IdGasto"].Value;
-
 
             this.DialogResult = DialogResult.OK;
             this.Close();
