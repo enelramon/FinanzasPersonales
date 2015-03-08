@@ -7,17 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FinanzasPersonales.Registros
 {
     public partial class rClasificaciones : Form
     {
+        
         public rClasificaciones()
         {
             InitializeComponent();
         }
 
-        private void BottarButtom_Click(object sender, EventArgs e)
+        private void LimpiarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuardarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BorrarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
         {
 
         }

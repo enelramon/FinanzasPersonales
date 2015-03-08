@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,6 +76,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cCuentas.Designer.cs">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cGastos.Designer.cs">
+      <DependentUpon>cGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.Designer.cs">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cTransferencias.Designer.cs">
+      <DependentUpon>cTransferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +120,37 @@
     <Compile Include="Registros\rCuentas.Designer.cs">
       <DependentUpon>rCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rGastos.Designer.cs">
+      <DependentUpon>rGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rPresupuesto.Designer.cs">
+      <DependentUpon>rPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rTransferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rTransferencias.Designer.cs">
+      <DependentUpon>rTransferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="Consultas\cCuentas.resx">
+      <DependentUpon>cCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cGastos.resx">
+      <DependentUpon>cGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cPresupuesto.resx">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cTransferencias.resx">
+      <DependentUpon>cTransferencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +165,18 @@
     </Compile>
     <EmbeddedResource Include="Registros\rClasificaciones.resx">
       <DependentUpon>rClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rCuentas.resx">
+      <DependentUpon>rCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rGastos.resx">
+      <DependentUpon>rGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rPresupuesto.resx">
+      <DependentUpon>rPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rTransferencias.resx">
+      <DependentUpon>rTransferencias.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
@@ -127,7 +195,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -142,6 +210,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\FinanzasPersonalesDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\FinanzasPersonalesDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>FinanzasPersonalesDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Database\Script Db.sql" />
     <Content Include="Participantes\Christopher Genao.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
   </ItemGroup>
@@ -151,9 +227,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Consultas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
