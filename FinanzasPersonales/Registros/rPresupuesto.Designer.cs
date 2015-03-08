@@ -53,6 +53,7 @@
             // 
             this.DetalledataGridView.AllowUserToAddRows = false;
             this.DetalledataGridView.AllowUserToDeleteRows = false;
+            this.DetalledataGridView.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Secuencia,
@@ -119,6 +120,7 @@
             // 
             // GuardarButtom
             // 
+            this.GuardarButtom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButtom.Image")));
             this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;

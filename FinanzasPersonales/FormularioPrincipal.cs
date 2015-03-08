@@ -70,6 +70,12 @@ namespace FinanzasPersonales
             cGasto.Show();
         }
 
+        private void presupuestoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cPresupuesto cPres = new Consultas.cPresupuesto();
+            cPres.Show();
+        }
+
        
     }
 }

@@ -42,9 +42,10 @@
             this.clasificacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.transferenciasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +128,8 @@
             this.clasificacionesToolStripMenuItem1,
             this.cuentasToolStripMenuItem1,
             this.transferenciasToolStripMenuItem1,
-            this.gastosToolStripMenuItem1});
+            this.gastosToolStripMenuItem1,
+            this.presupuestoToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -153,6 +155,13 @@
             this.transferenciasToolStripMenuItem1.Text = "Transferencias";
             this.transferenciasToolStripMenuItem1.Click += new System.EventHandler(this.transferenciasToolStripMenuItem1_Click);
             // 
+            // gastosToolStripMenuItem1
+            // 
+            this.gastosToolStripMenuItem1.Name = "gastosToolStripMenuItem1";
+            this.gastosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.gastosToolStripMenuItem1.Text = "Gastos";
+            this.gastosToolStripMenuItem1.Click += new System.EventHandler(this.gastosToolStripMenuItem1_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -169,12 +178,12 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // gastosToolStripMenuItem1
+            // presupuestoToolStripMenuItem1
             // 
-            this.gastosToolStripMenuItem1.Name = "gastosToolStripMenuItem1";
-            this.gastosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.gastosToolStripMenuItem1.Text = "Gastos";
-            this.gastosToolStripMenuItem1.Click += new System.EventHandler(this.gastosToolStripMenuItem1_Click);
+            this.presupuestoToolStripMenuItem1.Name = "presupuestoToolStripMenuItem1";
+            this.presupuestoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.presupuestoToolStripMenuItem1.Text = "Presupuestos";
+            this.presupuestoToolStripMenuItem1.Click += new System.EventHandler(this.presupuestoToolStripMenuItem1_Click);
             // 
             // FormularioPrincipal
             // 
@@ -218,6 +227,7 @@
         private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferenciasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem1;
 
     }
 }
