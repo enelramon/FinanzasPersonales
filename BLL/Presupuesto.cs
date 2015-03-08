@@ -19,7 +19,7 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
-        List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
+       // List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
         
 
         
