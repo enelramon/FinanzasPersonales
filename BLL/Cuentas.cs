@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
-
+//uyyh
 namespace BLL
 {
     public class Cuentas
@@ -28,19 +28,19 @@ namespace BLL
         {
 
 
-            return Conexion.EjecutarDB("Insert Into Cuentas (Descripcion)  Values('" + this.Descripcion + "')");
+            return Conexion.EjecutarDB("Insert Into Cuentas (Descripcion)  Values('" + this.Descripcion+"')");
 
         }
 
 
         public Boolean Modificar()
         {
-            return false;
+            return Conexion.EjecutarDB("Update Cuentas set Descripcion='"+this.Descripcion+"'where Descripcion='"+this.Descripcion+"'");
         }
 
         public Boolean Borrar()
         {
-            return false;
+            return Conexion.EjecutarDB("Delete from Cuentas where Descripcion='"+this.Descripcion+"'" );
         }
 
         public Boolean Buscar()

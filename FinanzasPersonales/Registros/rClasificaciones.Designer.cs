@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rClasificaciones));
             this.Active = new System.Windows.Forms.CheckBox();
             this.LimpiarButtom = new System.Windows.Forms.Button();
-            this.BottarButtom = new System.Windows.Forms.Button();
-            this.AceptarButtom = new System.Windows.Forms.Button();
+            this.BorrarButtom = new System.Windows.Forms.Button();
+            this.GuardarButtom = new System.Windows.Forms.Button();
             this.BuscarButtom = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,30 +67,30 @@
             // 
             // BottarButtom
             // 
-            this.BottarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BottarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BottarButtom.Image")));
-            this.BottarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BottarButtom.Location = new System.Drawing.Point(198, 136);
-            this.BottarButtom.Name = "BottarButtom";
-            this.BottarButtom.Size = new System.Drawing.Size(75, 33);
-            this.BottarButtom.TabIndex = 16;
-            this.BottarButtom.Text = "Borrar";
-            this.BottarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BottarButtom.UseVisualStyleBackColor = true;
-            this.BottarButtom.Click += new System.EventHandler(this.BottarButtom_Click);
+            this.BorrarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BottarButtom.Image")));
+            this.BorrarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BorrarButtom.Location = new System.Drawing.Point(198, 136);
+            this.BorrarButtom.Name = "BottarButtom";
+            this.BorrarButtom.Size = new System.Drawing.Size(75, 33);
+            this.BorrarButtom.TabIndex = 16;
+            this.BorrarButtom.Text = "Borrar";
+            this.BorrarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BorrarButtom.UseVisualStyleBackColor = true;
+            this.BorrarButtom.Click += new System.EventHandler(this.BottarButtom_Click);
             // 
             // AceptarButtom
+            this.BorrarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
-            this.AceptarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.AceptarButtom.Image = ((System.Drawing.Image)(resources.GetObject("AceptarButtom.Image")));
-            this.AceptarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AceptarButtom.Location = new System.Drawing.Point(117, 136);
-            this.AceptarButtom.Name = "AceptarButtom";
-            this.AceptarButtom.Size = new System.Drawing.Size(75, 33);
-            this.AceptarButtom.TabIndex = 15;
-            this.AceptarButtom.Text = "Guardar";
-            this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AceptarButtom.UseVisualStyleBackColor = true;
+            this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("AceptarButtom.Image")));
+            this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButtom.Location = new System.Drawing.Point(117, 136);
+            this.GuardarButtom.Name = "AceptarButtom";
+            this.GuardarButtom.Size = new System.Drawing.Size(75, 33);
+            this.GuardarButtom.TabIndex = 15;
+            this.GuardarButtom.Text = "Guardar";
+            this.GuardarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButtom.UseVisualStyleBackColor = true;
             // 
             // BuscarButtom
             // 
@@ -144,8 +144,8 @@
             this.ClientSize = new System.Drawing.Size(309, 186);
             this.Controls.Add(this.Active);
             this.Controls.Add(this.LimpiarButtom);
-            this.Controls.Add(this.BottarButtom);
-            this.Controls.Add(this.AceptarButtom);
+            this.Controls.Add(this.BorrarButtom);
+            this.Controls.Add(this.GuardarButtom);
             this.Controls.Add(this.BuscarButtom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -165,8 +165,8 @@
 
         private System.Windows.Forms.CheckBox Active;
         private System.Windows.Forms.Button LimpiarButtom;
-        private System.Windows.Forms.Button BottarButtom;
-        private System.Windows.Forms.Button AceptarButtom;
+        private System.Windows.Forms.Button BorrarButtom;
+        private System.Windows.Forms.Button GuardarButtom;
         private System.Windows.Forms.Button BuscarButtom;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

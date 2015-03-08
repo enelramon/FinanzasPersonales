@@ -89,6 +89,12 @@
     <Compile Include="Registros\rClasificaciones.Designer.cs">
       <DependentUpon>rClasificaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rCuentas.Designer.cs">
+      <DependentUpon>rCuentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
