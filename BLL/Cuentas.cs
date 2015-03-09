@@ -18,8 +18,10 @@ namespace BLL
         public string Descripcion { get; set; }
 
        private  float balance;
+
        public float Balance 
        {
+           set { this.balance = value; }
            get { return balance; } 
        }
       
