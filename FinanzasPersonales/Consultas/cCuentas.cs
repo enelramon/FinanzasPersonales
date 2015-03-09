@@ -80,5 +80,40 @@ namespace FinanzasPersonales.Consultas
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TotaltextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarPorcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

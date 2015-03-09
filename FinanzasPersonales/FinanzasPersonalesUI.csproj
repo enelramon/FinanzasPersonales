@@ -87,6 +87,12 @@
     <Compile Include="Consultas\cGastos.Designer.cs">
       <DependentUpon>cGastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cIngresos.Designer.cs">
+      <DependentUpon>cIngresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cTransferencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="Registros\rGastos.Designer.cs">
       <DependentUpon>rGastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rIngresos.Designer.cs">
+      <DependentUpon>rIngresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cGastos.resx">
       <DependentUpon>cGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cIngresos.resx">
+      <DependentUpon>cIngresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cTransferencias.resx">
       <DependentUpon>cTransferencias.cs</DependentUpon>
@@ -161,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rGastos.resx">
       <DependentUpon>rGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rIngresos.resx">
+      <DependentUpon>rIngresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rPresupuesto.resx">
       <DependentUpon>rPresupuesto.cs</DependentUpon>

@@ -83,6 +83,7 @@
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 34;
             this.label2.Text = "Buscar Por:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // BuscarPorcomboBox
             // 
@@ -95,6 +96,7 @@
             this.BuscarPorcomboBox.Name = "BuscarPorcomboBox";
             this.BuscarPorcomboBox.Size = new System.Drawing.Size(101, 21);
             this.BuscarPorcomboBox.TabIndex = 35;
+            this.BuscarPorcomboBox.SelectedIndexChanged += new System.EventHandler(this.BuscarPorcomboBox_SelectedIndexChanged);
             // 
             // FiltrotextBox
             // 
@@ -114,6 +116,7 @@
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "=";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CantidadtextBox
             // 
@@ -122,6 +125,7 @@
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(53, 20);
             this.CantidadtextBox.TabIndex = 38;
+            this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             // 
             // TotaltextBox
             // 
@@ -130,6 +134,7 @@
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.Size = new System.Drawing.Size(100, 20);
             this.TotaltextBox.TabIndex = 39;
+            this.TotaltextBox.TextChanged += new System.EventHandler(this.TotaltextBox_TextChanged);
             // 
             // label1
             // 
@@ -140,6 +145,7 @@
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 40;
             this.label1.Text = "Cantidad:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -150,6 +156,7 @@
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 41;
             this.label4.Text = "Total:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // CancelarButtom
             // 
