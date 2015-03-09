@@ -71,7 +71,7 @@ namespace FinanzasPersonales.Registros
 
             Cuenta.IdCuenta = Utilitarios.ToInt(IdCuentatextBox.Text);
             Cuenta.Descripcion = DescripciontextBox.Text;
-            Cuenta.Balance = Utilitarios.ToInt(BalanceTextBox.Text);
+            //todo: Arreglar esto: Cuenta.Balance = Utilitarios.ToInt(BalanceTextBox.Text);
 
             if (Cuenta.IdCuenta > 0)
             {
