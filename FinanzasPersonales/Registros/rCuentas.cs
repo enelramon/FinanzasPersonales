@@ -47,6 +47,7 @@ namespace FinanzasPersonales.Registros
             {
                 IdCuentatextBox.Text = Cuenta.IdCuenta.ToString();
                 DescripciontextBox.Text = Cuenta.Descripcion;
+                BalanceTextBox.Text = Cuenta.Balance.ToString();
 
             }
 
@@ -70,6 +71,7 @@ namespace FinanzasPersonales.Registros
 
             Cuenta.IdCuenta = Utilitarios.ToInt(IdCuentatextBox.Text);
             Cuenta.Descripcion = DescripciontextBox.Text;
+            Cuenta.Balance = Utilitarios.ToInt(BalanceTextBox.Text);
 
             if (Cuenta.IdCuenta > 0)
             {
@@ -92,7 +94,7 @@ namespace FinanzasPersonales.Registros
         private void BorrarButtom_Click(object sender, EventArgs e)
         {
             if (Cuenta.Eliminar(Utilitarios.ToInt(IdCuentatextBox.Text)))
-                MessageBox.Show("Registro Guardado");
+                MessageBox.Show("Registro Eliminado");
 
         }
 
@@ -100,6 +102,7 @@ namespace FinanzasPersonales.Registros
         {
             IdCuentatextBox.Clear();
             DescripciontextBox.Clear();
+            BalanceTextBox.Clear();
         }
 
 

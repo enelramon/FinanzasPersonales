@@ -12,6 +12,7 @@ namespace BLL
     public class Clasificaciones
     {
         private ConexionDb Conexion = new ConexionDb();
+
         public int IdClasificacion { get; set; }
         public string Descripcion { get; set; }
 
@@ -21,17 +22,15 @@ namespace BLL
             this.Descripcion = string.Empty;
         }
 
-        public Boolean Insert()
+        public Boolean Insertar()
         {
             this.IdClasificacion = 0;
-            this.IdClasificacion = (int)Conexion.ObtenerValorDb("Insert Into (Descripcion) Values('" + this.Descripcion + "') Select @@Identity");
-
-            return this.IdClasificacion > 0;
+            return Conexion.EjecutarDB("Insert Into Clasificaciones (Descripcion) Values('" + this.Descripcion + "') Select @@Identity");
         }
 
         public Boolean Modificar()
         {
-            return Conexion.EjecutarDB("Update Cuentas set Descripcion= '" + this.Descripcion + "' Where IdClasificacion = " + this.IdClasificacion);
+            return Conexion.EjecutarDB("Update Cuentas set Descripcion= '" + this.Descripcion + "' Where IdClasificacion = " + this.IdClasificacion + "'");
 
         }
 

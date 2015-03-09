@@ -25,7 +25,7 @@ namespace FinanzasPersonales
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("\tFinanzas Personales\n\tProgramacion Aplicada I inc.\n\tIntegrantes:\n\n\tEnel Almonte\n\tChristopher Genao\n\tJoel Olvares\n\tNewlin Duarte\n\tYahaida Vargas\n\tAngel Rodriguez\n\tFeliz Radel\n\tKlainer Morales");
+            MessageBox.Show("\tFinanzas Personales\n\tProgramacion Aplicada I inc.\n\tIntegrantes:\n\n\tEnel Almonte\n\tChristopher Genao\n\tJoel Olvares\n\tNewlin Duarte\n\tYahaida Vargas\n\tAngel Rodriguez\n\tFelix Fernandez\n\tKlainer Morales");
         }
 
         private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +50,12 @@ namespace FinanzasPersonales
         {
             Registros.rTransferencias trans = new Registros.rTransferencias();
             trans.Show();
+        }
+
+        private void clasificacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cClasificacion cClasificacion = new Consultas.cClasificacion();
+            cClasificacion.Show();
         }
 
        

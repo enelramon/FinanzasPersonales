@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cClasificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cClasificacion.Designer.cs">
+      <DependentUpon>cClasificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
       <DependentUpon>rTransferencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="Consultas\cClasificacion.resx">
+      <DependentUpon>cClasificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cCuentas.resx">
       <DependentUpon>cCuentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +191,7 @@
     </Content>
     <Content Include="Database\Script Db.sql" />
     <Content Include="Participantes\Christopher Genao.txt" />
+    <Content Include="Participantes\Felix Fernandez.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
   </ItemGroup>
   <ItemGroup>
