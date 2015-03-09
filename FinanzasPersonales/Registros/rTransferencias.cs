@@ -51,12 +51,12 @@ namespace FinanzasPersonales.Registros
             ErrorProvider EP4 = new ErrorProvider();
            bool ValidValor = Utilitarios.ValidarTextBoxVacio(ValorTextBox, EP4, "Por favor asigne un .");
 
-            if (Transferencia.IdTransferencia > 0 && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
+            if (Transferencia.IdTransferencia > 0)
             {
                 //editando
                 paso = Transferencia.Modificar();
             }
-            if (Transferencia.IdTransferencia == 0 && (ValidConcept = true) && (ValidCuentaOrigen = true) && (ValidCuentaDestino = true) && (ValidValor = true))
+            else
             {
                 //Insertando
                 paso = Transferencia.Insertar();
@@ -83,7 +83,8 @@ namespace FinanzasPersonales.Registros
 
         private void BuscarButtom_Click(object sender, EventArgs e)
         {
-
+            Consultas.cTransferencias cTran = new Consultas.cTransferencias();
+            cTran.Show();
         }
 
         private void IdCuentaOrigenTextBox_TextChanged(object sender, EventArgs e)
