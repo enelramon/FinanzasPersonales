@@ -49,6 +49,9 @@
             this.TransferenciasDataGridView1.AllowUserToAddRows = false;
             this.TransferenciasDataGridView1.AllowUserToDeleteRows = false;
             this.TransferenciasDataGridView1.AllowUserToOrderColumns = true;
+            this.TransferenciasDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TransferenciasDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TransferenciasDataGridView1.Location = new System.Drawing.Point(12, 58);
             this.TransferenciasDataGridView1.Name = "TransferenciasDataGridView1";
@@ -91,6 +94,8 @@
             // 
             // FiltroTextBox
             // 
+            this.FiltroTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FiltroTextBox.Location = new System.Drawing.Point(207, 20);
             this.FiltroTextBox.Name = "FiltroTextBox";
             this.FiltroTextBox.Size = new System.Drawing.Size(334, 20);
@@ -174,6 +179,7 @@
             this.AceptarButtom.Text = "Aceptar";
             this.AceptarButtom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AceptarButtom.UseVisualStyleBackColor = true;
+            this.AceptarButtom.Click += new System.EventHandler(this.AceptarButtom_Click);
             // 
             // cTransferencias
             // 

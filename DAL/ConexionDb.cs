@@ -19,7 +19,7 @@ namespace DAL
         //SqlConnection Conexion = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesDB;Integrated Security=True");
         //SqlConnection Conexion = new SqlConnection(@"Data Source=.;Initial Catalog=FinanzasPersonalesY;Integrated Security=True");
        // SqlConnection Conexion = new SqlConnection(@"Data Source=.;Initial Catalog=FinanzasPersonalesY;Integrated Security=True");
-        
+
         /// <summary>
         /// Ejecutar comandos a la base de datos, recuerde pasar solo los comandos que no retornan algun valor
         /// </summary>
@@ -33,7 +33,7 @@ namespace DAL
             try
             {
                 Conexion.Open(); // abrimos la conexion
-               
+
                 Comando.Connection = Conexion; //asignamos la conexion
                 Comando.CommandText = ComandoSql;     //asignamos el comando
                 Comando.ExecuteNonQuery(); // ejecutamos el comando

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rClasificaciones));
             this.Active = new System.Windows.Forms.CheckBox();
             this.LimpiarButtom = new System.Windows.Forms.Button();
@@ -38,6 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // Active
@@ -46,7 +51,7 @@
             this.Active.BackColor = System.Drawing.Color.Transparent;
             this.Active.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Active.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Active.Location = new System.Drawing.Point(126, 96);
+            this.Active.Location = new System.Drawing.Point(82, 75);
             this.Active.Name = "Active";
             this.Active.Size = new System.Drawing.Size(68, 20);
             this.Active.TabIndex = 18;
@@ -57,7 +62,7 @@
             // 
             this.LimpiarButtom.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButtom.Image")));
             this.LimpiarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButtom.Location = new System.Drawing.Point(36, 136);
+            this.LimpiarButtom.Location = new System.Drawing.Point(15, 115);
             this.LimpiarButtom.Name = "LimpiarButtom";
             this.LimpiarButtom.Size = new System.Drawing.Size(75, 33);
             this.LimpiarButtom.TabIndex = 17;
@@ -71,7 +76,7 @@
             this.BorrarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BorrarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BorrarButtom.Image")));
             this.BorrarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BorrarButtom.Location = new System.Drawing.Point(198, 136);
+            this.BorrarButtom.Location = new System.Drawing.Point(198, 115);
             this.BorrarButtom.Name = "BorrarButtom";
             this.BorrarButtom.Size = new System.Drawing.Size(75, 33);
             this.BorrarButtom.TabIndex = 16;
@@ -85,7 +90,7 @@
             this.GuardarButtom.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GuardarButtom.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButtom.Image")));
             this.GuardarButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButtom.Location = new System.Drawing.Point(117, 136);
+            this.GuardarButtom.Location = new System.Drawing.Point(105, 115);
             this.GuardarButtom.Name = "GuardarButtom";
             this.GuardarButtom.Size = new System.Drawing.Size(75, 33);
             this.GuardarButtom.TabIndex = 15;
@@ -97,9 +102,9 @@
             // BuscarButtom
             // 
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(239, 41);
+            this.BuscarButtom.Location = new System.Drawing.Point(198, 20);
             this.BuscarButtom.Name = "BuscarButtom";
-            this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
+            this.BuscarButtom.Size = new System.Drawing.Size(57, 24);
             this.BuscarButtom.TabIndex = 14;
             this.BuscarButtom.UseVisualStyleBackColor = true;
             this.BuscarButtom.Click += new System.EventHandler(this.BuscarButtom_Click);
@@ -109,7 +114,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 73);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 13;
@@ -120,7 +125,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Location = new System.Drawing.Point(51, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 16);
             this.label1.TabIndex = 12;
@@ -128,7 +133,7 @@
             // 
             // NombreTextBox
             // 
-            this.NombreTextBox.Location = new System.Drawing.Point(126, 70);
+            this.NombreTextBox.Location = new System.Drawing.Point(82, 49);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(173, 20);
             this.NombreTextBox.TabIndex = 11;
@@ -136,16 +141,24 @@
             // IDTextBox
             // 
             this.IDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.IDTextBox.Location = new System.Drawing.Point(126, 44);
+            this.IDTextBox.Location = new System.Drawing.Point(82, 23);
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.Size = new System.Drawing.Size(98, 20);
             this.IDTextBox.TabIndex = 10;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
             // 
             // rClasificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 186);
+            this.ClientSize = new System.Drawing.Size(299, 161);
             this.Controls.Add(this.Active);
             this.Controls.Add(this.LimpiarButtom);
             this.Controls.Add(this.BorrarButtom);
@@ -160,6 +173,8 @@
             this.MinimizeBox = false;
             this.Name = "rClasificaciones";
             this.Text = "Registro de Clasificaciones";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +191,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

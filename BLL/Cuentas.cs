@@ -85,7 +85,7 @@ namespace BLL
                 Encontro = true;
                
                 this.IdCuenta = IdBuscado;
-                this.Descripcion = (string)dt.Rows[0]["Descripcion"];
+                this.Descripcion = (string)dt.Rows[0]["Descripcion"].ToString();
                 this.balance = (float )dt.Rows[0]["Balance"];
             }
 

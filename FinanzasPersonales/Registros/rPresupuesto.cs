@@ -57,6 +57,8 @@ namespace FinanzasPersonales.Registros
             {
                 p.Descripcion = DescripciontextBox.Text;
                 p.Insertar();
+                IdtextBox.Clear();
+                IdtextBox.AppendText(p.IdPresupuesto.ToString());
             }
                 
 
@@ -66,14 +68,14 @@ namespace FinanzasPersonales.Registros
         {
             if (!string.IsNullOrWhiteSpace(IdtextBox.Text) && Utilitarios.ToInt(IdtextBox.Text)  > 0)
             {
-                PresupuestoDetalle pd = new PresupuestoDetalle();
-                Clasificaciones c = new Clasificaciones();
-                p.Buscar(Utilitarios.ToInt(IdtextBox.Text));
-                DescripciontextBox.Clear();
-                DescripciontextBox.AppendText(p.Descripcion);
-
-               
-                ActualizarDataGrid(Utilitarios.ToInt(IdtextBox.Text));
+                if (p.Buscar(Utilitarios.ToInt(IdtextBox.Text))) { 
+                    PresupuestoDetalle pd = new PresupuestoDetalle();
+                    Clasificaciones c = new Clasificaciones();
+                    p.Buscar(Utilitarios.ToInt(IdtextBox.Text));
+                    DescripciontextBox.Clear();
+                    DescripciontextBox.AppendText(p.Descripcion);               
+                    ActualizarDataGrid(Utilitarios.ToInt(IdtextBox.Text));
+                }
                 
             }
         }

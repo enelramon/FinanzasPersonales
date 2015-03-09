@@ -19,7 +19,7 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
-        List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
+       List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
         
 
         
@@ -43,9 +43,10 @@ namespace BLL
             
            // string fecha = string.Format("MM / dd / yyyy", Fecha);
 
-            return Conexion.EjecutarDB("Insert Into Presupuesto (Descripcion)  Values('" + this.Descripcion + "')");
-           
-            
+            this.IdPresupuesto = 0;
+            this.IdPresupuesto = Convert.ToInt32(Conexion.EjecutarDB("Insert Into Presupuesto (Descripcion)  Values('" + this.Descripcion + "') Select @@Identity"));
+            return this.IdPresupuesto > 0;
+
 
         }
 
@@ -100,7 +101,7 @@ namespace BLL
            {
                 if (pd.Valor > 0) 
                 { 
-                    detalle.Add(pd);
+                   detalle.Add(pd);
                    return pd.Guardar(IdPresupuesto);
                 }
            }

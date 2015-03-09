@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\cClasificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cClasificacion.Designer.cs">
+      <DependentUpon>cClasificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,12 @@
     </Compile>
     <Compile Include="Consultas\cIngresos.Designer.cs">
       <DependentUpon>cIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPresupuesto.Designer.cs">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\cTransferencias.cs">
       <SubType>Form</SubType>
@@ -144,6 +157,9 @@
       <DependentUpon>rTransferencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="Consultas\cClasificacion.resx">
+      <DependentUpon>cClasificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cCuentas.resx">
       <DependentUpon>cCuentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cIngresos.resx">
       <DependentUpon>cIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cPresupuesto.resx">
+      <DependentUpon>cPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cTransferencias.resx">
       <DependentUpon>cTransferencias.cs</DependentUpon>
@@ -227,6 +246,7 @@
     </Content>
     <Content Include="Database\Script Db.sql" />
     <Content Include="Participantes\Christopher Genao.txt" />
+    <Content Include="Participantes\Felix Fernandez.txt" />
     <Content Include="Participantes\YahaidaVargas.txt" />
   </ItemGroup>
   <ItemGroup>

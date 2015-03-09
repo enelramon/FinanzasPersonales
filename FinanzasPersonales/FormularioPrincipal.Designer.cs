@@ -45,8 +45,10 @@
             this.transferenciasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gastosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,6 +196,13 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
+            // presupuestoToolStripMenuItem1
+            // 
+            this.presupuestoToolStripMenuItem1.Name = "presupuestoToolStripMenuItem1";
+            this.presupuestoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.presupuestoToolStripMenuItem1.Text = "Presupuestos";
+            this.presupuestoToolStripMenuItem1.Click += new System.EventHandler(this.presupuestoToolStripMenuItem1_Click);
+            // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ingresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem1;
 
     }
 }

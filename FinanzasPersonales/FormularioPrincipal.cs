@@ -56,7 +56,7 @@ namespace FinanzasPersonales
         {
             Registros.rPresupuesto pres = new Registros.rPresupuesto();
             pres.Show();
-        } 
+        }
 
       
 
@@ -84,6 +84,12 @@ namespace FinanzasPersonales
              Consultas.cIngresos cons = new Consultas.cIngresos();
              cons.Show();
          }
+
+        private void presupuestoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cPresupuesto cPres = new Consultas.cPresupuesto();
+            cPres.Show();
+        }
 
        
     }

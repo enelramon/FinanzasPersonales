@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 using DAL;
 using System.Data.SqlClient;
 
-//TODO: Arreglar que se inserte el valor en la base de datos. (Sale 0) y Validar Todo!!
 
 namespace BLL
 {
     public class Transferencias
     {
-        private ConexionDb Conexion = new ConexionDb();
+        private ConexionDb Conexion = new ConexionDb(); // Creando la conexion a la DB
 
         // Creando setters y getters:
         public int IdTransferencia { get; set; }
@@ -23,7 +22,7 @@ namespace BLL
         public string Concepto { get; set; }
         public float Valor { get; set; }
 
-        public Transferencias()
+        public Transferencias() // Constructor que inicializa todas las variables con un valor.
         {
             this.IdTransferencia = 0;
             this.IdCuentaOrigen = 0;
@@ -34,7 +33,7 @@ namespace BLL
         }
 
 
-        public Boolean Insertar()
+        public Boolean Insertar() // Programando metodo que inserta a la DB
         {
             bool paso2 = false;
 
@@ -53,7 +52,7 @@ namespace BLL
         }
 
 
-        public Boolean Modificar()
+        public Boolean Modificar()  // Metodo Update
         {
             bool paso1 = false;
 
@@ -68,13 +67,13 @@ namespace BLL
 
         }
 
-        public Boolean Eliminar(Int32 IdBuscado)
+        public Boolean Eliminar(Int32 IdBuscado)  // Metodo DELETE
         {
             return Conexion.EjecutarDB("Delete from Transferencias where IdTransferencia =" + IdBuscado);
         }
 
 
-        public Boolean Buscar(Int32 IdBuscado)
+        public Boolean Buscar(Int32 IdBuscado)  // Programando metodo Buscar
         {
             bool Encontro = false;
             DataTable dt = new DataTable();
