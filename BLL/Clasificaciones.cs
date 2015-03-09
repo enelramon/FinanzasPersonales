@@ -24,14 +24,14 @@ namespace BLL
         public Boolean Insert()
         {
             this.IdClasificacion = 0;
-            this.IdClasificacion = (int)Conexion.ObtenerValorDb("Insert Into (Descripcion) Values('" + this.Descripcion + "') Select @@Identity");
+            this.IdClasificacion = (int)Conexion.ObtenerValorDb("Insert Into Clasificaciones (Descripcion) Values('" + this.Descripcion + "') Select @@Identity");
 
             return this.IdClasificacion > 0;
         }
 
         public Boolean Modificar()
         {
-            return Conexion.EjecutarDB("Update Cuentas set Descripcion= '" + this.Descripcion + "' Where IdClasificacion = " + this.IdClasificacion);
+            return Conexion.EjecutarDB("Update Clasificaciones set Descripcion= '" + this.Descripcion + "' Where IdClasificacion = " + this.IdClasificacion);
 
         }
 

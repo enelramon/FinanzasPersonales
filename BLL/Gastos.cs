@@ -66,7 +66,7 @@ namespace BLL
 
             if (paso)
             {
-                Cuentas.DecrementarBalance(this.IdCuenta, Inicial + this.Monto);
+                Cuentas.DecrementarBalance(this.IdCuenta, Inicial - this.Monto);
             }
 
             return paso;//End Modificar
@@ -95,7 +95,7 @@ namespace BLL
                 //this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.IdGasto = IdBuscado;
                 this.Concepto = dt.Rows[0]["Concepto"].ToString();
-                //this.Monto = Convert.ToString((float)dt.Rows[0]["Monto"].Value);
+                this.Monto = Convert.ToInt32(dt.Rows[0]["Monto"].ToString());
                 
             }
 
@@ -107,7 +107,8 @@ namespace BLL
             return Conexion.BuscarDb("Select " + campos + " from Gastos where " + Filtro);
         }
 
-        public static DataTable GetSubClas()
+
+            public static DataTable GetSubClas()
         {
             ConexionDb Conexion = new ConexionDb();
             return Conexion.BuscarDb("Select * from SubClasificaciones");
