@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    class Presupuesto
+    public class Presupuesto
     {
         private ConexionDb Conexion = new ConexionDb(); //instanciamos la ConexionDb
      
@@ -19,7 +19,7 @@ namespace BLL
 
         public string Descripcion { get; set; }
 
-        List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
+       List<PresupuestoDetalle> detalle = new List<PresupuestoDetalle>();
         
 
         
@@ -30,27 +30,30 @@ namespace BLL
         {
             this.IdPresupuesto = 0;
             this.Descripcion = string.Empty;
+            this.Fecha = DateTime.Now;
         }
 
 
 
-        // copia del esqueleto inicial de Cuentas que todavia no esta adaptado totalmente para Presupuesto
+        
 
 
-         public Boolean Insertar()
+         public Boolean Insertar(  )
         {
+            
+           // string fecha = string.Format("MM / dd / yyyy", Fecha);
+
             this.IdPresupuesto = 0;
-
-            this.IdPresupuesto = (int)Conexion.ObtenerValorDb("Insert Into Presupuesto (Descripcion)  Values('" + this.Descripcion + "') Select @@Identity");
-
+            this.IdPresupuesto = Convert.ToInt32(Conexion.EjecutarDB("Insert Into Presupuesto (Descripcion)  Values('" + this.Descripcion + "') Select @@Identity"));
             return this.IdPresupuesto > 0;
 
+
         }
 
 
-        public Boolean Modificar()
+        public Boolean Modificar(string Descripcion)
         {
-            return Conexion.EjecutarDB("Update Presupuesto set Descripcion= '" + this.Descripcion + "' Where IdPresupuesto = " + this.IdPresupuesto);
+            return Conexion.EjecutarDB("Update Presupuesto set Descripcion= '" + Descripcion + "' Where IdPresupuesto = " + this.IdPresupuesto);
 
         }
 
@@ -62,21 +65,21 @@ namespace BLL
 
        
 
-        public Boolean Buscar(Int32 IdBuscado)
+        public  Boolean Buscar(Int32 IdBuscado)
         {
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listar("Descripcion", "IdPresupuesto=" + IdBuscado);
+            dt = this.Listar("*", "IdPresupuesto = " + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
                 Encontro = true;
-
+                DataRow[] dr ;
+                dr = dt.Select("IdPresupuesto = " + IdBuscado);
                 this.IdPresupuesto = IdBuscado;
-                this.Descripcion = (string)dt.Rows[0]["Descripcion"];
+                this.Descripcion = (string)dr[0]["Descripcion"];
                 
-               
             }
 
             return Encontro;
@@ -89,12 +92,21 @@ namespace BLL
 
 
 
-        //Agrega un detalle a la Tabla Presupuesto detalle con el Id del presupuesto que se esta trabajando actualmente
-        public bool Add(int Valor, int IdClasificacion)
+        //Agrega un detalle a la Lista  detalle 
+        public int Add(int IdPresupuesto ,int IdClasificacion, int Valor)
         {
+           
+            PresupuestoDetalle pd = new PresupuestoDetalle(IdClasificacion, Valor);
+           if (Buscar(IdPresupuesto)) 
+           {
+                if (pd.Valor > 0) 
+                { 
+                   detalle.Add(pd);
+                   return pd.Guardar(IdPresupuesto);
+                }
+           }
 
-            return Conexion.EjecutarDB("Insert Into PresupuestoDetalle (IdPresupuesto, IdClasificacion, Valor)  Values(" + this.IdPresupuesto + " , " + IdClasificacion + " , " + Valor + ") ");
-              
+           return 0;      
         }
 
 

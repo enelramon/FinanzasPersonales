@@ -59,6 +59,7 @@
             this.DatosdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatosdataGridView.Size = new System.Drawing.Size(546, 315);
             this.DatosdataGridView.TabIndex = 0;
+            this.DatosdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosdataGridView_CellContentClick);
             // 
             // BuscarButtom
             // 
@@ -103,6 +104,7 @@
             this.FiltrotextBox.Name = "FiltrotextBox";
             this.FiltrotextBox.Size = new System.Drawing.Size(268, 20);
             this.FiltrotextBox.TabIndex = 36;
+            this.FiltrotextBox.TextChanged += new System.EventHandler(this.FiltrotextBox_TextChanged);
             // 
             // label3
             // 

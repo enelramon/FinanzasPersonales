@@ -8,9 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    
     public class Ingresos
     {
         private ConexionDb Conexion = new ConexionDb();

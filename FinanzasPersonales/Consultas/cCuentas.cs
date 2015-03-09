@@ -70,5 +70,15 @@ namespace FinanzasPersonales.Consultas
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void DatosdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FiltrotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
