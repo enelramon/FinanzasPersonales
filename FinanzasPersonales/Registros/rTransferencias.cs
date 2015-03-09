@@ -37,7 +37,7 @@ namespace FinanzasPersonales.Registros
             Transferencia.Concepto = ConceptoTextBox.Text;
             Transferencia.IdCuentaOrigen = Utilitarios.ToInt(IdCuentaOrigenTextBox.Text);
             Transferencia.IdCuentaDestino = Utilitarios.ToInt(IdCuentaDestinoTextBox.Text);
-            Transferencia.Valor = Utilitarios.ToInt(IdTransferenciaTextBox.Text);
+            Transferencia.Valor = Utilitarios.ToInt(ValorTextBox.Text);
 
             ErrorProvider EP = new ErrorProvider();
            bool ValidConcept = Utilitarios.ValidarTextBoxVacio(ConceptoTextBox, EP, "Por favor asigne un Concepto.");
