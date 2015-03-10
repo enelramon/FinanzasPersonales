@@ -78,7 +78,7 @@ namespace BLL
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Prestamos set Balance = Balance -" + ValorDecrementar.ToString() + "Where IdPrestamo =" + IdPrestamo.ToString());
+            return Conexion.EjecutarDB("Update Prestamos set Balance = Balance - " + ValorDecrementar.ToString() + "Where IdPrestamo = " + IdPrestamo.ToString());
 
         }
 

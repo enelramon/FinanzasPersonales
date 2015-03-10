@@ -62,7 +62,7 @@ namespace BLL
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Cuentas Set Balance=Balance+" + ValorAumentar.ToString() + "Where IdCuenta=" + IdCuenta.ToString() );
+            return Conexion.EjecutarDB("Update Cuentas Set Balance=Balance+" + ValorAumentar.ToString() + " Where IdCuenta= " + IdCuenta.ToString() );
        
         }
 
@@ -70,7 +70,7 @@ namespace BLL
         {
             ConexionDb Conexion = new ConexionDb();
 
-        return Conexion.EjecutarDB("Update Cuentas set Balance = Balance -" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdCuenta.ToString());
+        return Conexion.EjecutarDB("Update Cuentas set Balance = Balance -" + ValorDecrementar.ToString() + " Where IdCuenta = " + IdCuenta.ToString());
             
         }
 

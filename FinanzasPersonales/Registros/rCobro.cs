@@ -24,21 +24,22 @@ namespace FinanzasPersonales.Registros
         {
             Prestamos pres = new Prestamos();
 
-            PrestamoComboBox.DataSource = pres.Listar("IdPrestamo,Concepto", "Balance >= 0");
-            PrestamoComboBox.ValueMember = "Balance";
+            PrestamoComboBox.DataSource = pres.Listar("IdPrestamo,Concepto", "Balance > 0");
+            PrestamoComboBox.ValueMember = "IdPrestamo";
             PrestamoComboBox.DisplayMember = "Concepto";
-        }
+          
+            }
 
         private void GuardarButtom_Click(object sender, EventArgs e)
         {
             Boolean paso = false;
 
-            if (!Utilitarios.ValidarTextBoxVacio(MontoTextBox, errorProvider1, "Debe introducir algun Concepto"))
+            if (!Utilitarios.ValidarTextBoxVacio(MontoTextBox, errorProvider1, "Debe introducir Un Monto"))
                 return;
 
             if (MontoTextBox.Text.Trim().Length == 0)
             {
-               errorProvider2.SetError(MontoTextBox, "Debe introducir Algun Concepto.");
+               errorProvider2.SetError(MontoTextBox, "Debe introducir Algun Monto.");
                MontoTextBox.Focus();
                 return;
            }
@@ -48,7 +49,7 @@ namespace FinanzasPersonales.Registros
             CPrestamo.IdPrestamo = Utilitarios.ToInt(PrestamoComboBox.SelectedValue.ToString());
             CPrestamo.Monto = Convert.ToInt32(MontoTextBox.Text);
             
-            if (CPrestamo.IdPrestamo > 0) {
+            if (CPrestamo.IdCobro > 0) {
                 //Editando
                 IdCobroTextBox.Clear();
                 MontoTextBox.Clear();
@@ -72,5 +73,6 @@ namespace FinanzasPersonales.Registros
             MontoTextBox.Clear();
             BalancePTextBox3.Clear();
         }
+
     }
 }

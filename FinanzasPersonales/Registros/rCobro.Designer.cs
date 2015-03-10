@@ -180,7 +180,8 @@
             this.PrestamoComboBox.FormattingEnabled = true;
             this.PrestamoComboBox.Items.AddRange(new object[] {
             "IdPrestamo",
-            "Concepto"});
+            "Concepto",
+            "Balance"});
             this.PrestamoComboBox.Location = new System.Drawing.Point(97, 57);
             this.PrestamoComboBox.Name = "PrestamoComboBox";
             this.PrestamoComboBox.Size = new System.Drawing.Size(345, 21);

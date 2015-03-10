@@ -28,13 +28,12 @@ namespace BLL
         {
             bool paso2 = false;
 
-            this.IdPrestamo = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into CobroPrestamos(IdPrestamo,Monto)  Values("+this.Monto + "," + this.IdPrestamo + ") Select @@Identity"));
+            this.IdPrestamo = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into CobrosPrestamos (IdPrestamo,Monto)  Values("+this.IdPrestamo + "," + this.Monto+ ") Select @@Identity"));
 
             paso2 = this.IdPrestamo > 0;
 
             if (paso2)
             {
-
                 Prestamos.DecrementarBalance(this.IdPrestamo, this.Monto);
             }
 
@@ -44,7 +43,7 @@ namespace BLL
 
         public Boolean Eliminar(Int32 IdBuscado)
         {
-            return Conexion.EjecutarDB("Delete from CobroPrestamos where IdCobro=" + IdBuscado);
+            return Conexion.EjecutarDB("Delete from CobrosPrestamos where IdCobro=" + IdBuscado);
         }
 
 
@@ -70,7 +69,7 @@ namespace BLL
 
         public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
-            return Conexion.BuscarDb("Select " + campos + " from CobroPrestamos where " + Filtro);
+            return Conexion.BuscarDb("Select " + campos + " from CobrosPrestamos where " + Filtro);
         }
     }
 }
