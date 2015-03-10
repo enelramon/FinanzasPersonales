@@ -78,17 +78,17 @@ namespace BLL
         public Boolean Buscar(Int32 IdBuscado)
         {
             bool Encontro = false;
-            DataTable dt = new DataTable(); 
+            DataTable dt = new DataTable();
 
             dt = this.Listar("Descripcion,Balance", "IdCuenta=" + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {
                 Encontro = true;
-               
+
                 this.IdCuenta = IdBuscado;
                 this.Descripcion = (string)dt.Rows[0]["Descripcion"].ToString();
-                this.balance = (float )dt.Rows[0]["Balance"];
+                this.balance = (float)dt.Rows[0]["Balance"];
             }
 
             return Encontro;

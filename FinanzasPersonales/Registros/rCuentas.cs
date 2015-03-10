@@ -105,6 +105,11 @@ namespace FinanzasPersonales.Registros
             BalanceTextBox.Clear();
         }
 
+        private void BalanceTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

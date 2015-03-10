@@ -153,6 +153,7 @@
             this.BalanceTextBox.Name = "BalanceTextBox";
             this.BalanceTextBox.Size = new System.Drawing.Size(121, 20);
             this.BalanceTextBox.TabIndex = 28;
+            this.BalanceTextBox.TextChanged += new System.EventHandler(this.BalanceTextBox_TextChanged);
             // 
             // rCuentas
             // 

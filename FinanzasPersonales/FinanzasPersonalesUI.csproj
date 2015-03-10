@@ -150,6 +150,18 @@
     <Compile Include="Registros\rPresupuesto.Designer.cs">
       <DependentUpon>rPresupuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rRegistro de Cobros de Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rRegistro de Cobros de Prestamos.Designer.cs">
+      <DependentUpon>rRegistro de Cobros de Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rRegistro de prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rRegistro de prestamos.Designer.cs">
+      <DependentUpon>rRegistro de prestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rTransferencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rPresupuesto.resx">
       <DependentUpon>rPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rRegistro de Cobros de Prestamos.resx">
+      <DependentUpon>rRegistro de Cobros de Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rRegistro de prestamos.resx">
+      <DependentUpon>rRegistro de prestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rTransferencias.resx">
       <DependentUpon>rTransferencias.cs</DependentUpon>
