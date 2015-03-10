@@ -93,6 +93,23 @@ namespace FinanzasPersonales
             cPres.Show();
         }
 
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rPrestamos rPres = new Registros.rPrestamos();
+            rPres.Show();
+        }
+
+        private void cobrosPrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rCobrosPrestamos rCobP = new Registros.rCobrosPrestamos();
+            rCobP.Show();
+        }
+
+        private void clasificacionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cClasificacion cClasificacion = new Consultas.cClasificacion();
+            cClasificacion.Show();
+        }
        
     }
 }

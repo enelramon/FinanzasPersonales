@@ -38,6 +38,23 @@ Create table PresupuestoDetalle(
 IdPresupuesto int IDENTITY(1,1) Primary Key,
 IdClasificacion int references Clasificaciones(IdClasificacion),
 Valor float);
+
+create table Prestamos(
+IdPrestamo int identity(1,1),
+Cuenta int,
+Concepto varchar(50),
+Monto float,
+Balance float
+);
+
+create table CobroPrestmos(
+IdCobro int identity(1,1),
+IdPrestamo int,
+Monto float
+);
+
+
+
  
 
 -- select * from SubClasificaciones

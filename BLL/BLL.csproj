@@ -54,9 +54,11 @@
     </Compile>
     <Compile Include="Gastos.cs" />
     <Compile Include="Ingresos.cs" />
+    <Compile Include="Prestamos.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CobrosPrestamos.cs" />
     <Compile Include="SubClasificaciones.cs" />
     <Compile Include="Transferencias.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

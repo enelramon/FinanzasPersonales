@@ -48,6 +48,7 @@ namespace FinanzasPersonales.Registros
                
                 paso = clasificacion.Insertar();
 
+
             }
 
             if (paso)
