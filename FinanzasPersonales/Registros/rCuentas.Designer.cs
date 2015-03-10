@@ -48,7 +48,7 @@
             // 
             this.IdCuentatextBox.Location = new System.Drawing.Point(89, 25);
             this.IdCuentatextBox.Name = "IdCuentatextBox";
-            this.IdCuentatextBox.Size = new System.Drawing.Size(43, 20);
+            this.IdCuentatextBox.Size = new System.Drawing.Size(64, 20);
             this.IdCuentatextBox.TabIndex = 21;
             // 
             // DescripciontextBox
@@ -81,7 +81,7 @@
             // BuscarButtom
             // 
             this.BuscarButtom.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButtom.Image")));
-            this.BuscarButtom.Location = new System.Drawing.Point(138, 23);
+            this.BuscarButtom.Location = new System.Drawing.Point(159, 23);
             this.BuscarButtom.Name = "BuscarButtom";
             this.BuscarButtom.Size = new System.Drawing.Size(34, 24);
             this.BuscarButtom.TabIndex = 24;

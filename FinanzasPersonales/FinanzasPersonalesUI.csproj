@@ -132,6 +132,18 @@
     <Compile Include="Registros\rCuentas.Designer.cs">
       <DependentUpon>rCuentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\Registro de Cobros de Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\Registro de Cobros de Prestamos.Designer.cs">
+      <DependentUpon>Registro de Cobros de Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\Registros de Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\Registros de Prestamos.Designer.cs">
+      <DependentUpon>Registros de Prestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rGastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rCuentas.resx">
       <DependentUpon>rCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\Registro de Cobros de Prestamos.resx">
+      <DependentUpon>Registro de Cobros de Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\Registros de Prestamos.resx">
+      <DependentUpon>Registros de Prestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rGastos.resx">
       <DependentUpon>rGastos.cs</DependentUpon>
