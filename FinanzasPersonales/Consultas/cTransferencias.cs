@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 
+// probando branch
+
 namespace FinanzasPersonales.Consultas
 {
     public partial class cTransferencias : Form
@@ -77,7 +79,7 @@ namespace FinanzasPersonales.Consultas
             TotalTextBox.Text = dt.Compute("Sum(Valor)", "1=1").ToString();
         }
 
-        private void CancelarButtom_Click(object sender, EventArgs e)
+        private void CancelarButtom_Click(object sender, EventArgs e) // Programando boton cancelar
         {
         
             datoEncontrado = 0;

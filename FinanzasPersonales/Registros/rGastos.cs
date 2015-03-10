@@ -69,7 +69,7 @@ namespace FinanzasPersonales.Registros
                 errorProvider4.SetError(ConceptoTextBox, "Los caracteres no pueden exeder a 80");
                 ConceptoTextBox.Focus();
             return;
-        }
+            }
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
             Gastos.Monto = Convert.ToSingle(MontoTextBox.Text);
@@ -142,6 +142,7 @@ namespace FinanzasPersonales.Registros
             }
 
         }
+
         private void rGastos_Load(object sender, EventArgs e)
         {
             Cuentas cuenta = new Cuentas();

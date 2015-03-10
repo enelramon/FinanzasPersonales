@@ -12,6 +12,8 @@ namespace BLL
     public class Gastos
     {
         private ConexionDb Conexion = new ConexionDb(); //instanciamos la ConexionDb
+        
+        //probando gastos v2
 
         public int IdGasto { get; set; }
         public string Concepto { get; set; }

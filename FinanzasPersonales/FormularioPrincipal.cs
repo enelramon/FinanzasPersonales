@@ -76,6 +76,12 @@ namespace FinanzasPersonales
             cPres.Show();
         }
 
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rPrestamos rPres = new Registros.rPrestamos();
+            rPres.Show();
+        }
+
        
     }
 }

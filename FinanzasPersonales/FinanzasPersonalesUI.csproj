@@ -132,6 +132,12 @@
     <Compile Include="Registros\rGastos.Designer.cs">
       <DependentUpon>rGastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rPrestamos.Designer.cs">
+      <DependentUpon>rPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rGastos.resx">
       <DependentUpon>rGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rPrestamos.resx">
+      <DependentUpon>rPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rPresupuesto.resx">
       <DependentUpon>rPresupuesto.cs</DependentUpon>
