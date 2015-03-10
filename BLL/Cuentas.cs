@@ -39,7 +39,7 @@ namespace BLL
         {
             this.IdCuenta = 0;
 
-            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion,Balance)  Values('" + this.Descripcion + "',0) Select @@Identity");
+            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion,Balance)  Values('" + this.Descripcion + "',"+this.balance+") Select @@Identity");
 
             return this.IdCuenta > 0;
 
@@ -70,7 +70,8 @@ namespace BLL
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Cuentas set Balance= Balance-" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdCuenta.ToString());
+        return Conexion.EjecutarDB("Update Cuentas set Balance = Balance -" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdCuenta.ToString());
+            
         }
 
         public Boolean Buscar(Int32 IdBuscado)

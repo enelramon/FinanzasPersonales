@@ -49,11 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clasificaciones.cs" />
+    <Compile Include="CobroPrestamos.cs" />
     <Compile Include="Cuentas.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gastos.cs" />
     <Compile Include="Ingresos.cs" />
+    <Compile Include="Prestamos.cs" />
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
