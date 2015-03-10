@@ -34,7 +34,6 @@
             this.MontoTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.PrestamoComboBox = new System.Windows.Forms.ComboBox();
             this.LimpiarButtom = new System.Windows.Forms.Button();
             this.BorrarButtom = new System.Windows.Forms.Button();
             this.GuardarButtom = new System.Windows.Forms.Button();
@@ -44,23 +43,9 @@
             this.IdCobroTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.finanzasPersonalesDBDataSet = new FinanzasPersonales.FinanzasPersonalesDBDataSet();
-            this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosTableAdapter = new FinanzasPersonales.FinanzasPersonalesDBDataSetTableAdapters.PrestamosTableAdapter();
-            this.finanzasPersonalesDBDataSet1 = new FinanzasPersonales.FinanzasPersonalesDBDataSet1();
-            this.prestamosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosTableAdapter1 = new FinanzasPersonales.FinanzasPersonalesDBDataSet1TableAdapters.PrestamosTableAdapter();
-            this.finanzasPersonalesDBDataSet2 = new FinanzasPersonales.FinanzasPersonalesDBDataSet2();
-            this.prestamosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamosTableAdapter2 = new FinanzasPersonales.FinanzasPersonalesDBDataSet2TableAdapters.PrestamosTableAdapter();
+            this.PrestamoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // BalancePTextBox3
@@ -99,19 +84,6 @@
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 56;
             this.label4.Text = "Monto";
-            // 
-            // PrestamoComboBox
-            // 
-            this.PrestamoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrestamoComboBox.DataSource = this.prestamosBindingSource2;
-            this.PrestamoComboBox.DisplayMember = "Concepto";
-            this.PrestamoComboBox.FormattingEnabled = true;
-            this.PrestamoComboBox.Location = new System.Drawing.Point(96, 57);
-            this.PrestamoComboBox.Name = "PrestamoComboBox";
-            this.PrestamoComboBox.Size = new System.Drawing.Size(310, 21);
-            this.PrestamoComboBox.TabIndex = 54;
-            this.PrestamoComboBox.ValueMember = "Balance";
             // 
             // LimpiarButtom
             // 
@@ -203,58 +175,27 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // finanzasPersonalesDBDataSet
+            // PrestamoComboBox
             // 
-            this.finanzasPersonalesDBDataSet.DataSetName = "FinanzasPersonalesDBDataSet";
-            this.finanzasPersonalesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosBindingSource
-            // 
-            this.prestamosBindingSource.DataMember = "Prestamos";
-            this.prestamosBindingSource.DataSource = this.finanzasPersonalesDBDataSet;
-            // 
-            // prestamosTableAdapter
-            // 
-            this.prestamosTableAdapter.ClearBeforeFill = true;
-            // 
-            // finanzasPersonalesDBDataSet1
-            // 
-            this.finanzasPersonalesDBDataSet1.DataSetName = "FinanzasPersonalesDBDataSet1";
-            this.finanzasPersonalesDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosBindingSource1
-            // 
-            this.prestamosBindingSource1.DataMember = "Prestamos";
-            this.prestamosBindingSource1.DataSource = this.finanzasPersonalesDBDataSet1;
-            // 
-            // prestamosTableAdapter1
-            // 
-            this.prestamosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // finanzasPersonalesDBDataSet2
-            // 
-            this.finanzasPersonalesDBDataSet2.DataSetName = "FinanzasPersonalesDBDataSet2";
-            this.finanzasPersonalesDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosBindingSource2
-            // 
-            this.prestamosBindingSource2.DataMember = "Prestamos";
-            this.prestamosBindingSource2.DataSource = this.finanzasPersonalesDBDataSet2;
-            // 
-            // prestamosTableAdapter2
-            // 
-            this.prestamosTableAdapter2.ClearBeforeFill = true;
+            this.PrestamoComboBox.FormattingEnabled = true;
+            this.PrestamoComboBox.Items.AddRange(new object[] {
+            "Concepto",
+            "Balance"});
+            this.PrestamoComboBox.Location = new System.Drawing.Point(97, 57);
+            this.PrestamoComboBox.Name = "PrestamoComboBox";
+            this.PrestamoComboBox.Size = new System.Drawing.Size(345, 21);
+            this.PrestamoComboBox.TabIndex = 60;
             // 
             // rCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 262);
+            this.Controls.Add(this.PrestamoComboBox);
             this.Controls.Add(this.BalancePTextBox3);
             this.Controls.Add(this.MontoTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.PrestamoComboBox);
             this.Controls.Add(this.LimpiarButtom);
             this.Controls.Add(this.BorrarButtom);
             this.Controls.Add(this.GuardarButtom);
@@ -267,12 +208,6 @@
             this.Load += new System.EventHandler(this.rCobro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finanzasPersonalesDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +219,6 @@
         private System.Windows.Forms.TextBox MontoTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox PrestamoComboBox;
         private System.Windows.Forms.Button LimpiarButtom;
         private System.Windows.Forms.Button BorrarButtom;
         private System.Windows.Forms.Button GuardarButtom;
@@ -294,14 +228,6 @@
         private System.Windows.Forms.TextBox IdCobroTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
-        private FinanzasPersonalesDBDataSet finanzasPersonalesDBDataSet;
-        private System.Windows.Forms.BindingSource prestamosBindingSource;
-        private FinanzasPersonalesDBDataSetTableAdapters.PrestamosTableAdapter prestamosTableAdapter;
-        private FinanzasPersonalesDBDataSet1 finanzasPersonalesDBDataSet1;
-        private System.Windows.Forms.BindingSource prestamosBindingSource1;
-        private FinanzasPersonalesDBDataSet1TableAdapters.PrestamosTableAdapter prestamosTableAdapter1;
-        private FinanzasPersonalesDBDataSet2 finanzasPersonalesDBDataSet2;
-        private System.Windows.Forms.BindingSource prestamosBindingSource2;
-        private FinanzasPersonalesDBDataSet2TableAdapters.PrestamosTableAdapter prestamosTableAdapter2;
+        private System.Windows.Forms.ComboBox PrestamoComboBox;
     }
 }

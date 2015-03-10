@@ -106,21 +106,6 @@
     <Compile Include="Consultas\cTransferencias.Designer.cs">
       <DependentUpon>cTransferencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="FinanzasPersonalesDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinanzasPersonalesDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesDBDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinanzasPersonalesDBDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinanzasPersonalesDBDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,39 +205,6 @@
     <EmbeddedResource Include="Registros\rTransferencias.resx">
       <DependentUpon>rTransferencias.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="FinanzasPersonalesDBDataSet.xsc">
-      <DependentUpon>FinanzasPersonalesDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet.xss">
-      <DependentUpon>FinanzasPersonalesDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet1.xsc">
-      <DependentUpon>FinanzasPersonalesDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet1.xss">
-      <DependentUpon>FinanzasPersonalesDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet2.xsc">
-      <DependentUpon>FinanzasPersonalesDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinanzasPersonalesDBDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinanzasPersonalesDBDataSet2.xss">
-      <DependentUpon>FinanzasPersonalesDBDataSet2.xsd</DependentUpon>
-    </None>
     <None Include="FinanzasPersonalesUI_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

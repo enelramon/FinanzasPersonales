@@ -22,12 +22,6 @@ namespace FinanzasPersonales.Registros
 
         private void rCobro_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finanzasPersonalesDBDataSet2.Prestamos' table. You can move, or remove it, as needed.
-            this.prestamosTableAdapter2.Fill(this.finanzasPersonalesDBDataSet2.Prestamos);
-            // TODO: This line of code loads data into the 'finanzasPersonalesDBDataSet1.Prestamos' table. You can move, or remove it, as needed.
-            this.prestamosTableAdapter1.Fill(this.finanzasPersonalesDBDataSet1.Prestamos);
-            // TODO: This line of code loads data into the 'finanzasPersonalesDBDataSet.Prestamos' table. You can move, or remove it, as needed.
-            this.prestamosTableAdapter.Fill(this.finanzasPersonalesDBDataSet.Prestamos);
             Prestamos Prestamo = new Prestamos();
 
             PrestamoComboBox.DataSource = Prestamo.Listar("Concepto, Balance,", "1=1");
