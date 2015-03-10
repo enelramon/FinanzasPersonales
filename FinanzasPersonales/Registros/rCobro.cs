@@ -22,9 +22,9 @@ namespace FinanzasPersonales.Registros
 
         private void rCobro_Load(object sender, EventArgs e)
         {
-            Prestamos Prestamo = new Prestamos();
+            Prestamos pres = new Prestamos();
 
-            PrestamoComboBox.DataSource = Prestamo.Listar("Concepto, Balance,", "1=1");
+            PrestamoComboBox.DataSource = pres.Listar("IdPrestamo,Concepto", "Balance >= 0");
             PrestamoComboBox.ValueMember = "Balance";
             PrestamoComboBox.DisplayMember = "Concepto";
         }

@@ -67,6 +67,7 @@ namespace FinanzasPersonales.Registros
             Prestamos.IdCuenta = Utilitarios.ToInt(CuentaComboBox.SelectedValue.ToString());
             Prestamos.Concepto = ConceptoTextBox.Text;
             Prestamos.Monto = Convert.ToInt32(MontoTextBox.Text);
+            Prestamos.Balance = Convert.ToInt32(MontoTextBox.Text);
             
             if (Prestamos.IdPrestamo > 0) {
                 //Editando

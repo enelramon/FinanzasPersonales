@@ -40,7 +40,6 @@ namespace BLL
 
             if (paso2)
             {
-
                 Cuentas.DecrementarBalance(this.IdCuenta, this.Monto);
             }
 
@@ -75,9 +74,18 @@ namespace BLL
             return Encontro;
         }
 
+        public static Boolean DecrementarBalance(int IdPrestamo, float ValorDecrementar)
+        {
+            ConexionDb Conexion = new ConexionDb();
+
+            return Conexion.EjecutarDB("Update Prestamos set Balance = Balance -" + ValorDecrementar.ToString() + "Where IdPrestamo =" + IdPrestamo.ToString());
+
+        }
+
         public DataTable Listar(string campos = "*", string Filtro = "1=1")
         {
             return Conexion.BuscarDb("Select " + campos + " from Prestamos where " + Filtro);
         }
+        
     }
 }

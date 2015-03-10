@@ -20,7 +20,6 @@ namespace BLL
 
         public CobroPrestamos()
         {
-            Cuentas ct = new Cuentas();
             this.IdPrestamo = 0;
             this.Monto = 0;
         }
@@ -36,7 +35,7 @@ namespace BLL
             if (paso2)
             {
 
-                Cuentas.DecrementarBalance(this.IdPrestamo, this.Monto);
+                Prestamos.DecrementarBalance(this.IdPrestamo, this.Monto);
             }
 
             return paso2;
