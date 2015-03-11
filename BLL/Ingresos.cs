@@ -43,10 +43,10 @@ namespace BLL
 
             this.IdIngreso = 0;
 
-            string va;
-            va = String.Format("'{0}',{1},{2},'{3}',{4}", Fecha, IdCuenta, IdSubClas, Concepto, Valor);
-            this.IdIngreso = (int)Conexion.ObtenerValorDb("Insert Into Ingresos (Fecha, IdCuenta, IdSubClas, Concepto, Valor)  Values('" + va + "')Select @@Identity");
+            this.IdIngreso = (int)Conexion.ObtenerValorDb("Insert Into Ingresos (Fecha, IdCuenta, IdSubClas, Concepto, Valor)  Values(GETDATE(),"+this.IdCuenta+","+this.IdSubClas+",'"+this.Concepto+"',"+this.Valor+")Select @@Identity");
 
+
+                                                         
             return this.IdIngreso > 0;
 
         }

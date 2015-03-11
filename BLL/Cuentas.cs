@@ -18,8 +18,10 @@ namespace BLL
         public string Descripcion { get; set; }
 
        private  float balance;
+
        public float Balance 
        {
+           set { this.balance = value; }
            get { return balance; } 
        }
       
@@ -76,7 +78,7 @@ namespace BLL
         public Boolean Buscar(Int32 IdBuscado)
         {
             bool Encontro = false;
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable(); 
 
             dt = this.Listar("Descripcion,Balance", "IdCuenta=" + IdBuscado);
 

@@ -64,7 +64,7 @@ namespace FinanzasPersonales.Registros
                 return;
            }
             
-            if (ConceptoTextBox.Text.Trim().Length > 80)
+            if (ConceptoTextBox.Text.Trim().Length == 0 || ConceptoTextBox.Text.Trim().Length > 80)
             {
                 errorProvider4.SetError(ConceptoTextBox, "Los caracteres no pueden exeder a 80");
                 ConceptoTextBox.Focus();
@@ -72,7 +72,7 @@ namespace FinanzasPersonales.Registros
             }
             Gastos.IdGasto = Utilitarios.ToInt(IDTextBox.Text);
             Gastos.Concepto = ConceptoTextBox.Text;
-            Gastos.Monto = Convert.ToSingle(MontoTextBox.Text);
+            Gastos.Monto = Convert.ToInt32(MontoTextBox.Text);
             Gastos.IdCuenta = Utilitarios.ToInt(BuscarPorcomboBox.SelectedValue.ToString());
             Gastos.IdSubClas = Utilitarios.ToInt(BuscarPor2comboBox.SelectedValue.ToString());
 
@@ -137,8 +137,10 @@ namespace FinanzasPersonales.Registros
 
             if (Gastos.Buscar(Utilitarios.ToInt(IDTextBox.Text)))
             {
+                
                 IDTextBox.Text = Gastos.IdGasto.ToString();
                 ConceptoTextBox.Text = Gastos.Concepto;
+                //todo: Seguir el intento de la conversion de Float a String. MontoTextBox.Text = string.TryParse(MontoTextBox.Text, Gastos.Monto);
             }
 
         }
