@@ -54,7 +54,9 @@
     </Compile>
     <Compile Include="Gastos.cs" />
     <Compile Include="Ingresos.cs" />
-    <Compile Include="Prestamos.cs" />
+    <Compile Include="..\..\..\..\Prestamos.cs">
+      <Link>Prestamos.cs</Link>
+    </Compile>
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
