@@ -22,10 +22,19 @@ namespace FinanzasPersonales.Registros
         private void rPrestamos_Load(object sender, EventArgs e)
         {
             Cuentas cuenta = new Cuentas();
-            CuentacomboBox.DataSource = cuenta.Listar();
-            CuentacomboBox.ValueMember = "IdCuenta";
-            CuentacomboBox.DisplayMember = "Descripcion";
+            if (cuenta.Listar().Rows.Count > 0)
+            {
+                CuentacomboBox.DataSource = cuenta.Listar();
+                CuentacomboBox.ValueMember = "IdCuenta";
+                CuentacomboBox.DisplayMember = "Descripcion";
+            }
+            else
+            {
+                MessageBox.Show("No hay Cuentas existentes.");
+                this.Close();
+            }
         }
+
 
         private void BuscarButtom_Click(object sender, EventArgs e)
         {
@@ -48,24 +57,25 @@ namespace FinanzasPersonales.Registros
 
         private void LimpiarButtom_Click(object sender, EventArgs e)
         {
-            IdPrestamotextBox.Clear();
-            ConceptotextBox.Clear();
-            MontotextBox.Clear();
-            BalancetextBox.Clear();
+            Limpiar();
+            
         }
 
         private void GuardarButtom_Click(object sender, EventArgs e)
         {
             
             Prestamo p = new Prestamo();
-            if (Utilitarios.ValidarTextBoxVacio(IdPrestamotextBox, err, "Por favor introduzca un dato.") && Utilitarios.ValidarTextBoxVacio(ConceptotextBox, err, "Por favor introduzca un dato.") && Utilitarios.ValidarTextBoxVacio(MontotextBox, err, "Por favor introduzca un dato.") && Utilitarios.ToInt(MontotextBox.Text)> 0) 
+            if ( Utilitarios.ValidarTextBoxVacio(ConceptotextBox, err, "Por favor introduzca un dato.") && Utilitarios.ValidarTextBoxVacio(MontotextBox, err, "Por favor introduzca un dato.") && Utilitarios.ToInt(MontotextBox.Text)> 0) 
             {
                 
                 p.IdCuenta = (int)CuentacomboBox.SelectedValue;
                 p.Concepto = ConceptotextBox.Text;
-                p.Monto = Utilitarios.ToInt(MontotextBox.Text);                
+                p.Monto = Utilitarios.ToInt(MontotextBox.Text);
+                p.Balance += p.Monto;
                 p.Insertar();
                 Cuentas.DecrementarBalance((int)CuentacomboBox.SelectedValue, p.Monto);
+                Limpiar();
+                
 
             }    
 
@@ -79,8 +89,17 @@ namespace FinanzasPersonales.Registros
                 if (p.Buscar(Utilitarios.ToInt(IdPrestamotextBox.Text)))
                 {
                     p.Eliminar(Utilitarios.ToInt(IdPrestamotextBox.Text));
+                    Limpiar();
                 }
             }
+        }
+
+        private void Limpiar() 
+        {
+            IdPrestamotextBox.Clear();
+            ConceptotextBox.Clear();
+            MontotextBox.Clear();
+            BalancetextBox.Clear();
         }
 
     }// end class

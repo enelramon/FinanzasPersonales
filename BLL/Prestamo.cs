@@ -29,13 +29,13 @@ namespace BLL
 
         public bool Insertar( ) 
         {
-            this.IdPrestamo = (int)Conexion.ObtenerValorDb("Insert into Prestamos (IdCuenta, Concepto, Monto, Balance) values("+this.IdCuenta+", '"+this.Concepto+"', "+this.Monto +", "+Balance+")Select @@Identity");
+            this.IdPrestamo = Convert.ToInt32(Conexion.ObtenerValorDb("Insert into Prestamos (IdCuenta, Concepto, Monto, Balance) values("+this.IdCuenta+", '"+this.Concepto+"', "+this.Monto +", "+Balance+")Select @@Identity"));
             return IdPrestamo > 0;
         }
 
-        public Boolean Modificar(int Balance)
+        public Boolean Modificar(float Balance)
         {
-            return Conexion.EjecutarDB("Update Prestamo set Balance= " + Balance + " Where IdPrestamo = " + this.IdPrestamo);
+            return Conexion.EjecutarDB("Update Prestamos set Balance= " + Balance + " Where IdPrestamo = " + this.IdPrestamo);
 
         }
 
@@ -58,8 +58,8 @@ namespace BLL
                 dr = dt.Select("IdPrestamo = " + IdBuscado);
                 this.IdPrestamo = IdBuscado;
                 this.Concepto = (string)dr[0]["Concepto"];
-                this.Monto = (float)dr[0]["Monto"];
-                this.Balance = (float)dr[0]["Balance"];
+                this.Monto = Convert.ToSingle(dr[0]["Monto"]);
+                this.Balance = Convert.ToSingle(dr[0]["Balance"]);
             }
 
             return Encontro;

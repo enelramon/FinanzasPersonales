@@ -22,9 +22,17 @@ namespace FinanzasPersonales.Registros
         private void Cobro_de_Prestamos_Load(object sender, EventArgs e)
         {
             Prestamo p = new Prestamo();
-            PrestamoComboBox.DataSource = p.Listar();
-            PrestamoComboBox.ValueMember = "IdPrestamo";
-            PrestamoComboBox.DisplayMember = "Concepto";
+            if (p.Listar().Rows.Count > 0)
+            {
+                PrestamoComboBox.DataSource = p.Listar();
+                PrestamoComboBox.ValueMember = "IdPrestamo";
+                PrestamoComboBox.DisplayMember = "Concepto";
+            }
+            else 
+            {
+                MessageBox.Show("No hay Cuentas por cobrar.");
+                this.Close();
+            }
         }
 
         private void LimpiarButtom_Click(object sender, EventArgs e)
@@ -38,15 +46,19 @@ namespace FinanzasPersonales.Registros
         {
             Prestamo p = new Prestamo();
             Cuentas c = new Cuentas();
-            if (Utilitarios.ValidarTextBoxVacio(IdCobrotextBox, err, "Por favor llene este campo") && Utilitarios.ValidarTextBoxVacio(MontotextBox, err, "Por favor llene este campo")) 
+            CobroPrestamo cobro = new CobroPrestamo();
+            if ( Utilitarios.ValidarTextBoxVacio(MontotextBox, err, "Por favor llene este campo")) 
             {
-               // if(PrestamoComboBox.SelectedValue
+               
               
-                // Aqui ocurre un error cuando intenta guardar cuando el combobox esta vacio 
+                
                 p.Buscar((int)PrestamoComboBox.SelectedValue);
-                        if(p.Balance > Utilitarios.ToInt(MontotextBox.Text))
+                        if(p.Balance >= Utilitarios.ToInt(MontotextBox.Text))
                         {
-                            p.Modificar(Utilitarios.ToInt(MontotextBox.Text));
+                            cobro.IdPrestamo = p.IdPrestamo;
+                            cobro.Monto = Utilitarios.ToInt(MontotextBox.Text);
+                            cobro.Insertar();
+                            p.Modificar(p.Balance - Utilitarios.ToInt(MontotextBox.Text));                                
                         }
                         else
                         {

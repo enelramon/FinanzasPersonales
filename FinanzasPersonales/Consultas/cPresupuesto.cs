@@ -67,6 +67,7 @@ namespace FinanzasPersonales.Consultas
             Presupuesto p = new Presupuesto();
             IdcomboBox.DataSource = p.Listar("IdPresupuesto, Descripcion", "1=1");
             IdcomboBox.ValueMember = "IdPresupuesto";
+            //todo: Cambiar esto a descripcion, esta en IdPresupuesto para facilitar comprobacion
             IdcomboBox.DisplayMember = "IdPresupuesto";
         }
 

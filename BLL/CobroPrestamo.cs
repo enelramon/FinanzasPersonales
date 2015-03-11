@@ -25,7 +25,7 @@ namespace BLL
 
         public bool Insertar()
         {
-            this.IdCobro = (int)Conexion.ObtenerValorDb("Insert into CobrosPrestamos (  IdPrestamo,Monto) values(" +this.IdPrestamo+  ", " + this.Monto + ")Select @@Identity");
+            this.IdCobro = Convert.ToInt32(Conexion.ObtenerValorDb("Insert into CobrosPrestamos (  IdPrestamo,Monto) values(" +this.IdPrestamo+  ", " + this.Monto + ")Select @@Identity"));
             return IdCobro > 0;
         }
 

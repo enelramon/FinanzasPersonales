@@ -39,6 +39,8 @@
             this.transferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobrosDePrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,7 @@
             this.ingresosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cobrosDePrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.presupuestoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,6 +136,20 @@
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
+            // prestamosToolStripMenuItem
+            // 
+            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.prestamosToolStripMenuItem.Text = "Prestamos";
+            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
+            // 
+            // cobrosDePrestamosToolStripMenuItem
+            // 
+            this.cobrosDePrestamosToolStripMenuItem.Name = "cobrosDePrestamosToolStripMenuItem";
+            this.cobrosDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.cobrosDePrestamosToolStripMenuItem.Text = "Cobros de Prestamos";
+            this.cobrosDePrestamosToolStripMenuItem.Click += new System.EventHandler(this.cobrosDePrestamosToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -142,7 +157,8 @@
             this.cuentasToolStripMenuItem1,
             this.transferenciasToolStripMenuItem1,
             this.gastosToolStripMenuItem1,
-            this.ingresosToolStripMenuItem1});
+            this.ingresosToolStripMenuItem1,
+            this.presupuestoToolStripMenuItem2});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -198,19 +214,12 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // prestamosToolStripMenuItem
+            // presupuestoToolStripMenuItem2
             // 
-            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.prestamosToolStripMenuItem.Text = "Prestamos";
-            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
-            // 
-            // cobrosDePrestamosToolStripMenuItem
-            // 
-            this.cobrosDePrestamosToolStripMenuItem.Name = "cobrosDePrestamosToolStripMenuItem";
-            this.cobrosDePrestamosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.cobrosDePrestamosToolStripMenuItem.Text = "Cobros de Prestamos";
-            this.cobrosDePrestamosToolStripMenuItem.Click += new System.EventHandler(this.cobrosDePrestamosToolStripMenuItem_Click);
+            this.presupuestoToolStripMenuItem2.Name = "presupuestoToolStripMenuItem2";
+            this.presupuestoToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.presupuestoToolStripMenuItem2.Text = "Presupuesto";
+            this.presupuestoToolStripMenuItem2.Click += new System.EventHandler(this.presupuestoToolStripMenuItem2_Click);
             // 
             // FormularioPrincipal
             // 
@@ -259,6 +268,7 @@
         private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobrosDePrestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem presupuestoToolStripMenuItem2;
 
 
         public System.EventHandler clasificacionesToolStripMenuItem1_Click { get; set; }

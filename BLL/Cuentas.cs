@@ -41,7 +41,7 @@ namespace BLL
         {
             this.IdCuenta = 0;
 
-            this.IdCuenta = (int)Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion,Balance)  Values('" + this.Descripcion + "',0) Select @@Identity");
+            this.IdCuenta = Convert.ToInt32(Conexion.ObtenerValorDb("Insert Into Cuentas (Descripcion,Balance)  Values('" + this.Descripcion + "',0) Select @@Identity"));
 
             return this.IdCuenta > 0;
 

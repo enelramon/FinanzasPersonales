@@ -105,6 +105,12 @@ namespace FinanzasPersonales
             Cobro.Show();
         }
 
+        private void presupuestoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Consultas.cPresupuesto cPresupuesto = new Consultas.cPresupuesto();
+            cPresupuesto.Show();
+        }
+
        
     }
 }
