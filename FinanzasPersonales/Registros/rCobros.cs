@@ -82,6 +82,11 @@ namespace FinanzasPersonales.Registros
                 MessageBox.Show("Error en el Prestamo");
             }
         }
+
+        private void BuscarButtom_Click(object sender, EventArgs e)
+        {
+
+        }
       }
     }
 
