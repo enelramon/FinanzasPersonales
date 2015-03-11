@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    class RegistroDePrestamos
+    public class Prestamos
     {
         private ConexionDb Conexion = new ConexionDb();
 
@@ -19,7 +19,7 @@ namespace BLL
         public int Monto { get; set; }
         public float Balance { get; set; }
 
-        public RegistroDePrestamos()
+        public Prestamos()
         {
             
         this.IdPrestamo=0;
@@ -33,7 +33,7 @@ namespace BLL
         {
             this.IdPrestamo = 0;
 
-            this.IdPrestamo = (int)Conexion.ObtenerValorDb("Insert Into RegistroDePrestamos (Concepto,Monto,Balance)  Values('" + this.Concepto + "',"+this.Monto+","+this.Balance+") Select @@Identity");
+            this.IdPrestamo = (int)Conexion.ObtenerValorDb("Insert Into RegistroDePrestamos (IdCuenta,Concepto,Monto,Balance)  Values("+this.IdCuenta+",'" + this.Concepto + "',"+this.Monto+","+this.Balance+") Select @@Identity");
 
             return this.IdPrestamo > 0;
 

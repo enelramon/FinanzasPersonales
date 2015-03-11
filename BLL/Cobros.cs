@@ -9,24 +9,22 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    class Cobros
+    public class Cobros
     {
 
         private ConexionDb Conexion = new ConexionDb();
 
         public int IdCobro { get; set; }
-
         public int IdPrestamo { get; set; }
-
+        public float Balance{ get; set; }
         public int Monto { get; set; }
 
 
         public Cobros()
         {
             this.IdCobro = 0;
-
             this.IdPrestamo = 0;
-
+            this.Balance = 0;
             this.Monto = 0;
 
         }
@@ -35,7 +33,7 @@ namespace BLL
         {
             this.IdCobro = 0;
 
-            this.IdCobro = (int)Conexion.ObtenerValorDb("Insert Into Cobros (Monto)  Values('" + this.Monto + "') Select @@Identity");
+            this.IdCobro = (int)Conexion.ObtenerValorDb("Insert Into Cobros (IdPrestamo,Balance,Monto)  Values("+this.IdPrestamo+","+this.Balance+",'" + this.Monto + "') Select @@Identity");
 
             return this.IdCobro> 0;
 
@@ -60,6 +58,7 @@ namespace BLL
 
                 this.IdCobro = IdBuscado;
                 this.IdPrestamo = (int)dt.Rows[0]["IdPrestamo"];
+                this.Balance = (float)dt.Rows[0]["Balance"];
                 this.Monto = (int)dt.Rows[0]["Monto"];
                
             }

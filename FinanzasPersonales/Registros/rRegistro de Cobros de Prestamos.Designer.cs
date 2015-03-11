@@ -33,13 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1Cobros = new System.Windows.Forms.TextBox();
+            this.comboBox1Prestamo = new System.Windows.Forms.ComboBox();
+            this.textBox2MontoCB = new System.Windows.Forms.TextBox();
             this.LimpiarButtomRegistro = new System.Windows.Forms.Button();
             this.BorrarButtomRegistro = new System.Windows.Forms.Button();
             this.GuardarButtomRegistro = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox3Balance = new System.Windows.Forms.TextBox();
             this.BuscarButtomRegistro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,30 +79,31 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Monto";
             // 
-            // textBox1
+            // textBox1Cobros
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(89, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBox1Cobros.Location = new System.Drawing.Point(113, 63);
+            this.textBox1Cobros.Name = "textBox1Cobros";
+            this.textBox1Cobros.Size = new System.Drawing.Size(89, 20);
+            this.textBox1Cobros.TabIndex = 4;
             // 
-            // comboBox1
+            // comboBox1Prestamo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox1Prestamo.FormattingEnabled = true;
+            this.comboBox1Prestamo.Items.AddRange(new object[] {
             "Cuentas",
             "rRegistro de prestamos"});
-            this.comboBox1.Location = new System.Drawing.Point(113, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 21);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1Prestamo.Location = new System.Drawing.Point(113, 129);
+            this.comboBox1Prestamo.Name = "comboBox1Prestamo";
+            this.comboBox1Prestamo.Size = new System.Drawing.Size(281, 21);
+            this.comboBox1Prestamo.TabIndex = 5;
+            this.comboBox1Prestamo.SelectedIndexChanged += new System.EventHandler(this.comboBox1Prestamo_SelectedIndexChanged);
             // 
-            // textBox2
+            // textBox2MontoCB
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBox2MontoCB.Location = new System.Drawing.Point(113, 216);
+            this.textBox2MontoCB.Name = "textBox2MontoCB";
+            this.textBox2MontoCB.Size = new System.Drawing.Size(100, 20);
+            this.textBox2MontoCB.TabIndex = 6;
             // 
             // LimpiarButtomRegistro
             // 
@@ -130,6 +131,7 @@
             this.BorrarButtomRegistro.Text = "Borrar";
             this.BorrarButtomRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BorrarButtomRegistro.UseVisualStyleBackColor = true;
+            this.BorrarButtomRegistro.Click += new System.EventHandler(this.BorrarButtomRegistro_Click);
             // 
             // GuardarButtomRegistro
             // 
@@ -144,13 +146,14 @@
             this.GuardarButtomRegistro.Text = "Guardar";
             this.GuardarButtomRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButtomRegistro.UseVisualStyleBackColor = true;
+            this.GuardarButtomRegistro.Click += new System.EventHandler(this.GuardarButtomRegistro_Click);
             // 
-            // textBox3
+            // textBox3Balance
             // 
-            this.textBox3.Location = new System.Drawing.Point(213, 173);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 48;
+            this.textBox3Balance.Location = new System.Drawing.Point(213, 173);
+            this.textBox3Balance.Name = "textBox3Balance";
+            this.textBox3Balance.Size = new System.Drawing.Size(100, 20);
+            this.textBox3Balance.TabIndex = 48;
             // 
             // BuscarButtomRegistro
             // 
@@ -167,13 +170,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 339);
             this.Controls.Add(this.BuscarButtomRegistro);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox3Balance);
             this.Controls.Add(this.LimpiarButtomRegistro);
             this.Controls.Add(this.BorrarButtomRegistro);
             this.Controls.Add(this.GuardarButtomRegistro);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2MontoCB);
+            this.Controls.Add(this.comboBox1Prestamo);
+            this.Controls.Add(this.textBox1Cobros);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -191,13 +194,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1Cobros;
+        private System.Windows.Forms.ComboBox comboBox1Prestamo;
+        private System.Windows.Forms.TextBox textBox2MontoCB;
         private System.Windows.Forms.Button LimpiarButtomRegistro;
         private System.Windows.Forms.Button BorrarButtomRegistro;
         private System.Windows.Forms.Button GuardarButtomRegistro;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox3Balance;
         private System.Windows.Forms.Button BuscarButtomRegistro;
     }
 }

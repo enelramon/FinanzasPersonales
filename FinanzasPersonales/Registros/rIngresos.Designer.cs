@@ -39,9 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BuscarButtom = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2Concepto = new System.Windows.Forms.TextBox();
             this.textBox2IdIngreso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2Concepto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,6 +161,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // textBox2Concepto
+            // 
+            this.textBox2Concepto.Location = new System.Drawing.Point(127, 75);
+            this.textBox2Concepto.Name = "textBox2Concepto";
+            this.textBox2Concepto.Size = new System.Drawing.Size(175, 20);
+            this.textBox2Concepto.TabIndex = 62;
+            this.textBox2Concepto.TextChanged += new System.EventHandler(this.textBox2Concepto_TextChanged);
+            // 
             // textBox2IdIngreso
             // 
             this.textBox2IdIngreso.Location = new System.Drawing.Point(164, 66);
@@ -176,13 +184,6 @@
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 75;
             this.label4.Text = "ID Ingreso";
-            // 
-            // textBox2Concepto
-            // 
-            this.textBox2Concepto.Location = new System.Drawing.Point(127, 75);
-            this.textBox2Concepto.Name = "textBox2Concepto";
-            this.textBox2Concepto.Size = new System.Drawing.Size(175, 20);
-            this.textBox2Concepto.TabIndex = 62;
             // 
             // rIngresos
             // 

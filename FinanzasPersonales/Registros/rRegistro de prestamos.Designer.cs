@@ -81,6 +81,7 @@
             this.BorrarButtomRegistro.Text = "Borrar";
             this.BorrarButtomRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BorrarButtomRegistro.UseVisualStyleBackColor = true;
+            this.BorrarButtomRegistro.Click += new System.EventHandler(this.BorrarButtomRegistro_Click);
             // 
             // GuardarButtomRegistro
             // 
@@ -95,11 +96,13 @@
             this.GuardarButtomRegistro.Text = "Guardar";
             this.GuardarButtomRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButtomRegistro.UseVisualStyleBackColor = true;
+            this.GuardarButtomRegistro.Click += new System.EventHandler(this.GuardarButtomRegistro_Click);
             // 
             // textBox4Resgistro
             // 
             this.textBox4Resgistro.Location = new System.Drawing.Point(355, 195);
             this.textBox4Resgistro.Name = "textBox4Resgistro";
+            this.textBox4Resgistro.ReadOnly = true;
             this.textBox4Resgistro.Size = new System.Drawing.Size(100, 20);
             this.textBox4Resgistro.TabIndex = 41;
             // 

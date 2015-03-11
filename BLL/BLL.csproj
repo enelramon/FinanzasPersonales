@@ -58,7 +58,7 @@
     <Compile Include="Presupuesto.cs" />
     <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroDePrestamos.cs" />
+    <Compile Include="Prestamos.cs" />
     <Compile Include="SubClasificaciones.cs" />
     <Compile Include="Transferencias.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -85,6 +85,9 @@
       <Project>{01911d2d-fde4-4cca-a79b-f23515077e0a}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

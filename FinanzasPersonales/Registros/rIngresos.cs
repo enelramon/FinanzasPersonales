@@ -80,6 +80,11 @@ namespace FinanzasPersonales.Registros
             else
                 MessageBox.Show("Por Favor Complete los Campo");
         }
+
+        private void textBox2Concepto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 /*
         private void BorrarButtom_Click(object sender, EventArgs e)
         {

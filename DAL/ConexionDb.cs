@@ -14,11 +14,11 @@ namespace DAL
     /// </summary>
     public class ConexionDb
     {
-        SqlConnection Conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=FinanzasPersonalesDB;Integrated Security=True");
+        //SqlConnection Conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=FinanzasPersonalesDB;Integrated Security=True");
 
         //SqlConnection Conexion = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=FinanzasPersonalesDB;Integrated Security=True");
         //SqlConnection Conexion = new SqlConnection(@"Data Source=.;Initial Catalog=FinanzasPersonalesY;Integrated Security=True");
-       // SqlConnection Conexion = new SqlConnection(@"Data Source=.;Initial Catalog=FinanzasPersonalesY;Integrated Security=True");
+        SqlConnection Conexion = new SqlConnection(@"Data Source=.;Initial Catalog=FinanzasPersonalesY;Integrated Security=True");
 
         /// <summary>
         /// Ejecutar comandos a la base de datos, recuerde pasar solo los comandos que no retornan algun valor
@@ -42,7 +42,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                Console.Write("Error COECCION: " + ex.Message);
+                Console.Write("Error CONEXCION: " + ex.Message);
                 throw;
             }
             finally
