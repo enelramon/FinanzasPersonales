@@ -20,11 +20,11 @@ namespace FinanzasPersonales.Registros
 
         private void GuardarButtomRegistro_Click(object sender, EventArgs e)
         {
-                Cobros regCobPre = new Cobros();
+            Cobros regCobPre = new Cobros();
 
             
             regCobPre.IdPrestamo = Utilitarios.ToInt(comboBox1Prestamo.SelectedValue.ToString());
-           // regCobPre.Balance = Convert.ToSingle(textBox3Balance.Text);
+           ///// regCobPre.Balance = Convert.ToSingle(textBox3Balance.Text);
             regCobPre.Monto = Utilitarios.ToInt(textBox2MontoCB.Text);
             regCobPre.Insertar();
            
