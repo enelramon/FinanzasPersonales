@@ -53,11 +53,11 @@ namespace BLL
         }
 
 
-        public static Boolean AfectarBalance(int IdCuenta, float ValorAumentar)
+        public static Boolean AfectarBalance(int IdPrestamo, float ValorAumentar)
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Prestamos Set Balance = Balance +" + ValorAumentar.ToString() + "Where IdCuenta =" + IdCuenta.ToString()); 
+            return Conexion.EjecutarDB("Update Prestamos Set Balance = Balance-"+ ValorAumentar.ToString() + " Where IdPrestamo =" + IdPrestamo.ToString()); 
 
         }
 
