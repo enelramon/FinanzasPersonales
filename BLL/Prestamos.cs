@@ -13,7 +13,7 @@ namespace BLL
     {
         private ConexionDb Conexion = new ConexionDb(); // Creando la conexion a la DB.
 
-        // Creando setters y getters.
+        // Creando setters y getters. // Edito
 
         public int IdPrestamo { get; set; }
         public int IdCuenta { get; set; }
