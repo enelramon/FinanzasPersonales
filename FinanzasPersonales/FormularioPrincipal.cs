@@ -82,6 +82,12 @@ namespace FinanzasPersonales
             rPres.Show();
         }
 
+        private void cobroDePrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.rCobros rCob = new Registros.rCobros();
+            rCob.Show();
+        }
+
        
     }
 }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clasificaciones.cs" />
+    <Compile Include="Cobros.cs" />
     <Compile Include="Cuentas.cs">
       <SubType>Code</SubType>
     </Compile>

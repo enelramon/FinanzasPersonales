@@ -40,7 +40,7 @@ namespace BLL
 
             if (paso)
             {
-                DecrementarBalance(this.IdPrestamo, this.Monto);
+                DecrementarBalance(this.IdCuenta, this.Monto);
             }
 
             return paso;
@@ -53,22 +53,46 @@ namespace BLL
         }
 
 
-        public static Boolean AfectarBalance(int IdPrestamo, float ValorAumentar)
+        public static Boolean AfectarBalance(int IdCuenta, float ValorAumentar)
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Cuentas Set Balance = Balance +" + ValorAumentar.ToString() + "Where IdCuenta =" + IdPrestamo.ToString()); // poner  Prestamo.IdCuenta
+            return Conexion.EjecutarDB("Update Prestamos Set Balance = Balance +" + ValorAumentar.ToString() + "Where IdCuenta =" + IdCuenta.ToString()); 
 
         }
 
-        public static Boolean DecrementarBalance(int IdPrestamo, float ValorDecrementar)
+        public static Boolean DecrementarBalance(int IdCuenta, float ValorDecrementar)
         {
             ConexionDb Conexion = new ConexionDb();
 
-            return Conexion.EjecutarDB("Update Cuentas set Balance = Balance-" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdPrestamo.ToString()); // poner  Prestamo.IdCuenta
+            return Conexion.EjecutarDB("Update Cuentas set Balance = Balance-" + ValorDecrementar.ToString() + "Where IdCuenta =" + IdCuenta.ToString()); 
         }
 
+        public DataTable Listar(string campos = "*", string Filtro = "1=1")
+        {
+            return Conexion.BuscarDb("Select " + campos + " from Prestamos where " + Filtro);
+        }
 
+        public bool Buscar(int IdBuscado)
+        {
+            bool Encontro = false;
+            DataTable dt = new DataTable();
+
+            dt = this.Listar("*", "IdPrestamo = " + IdBuscado);
+
+            if (dt.Rows.Count > 0)
+            {
+                Encontro = true;
+                DataRow[] dr;
+                dr = dt.Select("IdPrestamo = " + IdBuscado);
+                this.IdPrestamo = IdBuscado;
+                this.Concepto = (string)dr[0]["Concepto"];
+                this.Monto = Convert.ToSingle(dr[0]["Monto"]);
+                this.Balance = Convert.ToSingle(dr[0]["Balance"]);
+            }
+
+            return Encontro;
+        }
 
     }
 }

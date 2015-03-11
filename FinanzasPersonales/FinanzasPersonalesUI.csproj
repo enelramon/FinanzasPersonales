@@ -120,6 +120,12 @@
     <Compile Include="Registros\rClasificaciones.Designer.cs">
       <DependentUpon>rClasificaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\rCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\rCobros.Designer.cs">
+      <DependentUpon>rCobros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\rCuentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="Registros\rClasificaciones.resx">
       <DependentUpon>rClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\rCobros.resx">
+      <DependentUpon>rCobros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\rCuentas.resx">
       <DependentUpon>rCuentas.cs</DependentUpon>
