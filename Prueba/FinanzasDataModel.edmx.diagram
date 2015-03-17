@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a01534c5fb14b39b5b844341c165fee" Name="Diagram1">
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Clasificacione" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Cuenta" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Gasto" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Ingreso" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Presupuesto" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.PresupuestoDetalle" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.SubClasificacione" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPersonalesDBModel.Transferencia" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__Presupues__IdCla__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__SubClasif__IdCla__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__Gastos__IdCuenta__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__Ingresos__IdCuen__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__Gastos__IdSubCla__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPersonalesDBModel.FK__Ingresos__IdSubC__182C9B23" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

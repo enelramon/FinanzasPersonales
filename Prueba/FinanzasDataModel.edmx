@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinanzasPersonalesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clasificaciones">
+          <Key>
+            <PropertyRef Name="IdClasificacion" />
+          </Key>
+          <Property Name="IdClasificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+          </Key>
+          <Property Name="IdCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Balance" Type="float" />
+        </EntityType>
+        <EntityType Name="Gastos">
+          <Key>
+            <PropertyRef Name="IdGasto" />
+          </Key>
+          <Property Name="IdGasto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IdCuenta" Type="int" />
+          <Property Name="IdSubClas" Type="int" />
+          <Property Name="Concepto" Type="varchar" MaxLength="80" />
+          <Property Name="Monto" Type="float" />
+        </EntityType>
+        <EntityType Name="Ingresos">
+          <Key>
+            <PropertyRef Name="IdIngreso" />
+          </Key>
+          <Property Name="IdIngreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IdCuenta" Type="int" />
+          <Property Name="IdSubClas" Type="int" />
+          <Property Name="Concepto" Type="varchar" MaxLength="80" />
+          <Property Name="Valor" Type="float" />
+        </EntityType>
+        <EntityType Name="Presupuesto">
+          <Key>
+            <PropertyRef Name="IdPresupuesto" />
+          </Key>
+          <Property Name="IdPresupuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PresupuestoDetalle">
+          <Key>
+            <PropertyRef Name="IdPresupuesto" />
+          </Key>
+          <Property Name="IdPresupuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClasificacion" Type="int" />
+          <Property Name="Valor" Type="float" />
+        </EntityType>
+        <EntityType Name="SubClasificaciones">
+          <Key>
+            <PropertyRef Name="IdSubClas" />
+          </Key>
+          <Property Name="IdSubClas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClasificacion" Type="int" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Transferencias">
+          <Key>
+            <PropertyRef Name="IdTransferecia" />
+          </Key>
+          <Property Name="IdTransferecia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="IdCuentaOrigen" Type="int" />
+          <Property Name="IdCuentaDestino" Type="int" />
+          <Property Name="Concepto" Type="varchar" MaxLength="100" />
+          <Property Name="Valor" Type="float" />
+        </EntityType>
+        <Association Name="FK__Gastos__IdCuenta__1B0907CE">
+          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="0..1" />
+          <End Role="Gastos" Type="Self.Gastos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="IdCuenta" />
+            </Principal>
+            <Dependent Role="Gastos">
+              <PropertyRef Name="IdCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gastos__IdSubCla__1BFD2C07">
+          <End Role="SubClasificaciones" Type="Self.SubClasificaciones" Multiplicity="0..1" />
+          <End Role="Gastos" Type="Self.Gastos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClasificaciones">
+              <PropertyRef Name="IdSubClas" />
+            </Principal>
+            <Dependent Role="Gastos">
+              <PropertyRef Name="IdSubClas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__IdCuen__173876EA">
+          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="IdCuenta" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="IdCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__IdSubC__182C9B23">
+          <End Role="SubClasificaciones" Type="Self.SubClasificaciones" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClasificaciones">
+              <PropertyRef Name="IdSubClas" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="IdSubClas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Presupues__IdCla__24927208">
+          <End Role="Clasificaciones" Type="Self.Clasificaciones" Multiplicity="0..1" />
+          <End Role="PresupuestoDetalle" Type="Self.PresupuestoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="PresupuestoDetalle">
+              <PropertyRef Name="IdClasificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubClasif__IdCla__145C0A3F">
+          <End Role="Clasificaciones" Type="Self.Clasificaciones" Multiplicity="0..1" />
+          <End Role="SubClasificaciones" Type="Self.SubClasificaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="SubClasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinanzasPersonalesDBModelStoreContainer">
+          <EntitySet Name="Clasificaciones" EntityType="Self.Clasificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gastos" EntityType="Self.Gastos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingresos" EntityType="Self.Ingresos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Presupuesto" EntityType="Self.Presupuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PresupuestoDetalle" EntityType="Self.PresupuestoDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubClasificaciones" EntityType="Self.SubClasificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transferencias" EntityType="Self.Transferencias" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Gastos__IdCuenta__1B0907CE" Association="Self.FK__Gastos__IdCuenta__1B0907CE">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Gastos" EntitySet="Gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gastos__IdSubCla__1BFD2C07" Association="Self.FK__Gastos__IdSubCla__1BFD2C07">
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+            <End Role="Gastos" EntitySet="Gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__IdCuen__173876EA" Association="Self.FK__Ingresos__IdCuen__173876EA">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__IdSubC__182C9B23" Association="Self.FK__Ingresos__IdSubC__182C9B23">
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Presupues__IdCla__24927208" Association="Self.FK__Presupues__IdCla__24927208">
+            <End Role="Clasificaciones" EntitySet="Clasificaciones" />
+            <End Role="PresupuestoDetalle" EntitySet="PresupuestoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubClasif__IdCla__145C0A3F" Association="Self.FK__SubClasif__IdCla__145C0A3F">
+            <End Role="Clasificaciones" EntitySet="Clasificaciones" />
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanzasPersonalesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clasificacione">
+          <Key>
+            <PropertyRef Name="IdClasificacion" />
+          </Key>
+          <Property Name="IdClasificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PresupuestoDetalles" Relationship="Self.FK__Presupues__IdCla__24927208" FromRole="Clasificaciones" ToRole="PresupuestoDetalle" />
+          <NavigationProperty Name="SubClasificaciones" Relationship="Self.FK__SubClasif__IdCla__145C0A3F" FromRole="Clasificaciones" ToRole="SubClasificaciones" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="IdCuenta" />
+          </Key>
+          <Property Name="IdCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Double" />
+          <NavigationProperty Name="Gastos" Relationship="Self.FK__Gastos__IdCuenta__1B0907CE" FromRole="Cuentas" ToRole="Gastos" />
+          <NavigationProperty Name="Ingresos" Relationship="Self.FK__Ingresos__IdCuen__173876EA" FromRole="Cuentas" ToRole="Ingresos" />
+        </EntityType>
+        <EntityType Name="Gasto">
+          <Key>
+            <PropertyRef Name="IdGasto" />
+          </Key>
+          <Property Name="IdGasto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="IdCuenta" Type="Int32" />
+          <Property Name="IdSubClas" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Double" />
+          <NavigationProperty Name="Cuenta" Relationship="Self.FK__Gastos__IdCuenta__1B0907CE" FromRole="Gastos" ToRole="Cuentas" />
+          <NavigationProperty Name="SubClasificacione" Relationship="Self.FK__Gastos__IdSubCla__1BFD2C07" FromRole="Gastos" ToRole="SubClasificaciones" />
+        </EntityType>
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="IdIngreso" />
+          </Key>
+          <Property Name="IdIngreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="IdCuenta" Type="Int32" />
+          <Property Name="IdSubClas" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="Double" />
+          <NavigationProperty Name="Cuenta" Relationship="Self.FK__Ingresos__IdCuen__173876EA" FromRole="Ingresos" ToRole="Cuentas" />
+          <NavigationProperty Name="SubClasificacione" Relationship="Self.FK__Ingresos__IdSubC__182C9B23" FromRole="Ingresos" ToRole="SubClasificaciones" />
+        </EntityType>
+        <EntityType Name="Presupuesto">
+          <Key>
+            <PropertyRef Name="IdPresupuesto" />
+          </Key>
+          <Property Name="IdPresupuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PresupuestoDetalle">
+          <Key>
+            <PropertyRef Name="IdPresupuesto" />
+          </Key>
+          <Property Name="IdPresupuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClasificacion" Type="Int32" />
+          <Property Name="Valor" Type="Double" />
+          <NavigationProperty Name="Clasificacione" Relationship="Self.FK__Presupues__IdCla__24927208" FromRole="PresupuestoDetalle" ToRole="Clasificaciones" />
+        </EntityType>
+        <EntityType Name="SubClasificacione">
+          <Key>
+            <PropertyRef Name="IdSubClas" />
+          </Key>
+          <Property Name="IdSubClas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClasificacion" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clasificacione" Relationship="Self.FK__SubClasif__IdCla__145C0A3F" FromRole="SubClasificaciones" ToRole="Clasificaciones" />
+          <NavigationProperty Name="Gastos" Relationship="Self.FK__Gastos__IdSubCla__1BFD2C07" FromRole="SubClasificaciones" ToRole="Gastos" />
+          <NavigationProperty Name="Ingresos" Relationship="Self.FK__Ingresos__IdSubC__182C9B23" FromRole="SubClasificaciones" ToRole="Ingresos" />
+        </EntityType>
+        <EntityType Name="Transferencia">
+          <Key>
+            <PropertyRef Name="IdTransferecia" />
+          </Key>
+          <Property Name="IdTransferecia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="IdCuentaOrigen" Type="Int32" />
+          <Property Name="IdCuentaDestino" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="Double" />
+        </EntityType>
+        <Association Name="FK__Presupues__IdCla__24927208">
+          <End Role="Clasificaciones" Type="Self.Clasificacione" Multiplicity="0..1" />
+          <End Role="PresupuestoDetalle" Type="Self.PresupuestoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="PresupuestoDetalle">
+              <PropertyRef Name="IdClasificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubClasif__IdCla__145C0A3F">
+          <End Role="Clasificaciones" Type="Self.Clasificacione" Multiplicity="0..1" />
+          <End Role="SubClasificaciones" Type="Self.SubClasificacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="SubClasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gastos__IdCuenta__1B0907CE">
+          <End Role="Cuentas" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Gastos" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="IdCuenta" />
+            </Principal>
+            <Dependent Role="Gastos">
+              <PropertyRef Name="IdCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__IdCuen__173876EA">
+          <End Role="Cuentas" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="IdCuenta" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="IdCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gastos__IdSubCla__1BFD2C07">
+          <End Role="SubClasificaciones" Type="Self.SubClasificacione" Multiplicity="0..1" />
+          <End Role="Gastos" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClasificaciones">
+              <PropertyRef Name="IdSubClas" />
+            </Principal>
+            <Dependent Role="Gastos">
+              <PropertyRef Name="IdSubClas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__IdSubC__182C9B23">
+          <End Role="SubClasificaciones" Type="Self.SubClasificacione" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClasificaciones">
+              <PropertyRef Name="IdSubClas" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="IdSubClas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinanzasPersonalesDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clasificaciones" EntityType="Self.Clasificacione" />
+          <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
+          <EntitySet Name="Gastos" EntityType="Self.Gasto" />
+          <EntitySet Name="Ingresos" EntityType="Self.Ingreso" />
+          <EntitySet Name="Presupuestoes" EntityType="Self.Presupuesto" />
+          <EntitySet Name="PresupuestoDetalles" EntityType="Self.PresupuestoDetalle" />
+          <EntitySet Name="SubClasificaciones" EntityType="Self.SubClasificacione" />
+          <EntitySet Name="Transferencias" EntityType="Self.Transferencia" />
+          <AssociationSet Name="FK__Presupues__IdCla__24927208" Association="Self.FK__Presupues__IdCla__24927208">
+            <End Role="Clasificaciones" EntitySet="Clasificaciones" />
+            <End Role="PresupuestoDetalle" EntitySet="PresupuestoDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubClasif__IdCla__145C0A3F" Association="Self.FK__SubClasif__IdCla__145C0A3F">
+            <End Role="Clasificaciones" EntitySet="Clasificaciones" />
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gastos__IdCuenta__1B0907CE" Association="Self.FK__Gastos__IdCuenta__1B0907CE">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Gastos" EntitySet="Gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__IdCuen__173876EA" Association="Self.FK__Ingresos__IdCuen__173876EA">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gastos__IdSubCla__1BFD2C07" Association="Self.FK__Gastos__IdSubCla__1BFD2C07">
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+            <End Role="Gastos" EntitySet="Gastos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__IdSubC__182C9B23" Association="Self.FK__Ingresos__IdSubC__182C9B23">
+            <End Role="SubClasificaciones" EntitySet="SubClasificaciones" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanzasPersonalesDBModelStoreContainer" CdmEntityContainer="FinanzasPersonalesDBEntities1">
+          <EntitySetMapping Name="Clasificaciones">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Clasificacione">
+              <MappingFragment StoreEntitySet="Clasificaciones">
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Cuenta">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gastos">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Gasto">
+              <MappingFragment StoreEntitySet="Gastos">
+                <ScalarProperty Name="IdGasto" ColumnName="IdGasto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+                <ScalarProperty Name="IdSubClas" ColumnName="IdSubClas" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingresos">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Ingreso">
+              <MappingFragment StoreEntitySet="Ingresos">
+                <ScalarProperty Name="IdIngreso" ColumnName="IdIngreso" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+                <ScalarProperty Name="IdSubClas" ColumnName="IdSubClas" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Presupuestoes">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Presupuesto">
+              <MappingFragment StoreEntitySet="Presupuesto">
+                <ScalarProperty Name="IdPresupuesto" ColumnName="IdPresupuesto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PresupuestoDetalles">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.PresupuestoDetalle">
+              <MappingFragment StoreEntitySet="PresupuestoDetalle">
+                <ScalarProperty Name="IdPresupuesto" ColumnName="IdPresupuesto" />
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubClasificaciones">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.SubClasificacione">
+              <MappingFragment StoreEntitySet="SubClasificaciones">
+                <ScalarProperty Name="IdSubClas" ColumnName="IdSubClas" />
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transferencias">
+            <EntityTypeMapping TypeName="FinanzasPersonalesDBModel.Transferencia">
+              <MappingFragment StoreEntitySet="Transferencias">
+                <ScalarProperty Name="IdTransferecia" ColumnName="IdTransferecia" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdCuentaOrigen" ColumnName="IdCuentaOrigen" />
+                <ScalarProperty Name="IdCuentaDestino" ColumnName="IdCuentaDestino" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
